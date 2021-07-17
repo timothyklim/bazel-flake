@@ -43,11 +43,11 @@
         "zing_15-pkg": "zing_15-pkg"
       },
       "locked": {
-        "lastModified": 1626352442,
-        "narHash": "sha256-F+bxS+PRVe2gvO0rxV7uSzMEa6HJdanqye+x/hmmmZk=",
+        "lastModified": 1626526525,
+        "narHash": "sha256-mtB5NCiG+oPyLR/CLQgi3uj9gREtyxCe9+ucMkM6ApQ=",
         "owner": "TawasalMessenger",
         "repo": "jdk-flake",
-        "rev": "8cc0f283aed0f9f820561f09ba5e19c8a182306d",
+        "rev": "53e99cad835ba57f4555e1189eab69002692e22b",
         "type": "github"
       },
       "original": {
@@ -158,11 +158,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1626216800,
-        "narHash": "sha256-rENRelK5xaXp+rIi68Sow0uPYx00kUA38yGOUcjWivI=",
+        "lastModified": 1626464457,
+        "narHash": "sha256-u2PCh/+8vQSLwf0mPpKHKQ8hAPB3l4uNZR3r0TdK2Lg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5e9429689a988bac273a98b3f85cb71d1aa15eb0",
+        "rev": "c6c4a3d45ab200f17805d2d86a1ff1cc7ca2b186",
         "type": "github"
       },
       "original": {
