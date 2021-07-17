@@ -1,4 +1,4 @@
-{ pkgs, src, version }:
+{ pkgs, runJdk, src, version }:
 
 with pkgs;
 let
@@ -94,7 +94,7 @@ let
   bazelRC = writeTextFile {
     name = "bazel-rc";
     text = ''
-      startup --server_javabase=${jdk}
+      startup --server_javabase=${runJdk}
 
       build --distdir=${distDir}
       fetch --distdir=${distDir}
@@ -104,9 +104,8 @@ let
       fetch --override_repository=${remote_java_tools.name}=${remote_java_tools}
       query --override_repository=${remote_java_tools.name}=${remote_java_tools}
 
-      # Provide a default java toolchain, this will be the same as ${jdk}
+      # Provide a default java toolchain, this will be the same as ${runJdk}
       build --host_javabase='@local_jdk//:jdk'
-      build --incompatible_use_toolchain_resolution_for_java_rules
 
       # load default location for the system wide configuration
       try-import /etc/bazel.bazelrc
