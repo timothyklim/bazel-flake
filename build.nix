@@ -145,6 +145,8 @@ buildBazelPackage {
         src = ./patches/bazel_rc.patch;
         bazelSystemBazelRCPath = bazelRC;
       })
+
+      ./patches/default_java_toolchain.patch
     ];
 
     postPatch = ''

@@ -1,0 +1,15 @@
+diff --git a/tools/jdk/default_java_toolchain.bzl b/tools/jdk/default_java_toolchain.bzl
+index d1f3a43df4..d13f243c7b 100644
+--- a/tools/jdk/default_java_toolchain.bzl
++++ b/tools/jdk/default_java_toolchain.bzl
+@@ -42,8 +42,8 @@ BASE_JDK9_JVM_OPTS = [
+ 
+ JDK9_JVM_OPTS = BASE_JDK9_JVM_OPTS + [
+     # override the javac in the JDK.
+-    "--patch-module=java.compiler=$(location @remote_java_tools//:java_compiler_jar)",
+-    "--patch-module=jdk.compiler=$(location @remote_java_tools//:jdk_compiler_jar)",
++    # "--patch-module=java.compiler=$(location @remote_java_tools//:java_compiler_jar)",
++    # "--patch-module=jdk.compiler=$(location @remote_java_tools//:jdk_compiler_jar)",
+ ]
+ 
+ DEFAULT_JAVACOPTS = [
