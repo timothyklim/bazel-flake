@@ -13,31 +13,36 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, java, src }:
-    let
-      sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      openjdk_16 = java.packages.${system}.openjdk_16;
-      bazel = import ./build.nix {
-        inherit pkgs src;
-        runJdk = openjdk_16.home;
-        version = "5.0.0-pre.20210708.4";
-      };
-      bazel-app = flake-utils.lib.mkApp { drv = bazel; };
-      derivation = { inherit bazel; };
-    in
-    with pkgs; rec {
-      packages.${system} = derivation;
-      defaultPackage.${system} = bazel;
-      apps.${system}.bazel = bazel-app;
-      defaultApp.${system} = bazel-app;
-      legacyPackages.${system} = extend overlay;
-      devShell.${system} = callPackage ./shell.nix {
-        inherit bazel src;
-      };
-      nixosModule = {
-        nixpkgs.overlays = [ overlay ];
-      };
-      overlay = final: prev: derivation;
-    };
+    flake-utils.lib.eachSystem [ "x86_64-linux" "x86_64-darwin" ] (
+      system:
+      let
+        sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
+        pkgs = nixpkgs.legacyPackages.${system};
+        jdk =
+          if pkgs.stdenv.isLinux
+          then java.packages.${system}.openjdk_16
+          else pkgs.adoptopenjdk-hotspot-bin-16;
+        bazel = import ./build.nix {
+          inherit pkgs nixpkgs src;
+          runJdk = jdk.home;
+          version = "5.0.0-pre.20210708.4";
+        };
+        bazel-app = flake-utils.lib.mkApp { drv = bazel; };
+        derivation = { inherit bazel; };
+      in
+      with pkgs; rec {
+        packages = derivation;
+        defaultPackage = bazel;
+        apps.bazel = bazel-app;
+        defaultApp = bazel-app;
+        legacyPackages = extend overlay;
+        devShell = callPackage ./shell.nix {
+          inherit bazel src;
+        };
+        nixosModule = {
+          nixpkgs.overlays = [ overlay ];
+        };
+        overlay = final: prev: derivation;
+      }
+    );
 }

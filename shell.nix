@@ -1,7 +1,6 @@
 { pkgs, src, bazel }:
 
 with pkgs;
-
 let
   updater = writeScript "update-bazel-deps.sh" ''
     #!${runtimeShell}
