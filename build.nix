@@ -116,7 +116,7 @@ buildBazelPackage {
   inherit src version;
   pname = "bazel";
 
-  buildInputs = [ python3 jdk ];
+  buildInputs = [ python3 jdk nix ];
 
   bazel = bazel_4;
   bazelTarget = "//src:bazel";
@@ -131,9 +131,24 @@ buildBazelPackage {
   ];
   fetchConfigured = true;
 
+  removeRulesCC = false;
+  removeLocalConfigCc = true;
+  removeLocal = false;
+
   dontAddBazelOpts = true;
 
-  fetchAttrs.sha256 = "SavpxxfBvn+k9OPc8O+eT5EwMS02uhKov2zC9MuaebA=";
+  fetchAttrs = {
+    postInstall = ''
+      for d in $bazelOut/external/* ; do
+        echo "$d $(nix-hash --type sha256 $d)"
+      done
+    '';
+
+    sha256 =
+      if stdenv.hostPlatform.isDarwin
+      then "jdWYQSAHII2fv4i8fyuwXGxP4VsKBgeueFZVm/GQxrQ="
+      else "MpZP3ffBlzAHGd0pthCFnCQafGm9Nx4F5nWQ6lUgUJs=";
+  };
 
   buildAttrs = {
     patches = [
