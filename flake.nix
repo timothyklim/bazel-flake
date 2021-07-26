@@ -25,7 +25,7 @@
         bazel = import ./build.nix {
           inherit pkgs nixpkgs src;
           runJdk = jdk.home;
-          version = "5.0.0-pre.20210708.4";
+          version = sources.src.original.ref;
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
         derivation = { inherit bazel; };

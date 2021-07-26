@@ -196,15 +196,18 @@ buildBazelPackage {
 
   fetchAttrs = {
     postInstall = ''
-      for d in $bazelOut/external/* ; do
-        echo "$d $(nix-hash --type sha256 $d)"
+      nix_build_top=$(echo $NIX_BUILD_TOP|sed "s/\/\//\//g")
+      find $bazelOut/external -type l | while read symlink; do
+        new_target="$(readlink "$symlink" | sed "s,$nix_build_top,NIX_BUILD_TOP,")"
+        rm "$symlink"
+        ln -sf "$new_target" "$symlink"
       done
     '';
 
     sha256 =
       if stdenv.hostPlatform.isDarwin
-      then "jdWYQSAHII2fv4i8fyuwXGxP4VsKBgeueFZVm/GQxrQ="
-      else "Jb1O4GR0gGUfFeSPpoFAcLhfkb/vAMKy/qYKDQ0paeY=";
+      then "oAUpjM51HAchWADWyXRGhHnE+KVpHOf8UfylpowUxDM="
+      else "2a2LCZxZ+VsVfgfDkf/OdqaKXTtcD6YLZt8gN2/pt5U=";
   };
 
   buildAttrs = {
