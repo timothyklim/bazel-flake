@@ -202,11 +202,17 @@ buildBazelPackage {
         rm "$symlink"
         ln -sf "$new_target" "$symlink"
       done
+
+      for d in $bazelOut/external/* ; do
+        echo "$d $(nix-hash --type sha256 $d)"
+      done
+
+      ls -la $bazelOut/external/rules_python/
     '';
 
     sha256 =
       if stdenv.hostPlatform.isDarwin
-      then "fdRxyhDu7eL386MPcHzPzseLAxDzQ9JoJThsv9BoTi8="
+      then lib.fakeSha256
       else "2a2LCZxZ+VsVfgfDkf/OdqaKXTtcD6YLZt8gN2/pt5U=";
   };
 
