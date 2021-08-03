@@ -158,11 +158,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1627533199,
-        "narHash": "sha256-NyIUcNevwtsMBINn56jnDF8wz3TV1AFxw+Vw6JMnkyE=",
+        "lastModified": 1627876884,
+        "narHash": "sha256-H6MzuidFip+F0Am4toJQI7o7ZklYL+nLOJEF1xtSgeg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "dd98b100651cfbb8804f32d852f75ef7c97a6b74",
+        "rev": "2a6732c38dfa8c1a3c8288f2b47a28cbea57a304",
         "type": "github"
       },
       "original": {
@@ -183,16 +183,16 @@
     "src": {
       "flake": false,
       "locked": {
-        "lastModified": 1627558810,
-        "narHash": "sha256-7AHED2ki6Ee6e6r7QmgtgtZBjmU4xjn9cTMiEcSpuxk=",
+        "lastModified": 1627994811,
+        "narHash": "sha256-nBwKECywvGKnM/RzdU7Y96d3zEBMklfzxsugkDi2eT0=",
         "owner": "bazelbuild",
         "repo": "bazel",
-        "rev": "13fd3a8504170fdb44c0d92055bdd7b0233ca172",
+        "rev": "93242b2753cfd0cce65e8c32db6d9033ce011b89",
         "type": "github"
       },
       "original": {
         "owner": "bazelbuild",
-        "ref": "5.0.0-pre.20210722.2",
+        "ref": "5.0.0-pre.20210728.1",
         "repo": "bazel",
         "type": "github"
       }
