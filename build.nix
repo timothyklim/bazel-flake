@@ -7,7 +7,7 @@ let
   arch = stdenv.hostPlatform.parsed.cpu.name;
   javaToolchain = "@bazel_tools//tools/jdk:toolchain";
   jdk = openjdk11_headless;
-  defaultShellPath = lib.makeBinPath [ bash coreutils findutils gawk gnugrep gnutar gnused gzip which unzip file zip python27 python3 ];
+  defaultShellPath = lib.makeBinPath [ bash coreutils findutils gawk gnugrep gnutar gnused gzip which unzip file zip python3 ];
   customBash = writeCBin "bash" ''
     #include <stdio.h>
     #include <stdlib.h>
@@ -212,8 +212,8 @@ buildBazelPackage {
 
     sha256 =
       if stdenv.hostPlatform.isDarwin
-      then "Rtjy6gVtIdwgChjxG9lbwMx4S0CSU3tMH18GTdEK9po="
-      else "V95U4/LS75vEVn2DaTA52gK1QvHJ7SvJW/HGeanZjEc=";
+      then lib.fakeSha256
+      else "rj9pQ3Zrn7YeZVnOL09vCiV131DeO4OPbOoOn9hAPN8=";
   };
 
   buildAttrs = {
@@ -238,13 +238,6 @@ buildBazelPackage {
     ];
 
     postPatch = ''
-      # Substitute j2objc and objc wrapper's python shebang to plain python path.
-      # These scripts explicitly depend on Python 2.7, hence we use python27.
-      # See also `postFixup` where python27 is added to $out/nix-support
-      substituteInPlace tools/j2objc/j2objc_header_map.py --replace "$!/usr/bin/python2.7" "#!${python27}/bin/python"
-      substituteInPlace tools/j2objc/j2objc_wrapper.py --replace "$!/usr/bin/python2.7" "#!${python27}/bin/python"
-      substituteInPlace tools/objc/j2objc_dead_code_pruner.py --replace "$!/usr/bin/python2.7" "#!${python27}/bin/python"
-
       # md5sum is part of coreutils
       sed -i 's|/sbin/md5|md5sum|' src/BUILD
 
@@ -326,12 +319,6 @@ buildBazelPackage {
     postFixup = ''
       mkdir -p $out/nix-support
       echo "${customBash} ${defaultShellPath}" >> $out/nix-support/depends
-      # The templates get tar’d up into a .jar,
-      # so nix can’t detect python is needed in the runtime closure
-      # Some of the scripts explicitly depend on Python 2.7. Otherwise, we
-      # default to using python3. Therefore, both python27 and python3 are
-      # runtime dependencies.
-      echo "${python27}" >> $out/nix-support/depends
       echo "${python3}" >> $out/nix-support/depends
     '' + lib.optionalString stdenv.isDarwin ''
       echo "${darwin.cctools}" >> $out/nix-support/depends
