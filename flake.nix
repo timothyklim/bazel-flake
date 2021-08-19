@@ -7,7 +7,7 @@
 
     java.url = "github:TawasalMessenger/jdk-flake";
     src = {
-      url = "github:bazelbuild/bazel/5.0.0-pre.20210802.5";
+      url = "github:bazelbuild/bazel/5.0.0-pre.20210810.4";
       flake = false;
     };
   };
@@ -21,7 +21,7 @@
         jdk =
           if pkgs.stdenv.isLinux
           then java.packages.${system}.openjdk_16
-          else pkgs.adoptopenjdk-hotspot-bin-16;
+          else pkgs.jdk16_headless;
         bazel = import ./build.nix {
           inherit pkgs nixpkgs src;
           runJdk = jdk.home;
