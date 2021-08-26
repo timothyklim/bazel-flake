@@ -212,8 +212,8 @@ buildBazelPackage {
 
     sha256 =
       if stdenv.hostPlatform.isDarwin
-      then "lcSbJiwE5AWn7J4h5AdjekiYXurQJ87Yac1vGJ85pPs="
-      else "rj9pQ3Zrn7YeZVnOL09vCiV131DeO4OPbOoOn9hAPN8=";
+      then lib.fakeSha256
+      else "PlLSaHkZvDEcpnkwExLV+2pgNLddZeiWPhCVScqWD84=";
   };
 
   buildAttrs = {
