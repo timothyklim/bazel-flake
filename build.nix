@@ -164,7 +164,7 @@ buildBazelPackage {
   inherit src version;
   pname = "bazel";
 
-  buildInputs = [ python3 jdk nix ];
+  buildInputs = [ python3 jdk ];
   nativeBuildInputs = [
     installShellFiles
     zip
@@ -202,12 +202,6 @@ buildBazelPackage {
         rm "$symlink"
         ln -sf "$new_target" "$symlink"
       done
-
-      for d in $bazelOut/external/* ; do
-        echo "$d $(nix-hash --type sha256 $d)"
-      done
-
-      ls -la $bazelOut/external/rules_python/
     '';
 
     sha256 =
