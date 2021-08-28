@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, runJdk, src, version }:
+{ pkgs, nixpkgs, jdk, src, version }:
 
 with pkgs;
 let
@@ -6,7 +6,6 @@ let
   system = if stdenv.hostPlatform.isDarwin then "darwin" else "linux";
   arch = stdenv.hostPlatform.parsed.cpu.name;
   javaToolchain = "@bazel_tools//tools/jdk:toolchain";
-  jdk = openjdk11_headless;
   defaultShellPath = lib.makeBinPath [ bash coreutils findutils gawk gnugrep gnutar gnused gzip which unzip file zip python3 ];
   customBash = writeCBin "bash" ''
     #include <stdio.h>
@@ -98,7 +97,7 @@ let
   bazelRC = writeTextFile {
     name = "bazel-rc";
     text = ''
-      startup --server_javabase=${runJdk}
+      startup --server_javabase=${jdk.home}
 
       build --distdir=${distDir}
       fetch --distdir=${distDir}
@@ -108,7 +107,7 @@ let
       fetch --override_repository=${remote_java_tools.name}=${remote_java_tools}
       query --override_repository=${remote_java_tools.name}=${remote_java_tools}
 
-      # Provide a default java toolchain, this will be the same as ${runJdk}
+      # Provide a default java toolchain, this will be the same as ${jdk.home}
       build --host_javabase='@local_jdk//:jdk'
 
       # load default location for the system wide configuration
@@ -159,12 +158,13 @@ let
       sed -i -e "s,/usr/bin/install_name_tool,${cctools}/bin/install_name_tool,g" $wrapper
     done
   '';
+  buildJdk = jdk11_headless;
 in
 buildBazelPackage {
   inherit src version;
   pname = "bazel";
 
-  buildInputs = [ python3 jdk ];
+  buildInputs = [ python3 buildJdk ];
   nativeBuildInputs = [
     installShellFiles
     zip
@@ -182,7 +182,7 @@ buildBazelPackage {
   ];
   bazelFlags = [
     "-c opt"
-    "--define=ABSOLUTE_JAVABASE=${jdk.home}"
+    "--define=ABSOLUTE_JAVABASE=${buildJdk.home}"
     "--host_javabase=@bazel_tools//tools/jdk:absolute_javabase"
     "--javabase=@bazel_tools//tools/jdk:absolute_javabase"
   ];
@@ -206,8 +206,8 @@ buildBazelPackage {
 
     sha256 =
       if stdenv.hostPlatform.isDarwin
-      then "4RH72Ktjlgf2WLeLe85D5i6dQS0g7z2JMvlAkBT0RdU="
-      else "PlLSaHkZvDEcpnkwExLV+2pgNLddZeiWPhCVScqWD84=";
+      then lib.fakeSha256
+      else "AE1hDyQBBm0mSd8IXIqqGNHPH3yErWcgvMCVUVGWVPw=";
   };
 
   buildAttrs = {

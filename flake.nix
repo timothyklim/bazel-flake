@@ -2,7 +2,7 @@
   description = "Bazel flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/46f0f0ed231907182986e14aa8623f00629e09a1";
     flake-utils.url = "github:numtide/flake-utils";
 
     java.url = "github:TawasalMessenger/jdk-flake";
@@ -23,8 +23,7 @@
           then java.packages.${system}.openjdk_16
           else pkgs.jdk16_headless;
         bazel = import ./build.nix {
-          inherit pkgs nixpkgs src;
-          runJdk = jdk.home;
+          inherit pkgs nixpkgs jdk src;
           version = sources.src.original.ref;
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
