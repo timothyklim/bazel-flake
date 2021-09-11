@@ -723,6 +723,13 @@
             "https://mirror.bazel.build/bazel_versioned_docs/jekyll-tree-4.2.0.tar"
         ]
     },
+    "jekyll_tree_4_2_1": {
+        "name": "jekyll_tree_4_2_1",
+        "sha256": "b767b7aa949f96b602257587add3be38acbead03bf919fe871397bc80d97f8b2",
+        "urls": [
+            "https://mirror.bazel.build/bazel_versioned_docs/jekyll-tree-4.2.1.tar"
+        ]
+    },
     "openjdk11_darwin_aarch64_archive": {
         "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
         "name": "openjdk11_darwin_aarch64_archive",
