@@ -2,7 +2,7 @@
   description = "Bazel flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/fc8a946321c9ade8134f9b4ac9d12ed23a0ec698";
     flake-utils.url = "github:numtide/flake-utils";
 
     java.url = "github:TawasalMessenger/jdk-flake";
@@ -21,7 +21,7 @@
         jdk =
           if pkgs.stdenv.isLinux
           then java.packages.${system}.openjdk_17
-          else pkgs.jdk17_headless;
+          else pkgs.adoptopenjdk-jre-hotspot-bin-17;
         bazel = import ./build.nix {
           inherit pkgs nixpkgs jdk src;
           version = "5.0.0-pre"; # sources.src.original.ref;
