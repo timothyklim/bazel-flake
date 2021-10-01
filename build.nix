@@ -63,7 +63,7 @@ let
         srcs.com_google_absl
         srcs.com_github_google_re2
         srcs.com_github_cares_cares
-        srcs."java_tools-v11.3.zip"
+        srcs."java_tools-v11.4.zip"
 
         srcs."remote_java_tools_${system}_for_testing"
         srcs."remotejdk11_${if stdenv.hostPlatform.isDarwin then "macos" else "linux"}"
@@ -207,7 +207,7 @@ buildBazelPackage {
     sha256 =
       if stdenv.hostPlatform.isDarwin
       then "CkahM5zmWFUaAjEAGBsjB7qvcT77HIVWvEh9XyreiIc="
-      else "CQTQHWi1n8EiKh4op9rpXbuH3EhCHH0WSg1GbHfCn90=";
+      else "ATspYUazuW/T6MZLaCvkpUBLkqnHrrm5+QCOOhfbBnQ=";
   };
 
   buildAttrs = {
