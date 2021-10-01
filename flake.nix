@@ -21,7 +21,7 @@
         jdk =
           if pkgs.stdenv.isLinux
           then java.packages.${system}.openjdk_17
-          else pkgs.adoptopenjdk-jre-hotspot-bin-17;
+          else pkgs.adoptopenjdk-hotspot-bin-17;
         bazel = import ./build.nix {
           inherit pkgs nixpkgs jdk src;
           version = "5.0.0-pre"; # sources.src.original.ref;
