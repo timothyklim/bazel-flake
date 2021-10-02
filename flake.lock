@@ -24,14 +24,16 @@
         "jdk17-valhalla": "jdk17-valhalla",
         "jdk18": "jdk18",
         "nixpkgs": "nixpkgs",
-        "zing_15-pkg": "zing_15-pkg"
+        "zing15_linux_tgz": "zing15_linux_tgz",
+        "zulu17_linux_tgz": "zulu17_linux_tgz",
+        "zulu17_macos_tgz": "zulu17_macos_tgz"
       },
       "locked": {
-        "lastModified": 1633064043,
-        "narHash": "sha256-3+1OJi+JumsopfdLVyC/bJ6gwoUtAdahL4YgNxikymk=",
+        "lastModified": 1633144857,
+        "narHash": "sha256-mqQ22U8JryHi+9QhA1hrKN+DigrDVnYzcBZBBpJoItE=",
         "owner": "TawasalMessenger",
         "repo": "jdk-flake",
-        "rev": "ae9b7f5e3c791575e599adfab9aa4d06a2499184",
+        "rev": "dd473a24bfefcdbf82dc2517420f28ff8376eb09",
         "type": "github"
       },
       "original": {
@@ -157,17 +159,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1633064524,
-        "narHash": "sha256-yIwh3W/l0kmp51EElBUumk/dMsWNKCQVsnEkBERuPDU=",
+        "lastModified": 1633141092,
+        "narHash": "sha256-BT6ppEWAvsU5zi2UuF6tJzPsYd9pmnZ/0W7MNMfRZf8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b3caee03b390c0bd9ddc38c52767c554b645b5e6",
+        "rev": "ff452174fc58b61e870b38524dc872267f91c7e3",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b3caee03b390c0bd9ddc38c52767c554b645b5e6",
         "type": "github"
       }
     },
@@ -182,20 +183,21 @@
     "src": {
       "flake": false,
       "locked": {
-        "lastModified": 1633035923,
-        "narHash": "sha256-6J0bKvAPIT1OkZur+3zSUqXIyhmp3dO7FIdbr/SVkhQ=",
+        "lastModified": 1633022804,
+        "narHash": "sha256-1qBQSIBOc4mboMirFFig1ougRCfo8s5VRQzvOjFRsjU=",
         "owner": "bazelbuild",
         "repo": "bazel",
-        "rev": "10e08c4fe291c2144d74d75a7c7bbb6473c5eb75",
+        "rev": "617ece8742b5d817518f5939cc528e801734205f",
         "type": "github"
       },
       "original": {
         "owner": "bazelbuild",
+        "ref": "5.0.0-pre.20210923.7",
         "repo": "bazel",
         "type": "github"
       }
     },
-    "zing_15-pkg": {
+    "zing15_linux_tgz": {
       "flake": false,
       "locked": {
         "narHash": "sha256-DlDB2Qe7P9V9corOiBov5BPk7UpZskoCxmRHpY8pbfQ=",
@@ -205,6 +207,30 @@
       "original": {
         "type": "tarball",
         "url": "https://cdn.azul.com/zing-zvm/feature-preview/zing99.99.99.99-fp.dev-3441-jdk15.0.1.tar.gz"
+      }
+    },
+    "zulu17_linux_tgz": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-qaQSw5gK/IHBdgfV1O1CpwK/NuMem45L4G3zEoEUNEg=",
+        "type": "tarball",
+        "url": "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-linux_x64.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-linux_x64.tar.gz"
+      }
+    },
+    "zulu17_macos_tgz": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-XsE8fC2CXlT90uPFmc4mhFO1A/IIt0jmOM0pB4Mc11A=",
+        "type": "tarball",
+        "url": "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_x64.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_x64.tar.gz"
       }
     }
   },
