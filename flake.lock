@@ -45,11 +45,11 @@
         "zulu17_macos_tgz": "zulu17_macos_tgz"
       },
       "locked": {
-        "lastModified": 1633146150,
-        "narHash": "sha256-pVY8wHOlgz0TRfWUwMwIpmOvOcCQoH0qfzRKXPmXFuY=",
+        "lastModified": 1633148935,
+        "narHash": "sha256-RHlclhx5eiV6VgO+yJFX0LYD5Ts3n1ivtH1u5E8+dUo=",
         "owner": "TawasalMessenger",
         "repo": "jdk-flake",
-        "rev": "1d84c1f73a78b66c1d6b71e0f7b7bb8772923011",
+        "rev": "1e5cf1d77160f5d25612e98860d40d9e6079fd8d",
         "type": "github"
       },
       "original": {
@@ -175,11 +175,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1633141092,
-        "narHash": "sha256-BT6ppEWAvsU5zi2UuF6tJzPsYd9pmnZ/0W7MNMfRZf8=",
+        "lastModified": 1633148205,
+        "narHash": "sha256-trxjzDaW6Hb9TKTxzzhJZdVfnsQBTLGKD9HdE/NW6FU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ff452174fc58b61e870b38524dc872267f91c7e3",
+        "rev": "09b2efb2d3a11fb010aa43c29c580de70f785940",
         "type": "github"
       },
       "original": {
