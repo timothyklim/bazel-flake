@@ -15,8 +15,24 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1631561581,
+        "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e5bf3925f6fbdfaf50a2a7ca0be2879c4261d19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "java": {
       "inputs": {
+        "flake-utils": "flake-utils_2",
         "jdk16": "jdk16",
         "jdk17": "jdk17",
         "jdk17-loom": "jdk17-loom",
@@ -29,11 +45,11 @@
         "zulu17_macos_tgz": "zulu17_macos_tgz"
       },
       "locked": {
-        "lastModified": 1633144857,
-        "narHash": "sha256-mqQ22U8JryHi+9QhA1hrKN+DigrDVnYzcBZBBpJoItE=",
+        "lastModified": 1633146150,
+        "narHash": "sha256-pVY8wHOlgz0TRfWUwMwIpmOvOcCQoH0qfzRKXPmXFuY=",
         "owner": "TawasalMessenger",
         "repo": "jdk-flake",
-        "rev": "dd473a24bfefcdbf82dc2517420f28ff8376eb09",
+        "rev": "1d84c1f73a78b66c1d6b71e0f7b7bb8772923011",
         "type": "github"
       },
       "original": {
@@ -183,16 +199,15 @@
     "src": {
       "flake": false,
       "locked": {
-        "lastModified": 1633022804,
-        "narHash": "sha256-1qBQSIBOc4mboMirFFig1ougRCfo8s5VRQzvOjFRsjU=",
+        "lastModified": 1633128890,
+        "narHash": "sha256-XMR1G0eIy7v/FAcu2Kfcbepc5P/+ueH8IYbQ6yS8ubg=",
         "owner": "bazelbuild",
         "repo": "bazel",
-        "rev": "617ece8742b5d817518f5939cc528e801734205f",
+        "rev": "fad21dae0b01d5f9b2274542c89f4c8163c2ff36",
         "type": "github"
       },
       "original": {
         "owner": "bazelbuild",
-        "ref": "5.0.0-pre.20210923.7",
         "repo": "bazel",
         "type": "github"
       }
