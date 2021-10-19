@@ -96,14 +96,6 @@
             "https://github.com/bazelbuild/bazel-skylib/releases/download/1.0.3/bazel-skylib-1.0.3.tar.gz"
         ]
     },
-    "bazel-toolchains-4.1.0.tar.gz": {
-        "name": "bazel-toolchains-4.1.0.tar.gz",
-        "sha256": "179ec02f809e86abf56356d8898c8bd74069f1bd7c56044050c2cd3d79d0e024",
-        "urls": [
-            "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/releases/download/4.1.0/bazel-toolchains-4.1.0.tar.gz",
-            "https://github.com/bazelbuild/bazel-toolchains/releases/download/4.1.0/bazel-toolchains-4.1.0.tar.gz"
-        ]
-    },
     "bazel_j2objc": {
         "name": "bazel_j2objc",
         "sha256": "8d3403b5b7db57e347c943d214577f6879e5b175c2b59b7e075c0b6453330e9b",
@@ -132,22 +124,14 @@
         ]
     },
     "bazel_toolchains": {
-        "generator_function": "dist_http_archive",
+        "generator_function": "grpc_deps",
         "generator_name": "bazel_toolchains",
         "name": "bazel_toolchains",
-        "patch_cmds": [
-            "test -f BUILD && chmod u+w BUILD || true",
-            "echo >> BUILD",
-            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD"
-        ],
-        "patch_cmds_win": [
-            "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
-        ],
-        "sha256": "179ec02f809e86abf56356d8898c8bd74069f1bd7c56044050c2cd3d79d0e024",
-        "strip_prefix": "bazel-toolchains-4.1.0",
+        "sha256": "0b36eef8a66f39c8dbae88e522d5bbbef49d5e66e834a982402c79962281be10",
+        "strip_prefix": "bazel-toolchains-1.0.1",
         "urls": [
-            "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/releases/download/4.1.0/bazel-toolchains-4.1.0.tar.gz",
-            "https://github.com/bazelbuild/bazel-toolchains/releases/download/4.1.0/bazel-toolchains-4.1.0.tar.gz"
+            "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/1.0.1.tar.gz",
+            "https://github.com/bazelbuild/bazel-toolchains/releases/download/1.0.1/bazel-toolchains-1.0.1.tar.gz"
         ]
     },
     "bazel_website": {
@@ -157,6 +141,31 @@
         "strip_prefix": "bazel-website-c174fa288aa079b68416d2ce2cc97268fa172f42",
         "urls": [
             "https://github.com/bazelbuild/bazel-website/archive/c174fa288aa079b68416d2ce2cc97268fa172f42.tar.gz"
+        ]
+    },
+    "bazelci_rules": {
+        "generator_function": "dist_http_archive",
+        "generator_name": "bazelci_rules",
+        "name": "bazelci_rules",
+        "patch_cmds": [
+            "test -f BUILD && chmod u+w BUILD || true",
+            "echo >> BUILD",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "eca21884e6f66a88c358e580fd67a6b148d30ab57b1680f62a96c00f9bc6a07e",
+        "strip_prefix": "bazelci_rules-1.0.0",
+        "urls": [
+            "https://github.com/bazelbuild/continuous-integration/releases/download/rules-1.0.0/bazelci_rules-1.0.0.tar.gz"
+        ]
+    },
+    "bazelci_rules-1.0.0.tar.gz": {
+        "name": "bazelci_rules-1.0.0.tar.gz",
+        "sha256": "eca21884e6f66a88c358e580fd67a6b148d30ab57b1680f62a96c00f9bc6a07e",
+        "urls": [
+            "https://github.com/bazelbuild/continuous-integration/releases/download/rules-1.0.0/bazelci_rules-1.0.0.tar.gz"
         ]
     },
     "boringssl": {
@@ -845,6 +854,46 @@
         "urls": [
             "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu16.28.11-ca-jdk16.0.0-win_x64.zip",
             "https://cdn.azul.com/zulu/bin/zulu16.28.11-ca-jdk16.0.0-win_x64.zip"
+        ]
+    },
+    "openjdk17_darwin_aarch64_archive": {
+        "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
+        "name": "openjdk17_darwin_aarch64_archive",
+        "sha256": "6b17f01f767ee7abf4704149ca4d86423aab9b16b68697b7d36e9b616846a8b0",
+        "strip_prefix": "zulu17.28.13-ca-jdk17.0.0-macosx_aarch64",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_aarch64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_aarch64.tar.gz"
+        ]
+    },
+    "openjdk17_darwin_archive": {
+        "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
+        "name": "openjdk17_darwin_archive",
+        "sha256": "6029b1fe6853cecad22ab99ac0b3bb4fb8c903dd2edefa91c3abc89755bbd47d",
+        "strip_prefix": "zulu17.28.13-ca-jdk17.0.0-macosx_x64",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_x64.tar.gz"
+        ]
+    },
+    "openjdk17_linux_archive": {
+        "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
+        "name": "openjdk17_linux_archive",
+        "sha256": "37c4f8e48536cceae8c6c20250d6c385e176972532fd35759fa7d6015c965f56",
+        "strip_prefix": "zulu17.28.13-ca-jdk17.0.0-linux_x64",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-linux_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-linux_x64.tar.gz"
+        ]
+    },
+    "openjdk17_windows_archive": {
+        "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
+        "name": "openjdk17_windows_archive",
+        "sha256": "f4437011239f3f0031c794bb91c02a6350bc941d4196bdd19c9f157b491815a3",
+        "strip_prefix": "zulu17.28.13-ca-jdk17.0.0-win_x64",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-win_x64.zip",
+            "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-win_x64.zip"
         ]
     },
     "openjdk_linux": {
@@ -1619,6 +1668,78 @@
         "urls": [
             "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu16.28.11-ca-jdk16.0.0-win_x64.zip",
             "https://cdn.azul.com/zulu/bin/zulu16.28.11-ca-jdk16.0.0-win_x64.zip"
+        ]
+    },
+    "remotejdk17_linux_for_testing": {
+        "build_file": "@local_jdk//:BUILD.bazel",
+        "name": "remotejdk17_linux_for_testing",
+        "patch_cmds": [
+            "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
+            "echo >> BUILD.bazel",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD.bazel"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "37c4f8e48536cceae8c6c20250d6c385e176972532fd35759fa7d6015c965f56",
+        "strip_prefix": "zulu17.28.13-ca-jdk17.0.0-linux_x64",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-linux_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-linux_x64.tar.gz"
+        ]
+    },
+    "remotejdk17_macos_aarch64_for_testing": {
+        "build_file": "@local_jdk//:BUILD.bazel",
+        "name": "remotejdk17_macos_aarch64_for_testing",
+        "patch_cmds": [
+            "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
+            "echo >> BUILD.bazel",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD.bazel"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "6b17f01f767ee7abf4704149ca4d86423aab9b16b68697b7d36e9b616846a8b0",
+        "strip_prefix": "zulu17.28.13-ca-jdk17.0.0-macosx_aarch64",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_aarch64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_aarch64.tar.gz"
+        ]
+    },
+    "remotejdk17_macos_for_testing": {
+        "build_file": "@local_jdk//:BUILD.bazel",
+        "name": "remotejdk17_macos_for_testing",
+        "patch_cmds": [
+            "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
+            "echo >> BUILD.bazel",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD.bazel"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "6029b1fe6853cecad22ab99ac0b3bb4fb8c903dd2edefa91c3abc89755bbd47d",
+        "strip_prefix": "zulu17.28.13-ca-jdk17.0.0-macosx_x64",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-macosx_x64.tar.gz"
+        ]
+    },
+    "remotejdk17_win_for_testing": {
+        "build_file": "@local_jdk//:BUILD.bazel",
+        "name": "remotejdk17_win_for_testing",
+        "patch_cmds": [
+            "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
+            "echo >> BUILD.bazel",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD.bazel"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "f4437011239f3f0031c794bb91c02a6350bc941d4196bdd19c9f157b491815a3",
+        "strip_prefix": "zulu17.28.13-ca-jdk17.0.0-win_x64",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-win_x64.zip",
+            "https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jdk17.0.0-win_x64.zip"
         ]
     },
     "rules_cc": {
