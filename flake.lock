@@ -199,16 +199,16 @@
     "src": {
       "flake": false,
       "locked": {
-        "lastModified": 1634652855,
-        "narHash": "sha256-IqWzDPEfNqQhg67Qbap8P4c598M2NcSdba1QEPG3+00=",
+        "lastModified": 1634756445,
+        "narHash": "sha256-Njk/Hz8B7HnCehoulpajr09waB+wc9GZTqN8BnrZmjs=",
         "owner": "bazelbuild",
         "repo": "bazel",
-        "rev": "95a35465eafe460cabe05635389313532bd5dab7",
+        "rev": "0dc817cbe2bcfb14d6863e40dc06c115135e673b",
         "type": "github"
       },
       "original": {
         "owner": "bazelbuild",
-        "ref": "5.0.0-pre.20211006.1",
+        "ref": "5.0.0-pre.20211011.2",
         "repo": "bazel",
         "type": "github"
       }
