@@ -206,7 +206,7 @@ buildBazelPackage {
 
     sha256 =
       if stdenv.hostPlatform.isDarwin
-      then "u7Tj1i8/UabUx5aEe/SRKJz4NMeUx6h6fBEwgdszDZM="
+      then "ejO4sy3VJAw3WXBYPxyihXJ+9RrUXu8PWKTaGUzm9Fk="
       else "xTxfXQDymN2YdWEjLlReKUilHVenWmvpILEDpmLKjc4=";
   };
 
