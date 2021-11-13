@@ -61,7 +61,7 @@ let
         srcs.rules_java
         srcs.rules_proto
         srcs.com_google_absl
-        srcs.com_github_google_re2
+        srcs.com_googlesource_code_re2
         srcs.com_github_cares_cares
         srcs."java_tools-v11.5.zip"
 
@@ -207,7 +207,7 @@ buildBazelPackage {
     sha256 =
       if stdenv.hostPlatform.isDarwin
       then "ejO4sy3VJAw3WXBYPxyihXJ+9RrUXu8PWKTaGUzm9Fk="
-      else "xTxfXQDymN2YdWEjLlReKUilHVenWmvpILEDpmLKjc4=";
+      else "vWXVtlPwqCUV+QlD3mvu74Z8jwImXVXToaJ0kgbwHaI=";
   };
 
   buildAttrs = {
