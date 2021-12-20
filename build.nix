@@ -207,12 +207,11 @@ buildBazelPackage {
     sha256 =
       if stdenv.hostPlatform.isDarwin
       then "SUPPwn5jUmotSTyjmXE6ko1Q2BhuhZh1XOkdoAEY7fY="
-      else "5b8EtvYLO/AGl8HBmomMKlYVl7YAQ2aBGaPerafWDBc=";
+      else "ee0RGk3pNuwicMywvW0A8c+bWNGCufe0OJuCCBLN3zM=";
   };
 
   buildAttrs = {
     patches = [
-      "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_4/no-arc.patch"
       "${nixpkgs}/pkgs/development/tools/build-managers/bazel/trim-last-argument-to-gcc-if-empty.patch"
 
       (
