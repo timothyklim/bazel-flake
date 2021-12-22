@@ -40,7 +40,7 @@ let
         srcs.com_google_absl
         srcs.com_googlesource_code_re2
         srcs.com_github_cares_cares
-        srcs."java_tools-v11.5.zip"
+        srcs."java_tools-v11.6.zip"
 
         srcs."remote_java_tools_${system}_for_testing"
         srcs."remotejdk11_${if stdenv.hostPlatform.isDarwin then "macos" else "linux"}"
