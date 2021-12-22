@@ -126,15 +126,6 @@
             "https://github.com/bazelbuild/bazel-gazelle/archive/v0.19.1.tar.gz"
         ]
     },
-    "bazel_j2objc": {
-        "name": "bazel_j2objc",
-        "sha256": "8d3403b5b7db57e347c943d214577f6879e5b175c2b59b7e075c0b6453330e9b",
-        "strip_prefix": "j2objc-2.5",
-        "urls": [
-            "https://mirror.bazel.build/github.com/google/j2objc/releases/download/2.5/j2objc-2.5.zip",
-            "https://github.com/google/j2objc/releases/download/2.5/j2objc-2.5.zip"
-        ]
-    },
     "bazel_skylib": {
         "generator_function": "dist_http_archive",
         "generator_name": "bazel_skylib",
@@ -188,6 +179,7 @@
         "sha256": "eca21884e6f66a88c358e580fd67a6b148d30ab57b1680f62a96c00f9bc6a07e",
         "strip_prefix": "bazelci_rules-1.0.0",
         "urls": [
+            "https://mirror.bazel.build/github.com/bazelbuild/continuous-integration/releases/download/rules-1.0.0/bazelci_rules-1.0.0.tar.gz",
             "https://github.com/bazelbuild/continuous-integration/releases/download/rules-1.0.0/bazelci_rules-1.0.0.tar.gz"
         ]
     },
@@ -195,6 +187,7 @@
         "name": "bazelci_rules-1.0.0.tar.gz",
         "sha256": "eca21884e6f66a88c358e580fd67a6b148d30ab57b1680f62a96c00f9bc6a07e",
         "urls": [
+            "https://mirror.bazel.build/github.com/bazelbuild/continuous-integration/releases/download/rules-1.0.0/bazelci_rules-1.0.0.tar.gz",
             "https://github.com/bazelbuild/continuous-integration/releases/download/rules-1.0.0/bazelci_rules-1.0.0.tar.gz"
         ]
     },
@@ -488,20 +481,20 @@
             "https://github.com/census-instrumentation/opencensus-cpp/archive/c9a4da319bc669a772928ffc55af4a61be1a1176.tar.gz"
         ]
     },
-    "java_tools-v11.5.zip": {
-        "name": "java_tools-v11.5.zip",
-        "sha256": "b763ee80e5754e593fd6d5be6d7343f905bc8b73d661d36d842b024ca11b6793",
+    "java_tools-v11.6.zip": {
+        "name": "java_tools-v11.6.zip",
+        "sha256": "a7ac5922ee01e8b8fcb546ffc264ef314d0a0c679328b7fa4c432e5f54a86067",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools-v11.6.zip"
         ]
     },
-    "java_tools_darwin-v11.5.zip": {
-        "name": "java_tools_darwin-v11.5.zip",
-        "sha256": "792bc1352e736073b152528175ed424687f86a9f6f5f461f07d8b26806762738",
+    "java_tools_darwin-v11.6.zip": {
+        "name": "java_tools_darwin-v11.6.zip",
+        "sha256": "f17ee54582b61f1ebd84c8fa2c54df796914cfbaac3cb821fb1286b55b080bc0",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_darwin-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_darwin-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_darwin-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_darwin-v11.6.zip"
         ]
     },
     "java_tools_langtools_javac11": {
@@ -511,20 +504,20 @@
             "https://mirror.bazel.build/bazel_java_tools/jdk_langtools/langtools_jdk11_v2.zip"
         ]
     },
-    "java_tools_linux-v11.5.zip": {
-        "name": "java_tools_linux-v11.5.zip",
-        "sha256": "ae1eca4546eac6487c6e565f9b409536609c273207220c51e5c94f2a058a5a56",
+    "java_tools_linux-v11.6.zip": {
+        "name": "java_tools_linux-v11.6.zip",
+        "sha256": "15da4f84a7d39cd179acf3035d9def638eea6ba89a0ed8f4e8a8e6e1d6c8e328",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_linux-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_linux-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_linux-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_linux-v11.6.zip"
         ]
     },
-    "java_tools_windows-v11.5.zip": {
-        "name": "java_tools_windows-v11.5.zip",
-        "sha256": "36766802f7ec684cecb1a14c122428de6be9784e88419e2ab5912ad4b59a8c7d",
+    "java_tools_windows-v11.6.zip": {
+        "name": "java_tools_windows-v11.6.zip",
+        "sha256": "939f9d91f0df02851bbad8f5b1d26d24011329394cafe5668c1234e31ac2a1f7",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_windows-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_windows-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_windows-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_windows-v11.6.zip"
         ]
     },
     "jekyll_tree_0_17_1": {
@@ -770,6 +763,13 @@
         "sha256": "b767b7aa949f96b602257587add3be38acbead03bf919fe871397bc80d97f8b2",
         "urls": [
             "https://mirror.bazel.build/bazel_versioned_docs/jekyll-tree-4.2.1.tar"
+        ]
+    },
+    "jekyll_tree_4_2_2": {
+        "name": "jekyll_tree_4_2_2",
+        "sha256": "2447e768d8ae1f62fbf59809b5a4ef45967be6a6cedb66cec3daeb062de0b68e",
+        "urls": [
+            "https://mirror.bazel.build/bazel_versioned_docs/jekyll-tree-4.2.2.tar"
         ]
     },
     "opencensus_proto": {
@@ -1135,10 +1135,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "792bc1352e736073b152528175ed424687f86a9f6f5f461f07d8b26806762738",
+        "sha256": "f17ee54582b61f1ebd84c8fa2c54df796914cfbaac3cb821fb1286b55b080bc0",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_darwin-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_darwin-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_darwin-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_darwin-v11.6.zip"
         ]
     },
     "remote_java_tools_for_testing": {
@@ -1153,10 +1153,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "b763ee80e5754e593fd6d5be6d7343f905bc8b73d661d36d842b024ca11b6793",
+        "sha256": "a7ac5922ee01e8b8fcb546ffc264ef314d0a0c679328b7fa4c432e5f54a86067",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools-v11.6.zip"
         ]
     },
     "remote_java_tools_linux": {
@@ -1181,10 +1181,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "ae1eca4546eac6487c6e565f9b409536609c273207220c51e5c94f2a058a5a56",
+        "sha256": "15da4f84a7d39cd179acf3035d9def638eea6ba89a0ed8f4e8a8e6e1d6c8e328",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_linux-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_linux-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_linux-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_linux-v11.6.zip"
         ]
     },
     "remote_java_tools_test": {
@@ -1199,10 +1199,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "b763ee80e5754e593fd6d5be6d7343f905bc8b73d661d36d842b024ca11b6793",
+        "sha256": "a7ac5922ee01e8b8fcb546ffc264ef314d0a0c679328b7fa4c432e5f54a86067",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools-v11.6.zip"
         ]
     },
     "remote_java_tools_test_darwin": {
@@ -1217,10 +1217,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "792bc1352e736073b152528175ed424687f86a9f6f5f461f07d8b26806762738",
+        "sha256": "f17ee54582b61f1ebd84c8fa2c54df796914cfbaac3cb821fb1286b55b080bc0",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_darwin-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_darwin-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_darwin-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_darwin-v11.6.zip"
         ]
     },
     "remote_java_tools_test_linux": {
@@ -1235,10 +1235,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "ae1eca4546eac6487c6e565f9b409536609c273207220c51e5c94f2a058a5a56",
+        "sha256": "15da4f84a7d39cd179acf3035d9def638eea6ba89a0ed8f4e8a8e6e1d6c8e328",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_linux-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_linux-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_linux-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_linux-v11.6.zip"
         ]
     },
     "remote_java_tools_test_windows": {
@@ -1253,10 +1253,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "36766802f7ec684cecb1a14c122428de6be9784e88419e2ab5912ad4b59a8c7d",
+        "sha256": "939f9d91f0df02851bbad8f5b1d26d24011329394cafe5668c1234e31ac2a1f7",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_windows-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_windows-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_windows-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_windows-v11.6.zip"
         ]
     },
     "remote_java_tools_windows": {
@@ -1281,10 +1281,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "36766802f7ec684cecb1a14c122428de6be9784e88419e2ab5912ad4b59a8c7d",
+        "sha256": "939f9d91f0df02851bbad8f5b1d26d24011329394cafe5668c1234e31ac2a1f7",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.5/java_tools_windows-v11.5.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.5/java_tools_windows-v11.5.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.6/java_tools_windows-v11.6.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.6/java_tools_windows-v11.6.zip"
         ]
     },
     "remotejdk11_linux": {
@@ -1898,6 +1898,14 @@
             "https://github.com/grpc/grpc/archive/v1.41.0.tar.gz"
         ]
     },
+    "v1.5.0-4.zip": {
+        "name": "v1.5.0-4.zip",
+        "sha256": "d320d59b89a163c5efccbe4915ae6a49883ce653cdc670643dfa21c6063108e4",
+        "urls": [
+            "https://mirror.bazel.build/github.com/luben/zstd-jni/archive/v1.5.0-4.zip",
+            "https://github.com/luben/zstd-jni/archive/v1.5.0-4.zip"
+        ]
+    },
     "v3.13.0.tar.gz": {
         "name": "v3.13.0.tar.gz",
         "sha256": "9b4ee22c250fe31b16f1a24d61467e40780a3fbb9b91c3b65be2a376ed913a1a",
@@ -1916,6 +1924,32 @@
         "urls": [
             "https://storage.googleapis.com/grpc-bazel-mirror/github.com/madler/zlib/archive/cacf7f1d4e3d44d871b605da3b647f07d718623f.tar.gz",
             "https://github.com/madler/zlib/archive/cacf7f1d4e3d44d871b605da3b647f07d718623f.tar.gz"
+        ]
+    },
+    "zstd-jni": {
+        "build_file": "//third_party:zstd-jni/zstd-jni.BUILD",
+        "generator_function": "dist_http_archive",
+        "generator_name": "zstd-jni",
+        "name": "zstd-jni",
+        "patch_args": [
+            "-p1"
+        ],
+        "patch_cmds": [
+            "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
+            "echo >> BUILD.bazel",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD.bazel"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "patches": [
+            "//third_party:zstd-jni/Native.java.patch"
+        ],
+        "sha256": "d320d59b89a163c5efccbe4915ae6a49883ce653cdc670643dfa21c6063108e4",
+        "strip_prefix": "zstd-jni-1.5.0-4",
+        "urls": [
+            "https://mirror.bazel.build/github.com/luben/zstd-jni/archive/v1.5.0-4.zip",
+            "https://github.com/luben/zstd-jni/archive/v1.5.0-4.zip"
         ]
     },
     "zulu11.50.19-ca-jdk11.0.12-linux_aarch64.tar.gz": {

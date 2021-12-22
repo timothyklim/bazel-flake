@@ -6,31 +6,8 @@ let
   system = if stdenv.hostPlatform.isDarwin then "darwin" else "linux";
   arch = stdenv.hostPlatform.parsed.cpu.name;
   javaToolchain = "@bazel_tools//tools/jdk:toolchain";
-  defaultShellPath = lib.makeBinPath [ bash coreutils findutils gawk gnugrep gnutar gnused gzip which unzip file zip python3 ];
-  customBash = writeCBin "bash" ''
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-    #include <unistd.h>
-
-    extern char **environ;
-
-    int main(int argc, char *argv[]) {
-      char *path = getenv("PATH");
-      char *pathToAppend = "${defaultShellPath}";
-      char *newPath;
-      if (path != NULL) {
-        int length = strlen(path) + 1 + strlen(pathToAppend) + 1;
-        newPath = malloc(length * sizeof(char));
-        snprintf(newPath, length, "%s:%s", path, pathToAppend);
-      } else {
-        newPath = pathToAppend;
-      }
-      setenv("PATH", newPath, 1);
-      execve("${bash}/bin/bash", argv, environ);
-      return 0;
-    }
-  '';
+  defaultShellUtils = [ bash coreutils findutils gawk gnugrep gnutar gnused gzip which unzip file zip python3 ];
+  defaultShellPath = lib.makeBinPath defaultShellUtils;
   srcDeps = lib.attrsets.attrValues srcDepsSet;
   srcDepsSet =
     let
@@ -166,13 +143,14 @@ buildBazelPackage {
 
   buildInputs = [ python3 buildJdk ];
   nativeBuildInputs = [
+    bash
+    coreutils
     installShellFiles
-    zip
+    makeWrapper
     python3
     unzip
-    makeWrapper
     which
-    customBash
+    zip
   ] ++ lib.optionals (stdenv.isDarwin) (with darwin; with apple_sdk.frameworks; [ cctools libcxx CoreFoundation CoreServices Foundation ]);
 
   bazel = bazel_4;
@@ -207,25 +185,25 @@ buildBazelPackage {
     sha256 =
       if stdenv.hostPlatform.isDarwin
       then "pQBD5f1/Wo8h6cgyZF8sB/UeOXgCJQmqn0LEnGaumo0="
-      else "ee0RGk3pNuwicMywvW0A8c+bWNGCufe0OJuCCBLN3zM=";
+      else "wneBmqI6OX8HiEhc06wEvUtLBtKph5yYieVjWL3Whnc=";
   };
 
   buildAttrs = {
     patches = [
       "${nixpkgs}/pkgs/development/tools/build-managers/bazel/trim-last-argument-to-gcc-if-empty.patch"
 
-      (
-        substituteAll {
-          src = ./patches/strict_action_env.patch;
-          strictActionEnvPatch = defaultShellPath;
-        }
-      )
-      (
-        substituteAll {
-          src = ./patches/bazel_rc.patch;
-          bazelSystemBazelRCPath = bazelRC;
-        }
-      )
+      (substituteAll {
+        src = ./patches/actions_path.patch;
+        actionsPathPatch = defaultShellPath;
+      })
+      (substituteAll {
+        src = ./patches/strict_action_env.patch;
+        strictActionEnvPatch = defaultShellPath;
+      })
+      (substituteAll {
+        src = ./patches/bazel_rc.patch;
+        bazelSystemBazelRCPath = bazelRC;
+      })
 
       ./patches/default_java_toolchain.patch
     ];
@@ -245,23 +223,23 @@ buildBazelPackage {
         # We default to python3 where possible. See also `postFixup` where
         # python3 is added to $out/nix-support
         substituteInPlace "$path" \
-          --replace /bin/bash ${customBash}/bin/bash \
-          --replace "/usr/bin/env bash" ${customBash}/bin/bash \
+          --replace /bin/bash ${bash}/bin/bash \
+          --replace "/usr/bin/env bash" ${bash}/bin/bash \
           --replace "/usr/bin/env python" ${python3}/bin/python \
           --replace /usr/bin/env ${coreutils}/bin/env \
           --replace /bin/true ${coreutils}/bin/true
       done
 
       # bazel test runner include references to /bin/bash
-      substituteInPlace tools/build_rules/test_rules.bzl --replace /bin/bash ${customBash}/bin/bash
+      substituteInPlace tools/build_rules/test_rules.bzl --replace /bin/bash ${bash}/bin/bash
 
       for i in $(find tools/cpp/ -type f)
       do
-        substituteInPlace $i --replace /bin/bash ${customBash}/bin/bash
+        substituteInPlace $i --replace /bin/bash ${bash}/bin/bash
       done
 
       # Fixup scripts that generate scripts. Not fixed up by patchShebangs below.
-      substituteInPlace scripts/bootstrap/compile.sh --replace /bin/bash ${customBash}/bin/bash
+      substituteInPlace scripts/bootstrap/compile.sh --replace /bin/bash ${bash}/bin/bash
 
       # append the PATH with defaultShellPath in tools/bash/runfiles/runfiles.bash
       echo "PATH=\$PATH:${defaultShellPath}" >> runfiles.bash.tmp
@@ -311,7 +289,7 @@ buildBazelPackage {
     # Save paths to hardcoded dependencies so Nix can detect them.
     postFixup = ''
       mkdir -p $out/nix-support
-      echo "${customBash} ${defaultShellPath}" >> $out/nix-support/depends
+      echo "${bash} ${defaultShellPath}" >> $out/nix-support/depends
       echo "${python3}" >> $out/nix-support/depends
     '' + lib.optionalString stdenv.isDarwin ''
       echo "${darwin.cctools}" >> $out/nix-support/depends
