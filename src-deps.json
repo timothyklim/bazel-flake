@@ -1898,6 +1898,14 @@
             "https://github.com/grpc/grpc/archive/v1.41.0.tar.gz"
         ]
     },
+    "v1.5.0-4.zip": {
+        "name": "v1.5.0-4.zip",
+        "sha256": "d320d59b89a163c5efccbe4915ae6a49883ce653cdc670643dfa21c6063108e4",
+        "urls": [
+            "https://mirror.bazel.build/github.com/luben/zstd-jni/archive/v1.5.0-4.zip",
+            "https://github.com/luben/zstd-jni/archive/v1.5.0-4.zip"
+        ]
+    },
     "v3.13.0.tar.gz": {
         "name": "v3.13.0.tar.gz",
         "sha256": "9b4ee22c250fe31b16f1a24d61467e40780a3fbb9b91c3b65be2a376ed913a1a",
@@ -1916,6 +1924,32 @@
         "urls": [
             "https://storage.googleapis.com/grpc-bazel-mirror/github.com/madler/zlib/archive/cacf7f1d4e3d44d871b605da3b647f07d718623f.tar.gz",
             "https://github.com/madler/zlib/archive/cacf7f1d4e3d44d871b605da3b647f07d718623f.tar.gz"
+        ]
+    },
+    "zstd-jni": {
+        "build_file": "//third_party:zstd-jni/zstd-jni.BUILD",
+        "generator_function": "dist_http_archive",
+        "generator_name": "zstd-jni",
+        "name": "zstd-jni",
+        "patch_args": [
+            "-p1"
+        ],
+        "patch_cmds": [
+            "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
+            "echo >> BUILD.bazel",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD.bazel"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "patches": [
+            "//third_party:zstd-jni/Native.java.patch"
+        ],
+        "sha256": "d320d59b89a163c5efccbe4915ae6a49883ce653cdc670643dfa21c6063108e4",
+        "strip_prefix": "zstd-jni-1.5.0-4",
+        "urls": [
+            "https://mirror.bazel.build/github.com/luben/zstd-jni/archive/v1.5.0-4.zip",
+            "https://github.com/luben/zstd-jni/archive/v1.5.0-4.zip"
         ]
     },
     "zulu11.50.19-ca-jdk11.0.12-linux_aarch64.tar.gz": {
