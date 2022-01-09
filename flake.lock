@@ -45,11 +45,11 @@
         "zulu17_macos_tgz": "zulu17_macos_tgz"
       },
       "locked": {
-        "lastModified": 1638249721,
-        "narHash": "sha256-Ieh/lRn7fU226zJJ5gTZzn29v4ga93xKPZvbICXCftU=",
+        "lastModified": 1640856913,
+        "narHash": "sha256-LeWYU5lD6udFZmJ8ld5wfT1Cia0MkegUKjqNUYdpd+0=",
         "owner": "TawasalMessenger",
         "repo": "jdk-flake",
-        "rev": "7c014af777adf51a49add8b8cc62480800ccf423",
+        "rev": "387f7c9166f69ce44fe7d0482610b1733af1972a",
         "type": "github"
       },
       "original": {
@@ -77,11 +77,11 @@
     "jdk17": {
       "flake": false,
       "locked": {
-        "lastModified": 1638194084,
-        "narHash": "sha256-GjWtWv9FcNk7GDEgCYJcMY3hh2L0mUWDOw7EYxRWhnk=",
+        "lastModified": 1638879530,
+        "narHash": "sha256-mjJnlslFEklfFUW1wf/0OEbavAfwVPshfG4J0oS8Yxg=",
         "owner": "openjdk",
         "repo": "jdk17u",
-        "rev": "5406f14a71bb2abde43e180fe272958c46601634",
+        "rev": "aa11a935373686bf5d67afb89368931c995824f6",
         "type": "github"
       },
       "original": {
@@ -93,11 +93,11 @@
     "jdk18": {
       "flake": false,
       "locked": {
-        "lastModified": 1638236092,
-        "narHash": "sha256-LpYfWhrwGX5AHu9aQZUTp6+TDCRrDhwjsLLcey62+jQ=",
+        "lastModified": 1640690952,
+        "narHash": "sha256-XDWLsDxynkWucekioSZu9Zb5UrUvcm1w1o23YL1YG+U=",
         "owner": "openjdk",
         "repo": "jdk",
-        "rev": "27299eaa98fd2d608a6cecfbf2b1a2a177bd5e9a",
+        "rev": "299022dfacbcb49e3bc5beca8ff9b1fca1101493",
         "type": "github"
       },
       "original": {
@@ -109,11 +109,11 @@
     "jdk18-loom": {
       "flake": false,
       "locked": {
-        "lastModified": 1638089126,
-        "narHash": "sha256-z/6DqJxMg+8nitptgX7S987HFxmIU8cmiBM6pGk+YeE=",
+        "lastModified": 1640590594,
+        "narHash": "sha256-V8edn1sCYwTTQ+k/u1yf8TiYv1IQBUjQugi4NYCG8LE=",
         "owner": "openjdk",
         "repo": "loom",
-        "rev": "1f8b7fcc4505028fe534e8b318198281b96e118c",
+        "rev": "5d0a7b539bbd729a9da6f008f9491c5e3a0ef20b",
         "type": "github"
       },
       "original": {
@@ -126,11 +126,11 @@
     "jdk18-panama": {
       "flake": false,
       "locked": {
-        "lastModified": 1638202177,
-        "narHash": "sha256-mWrh3d8GYMmJ3lZ6cxTmGMWkYSD0RYI7iJBPGwIRsEY=",
+        "lastModified": 1640343682,
+        "narHash": "sha256-aMSkTSW7VoBX87j0tXFfDfRpe/vW2/FYkcVw/fWc3RA=",
         "owner": "openjdk",
         "repo": "panama-foreign",
-        "rev": "95d344ceb9bcb20ce8b4d7ed6d957b6eb01d3ffc",
+        "rev": "812e426ee0c10d5cf6e9b3ab5e934b1ad6cd373b",
         "type": "github"
       },
       "original": {
@@ -143,11 +143,11 @@
     "jdk18-valhalla": {
       "flake": false,
       "locked": {
-        "lastModified": 1637697319,
-        "narHash": "sha256-t6tiWZnH4aXfy1wPuMkTAvKoWf1/7eAvy+KvrjncRuc=",
+        "lastModified": 1639175657,
+        "narHash": "sha256-jSQYq+3PCFmWZax7D8XdO932DFjaTwuMySALvcBi5SE=",
         "owner": "openjdk",
         "repo": "valhalla",
-        "rev": "b9afd2a05794e747e664bf7b8a0e97573289b96c",
+        "rev": "5ac15a15e265e4770c8e13c4dfe7ddf760dd0a9f",
         "type": "github"
       },
       "original": {
@@ -159,27 +159,27 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1638198142,
-        "narHash": "sha256-plU9b8r4St6q4U7VHtG9V7oF8k9fIpfXl/KDaZLuY9k=",
+        "lastModified": 1640798027,
+        "narHash": "sha256-1e7bsxWJW0ugkA95AMGL3Da9sHugkz+J4kfYB9fTWZc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8a308775674e178495767df90c419425474582a1",
+        "rev": "8588b14a397e045692d0a87192810b6dddf53003",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "ref": "nixos-21.11",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1638587357,
-        "narHash": "sha256-2ySMW3QARG8BsRPmwe7clTbdCuaObromOKewykP+UJc=",
+        "lastModified": 1641593416,
+        "narHash": "sha256-Vn/vqQtYnVuZlbGGO0gSzLjmtFwb6OPvakwyoG1D/MY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e34c5379866833f41e2a36f309912fa675d687c7",
+        "rev": "36480448d470bf41bb21267cf9062a1542c4a95f",
         "type": "github"
       },
       "original": {
