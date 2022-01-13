@@ -2,12 +2,12 @@
   description = "Bazel flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-21.11";
     flake-utils.url = "github:numtide/flake-utils";
 
     java.url = "github:TawasalMessenger/jdk-flake";
     src = {
-      url = "github:bazelbuild/bazel/6.0.0-pre.20211215.3";
+      url = "github:bazelbuild/bazel/6.0.0-pre.20211220.1";
       flake = false;
     };
   };
