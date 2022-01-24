@@ -206,6 +206,7 @@ buildBazelPackage {
       })
 
       ./patches/default_java_toolchain.patch
+      ./patches/no-arc.patch
     ];
 
     postPatch = ''
