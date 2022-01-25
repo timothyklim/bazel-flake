@@ -163,6 +163,7 @@ buildBazelPackage {
     "--define=ABSOLUTE_JAVABASE=${buildJdk.home}"
     "--host_javabase=@bazel_tools//tools/jdk:absolute_javabase"
     "--javabase=@bazel_tools//tools/jdk:absolute_javabase"
+    "--features=-layering_check"
   ];
   fetchConfigured = true;
 
