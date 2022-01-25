@@ -135,13 +135,12 @@ let
       sed -i -e "s,/usr/bin/install_name_tool,${cctools}/bin/install_name_tool,g" $wrapper
     done
   '';
-  buildJdk = jdk11_headless;
 in
 buildBazelPackage {
   inherit src version;
   pname = "bazel";
 
-  buildInputs = [ python3 buildJdk ];
+  buildInputs = [ python3 jdk11_headless ];
   nativeBuildInputs = [
     bash
     coreutils
@@ -153,17 +152,13 @@ buildBazelPackage {
     zip
   ] ++ lib.optionals (stdenv.isDarwin) (with darwin; with apple_sdk.frameworks; [ cctools libcxx CoreFoundation CoreServices Foundation ]);
 
-  bazel = bazel_4;
+  bazel = bazel_5;
   bazelTarget = "//src:bazel";
   bazelFetchFlags = [
     "--loading_phase_threads=HOST_CPUS"
   ];
   bazelFlags = [
     "-c opt"
-    "--define=ABSOLUTE_JAVABASE=${buildJdk.home}"
-    "--host_javabase=@bazel_tools//tools/jdk:absolute_javabase"
-    "--javabase=@bazel_tools//tools/jdk:absolute_javabase"
-    "--features=-layering_check"
   ];
   fetchConfigured = true;
 
@@ -185,8 +180,8 @@ buildBazelPackage {
 
     sha256 =
       if stdenv.hostPlatform.isDarwin
-      then "wbGBs1WT3PfQLTtw9tVyPP27NG2j5rBkvaolYZW+iTg="
-      else "F7FI5shf/1OpRoZDxWhz3h/UIY8+ezYnB3o01O+++6c=";
+      then lib.fakeSha256
+      else "tCEndSumfWtyFAfwMiOnvj4SH6rJKRq601/QiHJGPaM=";
   };
 
   buildAttrs = {
