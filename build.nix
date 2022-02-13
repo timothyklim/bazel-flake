@@ -5,7 +5,6 @@ let
   sourceRoot = ".";
   system = if stdenv.hostPlatform.isDarwin then "darwin" else "linux";
   arch = stdenv.hostPlatform.parsed.cpu.name;
-  javaToolchain = "@bazel_tools//tools/jdk:toolchain";
   defaultShellUtils = [ bash coreutils findutils gawk gnugrep gnutar gnused gzip which unzip file zip python3 ];
   defaultShellPath = lib.makeBinPath defaultShellUtils;
   srcDeps = lib.attrsets.attrValues srcDepsSet;
@@ -60,7 +59,6 @@ let
 
     nativeBuildInputs = [ autoPatchelfHook unzip ];
     buildInputs = [ gcc-unwrapped ];
-
 
     buildPhase = ''
       mkdir $out;
@@ -159,6 +157,12 @@ buildBazelPackage {
   ];
   bazelFlags = [
     "-c opt"
+    "--override_repository=${remote_java_tools.name}=${remote_java_tools}"
+    "--java_language_version=11"
+    "--java_runtime_version=11"
+    "--tool_java_language_version=11"
+    "--tool_java_runtime_version=11"
+    "--extra_toolchains=@local_jdk//:all"
   ];
   fetchConfigured = true;
 
@@ -178,10 +182,11 @@ buildBazelPackage {
       done
     '';
 
+    # lib.fakeSha256
     sha256 =
       if stdenv.hostPlatform.isDarwin
-      then "O9kRCH2Ji/zWFk+x2v62bSysP298i0rabHIBexmOlPU="
-      else "tCEndSumfWtyFAfwMiOnvj4SH6rJKRq601/QiHJGPaM=";
+      then lib.fakeSha256
+      else "H5LzyT4p2y3EcpncNPa0G2U1YEylZXzKZ+tnttlq5mk=";
   };
 
   buildAttrs = {

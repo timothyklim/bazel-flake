@@ -2,12 +2,12 @@
   description = "Bazel flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/e1a28002a3a0f0ebbdcf24cc350d20551be517f0";
+    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
     java.url = "github:TawasalMessenger/jdk-flake";
     src = {
-      url = "github:bazelbuild/bazel/6.0.0-pre.20220112.2";
+      url = "github:bazelbuild/bazel/6.0.0-pre.20220201.3";
       flake = false;
     };
   };
@@ -33,7 +33,9 @@
         defaultApp = bazel-app;
         legacyPackages = extend overlay;
         devShell = callPackage ./shell.nix {
-          inherit bazel src;
+          # inherit bazel src;
+          inherit src;
+          bazel = pkgs.bazel_5;
         };
         nixosModule = {
           nixpkgs.overlays = [ overlay ];
