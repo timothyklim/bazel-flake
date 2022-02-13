@@ -148,7 +148,7 @@ buildBazelPackage {
     unzip
     which
     zip
-  ] ++ lib.optionals (stdenv.isDarwin) (with darwin; with apple_sdk.frameworks; [ cctools libcxx CoreFoundation CoreServices Foundation ]);
+  ] ++ lib.optionals (stdenv.isDarwin) (with darwin; with apple_sdk.frameworks; [ cctools libcxx CoreFoundation CoreServices Foundation Libsystem ]);
 
   bazel = bazel_5;
   bazelTarget = "//src:bazel";
