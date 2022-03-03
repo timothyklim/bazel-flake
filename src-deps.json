@@ -275,7 +275,8 @@
             "-p1"
         ],
         "patches": [
-            "//third_party/grpc:grpc_1.41.0.patch"
+            "//third_party/grpc:grpc_1.41.0.patch",
+            "//third_party/grpc:grpc_1.41.0.win_arm64.patch"
         ],
         "sha256": "e5fb30aae1fa1cffa4ce00aa0bbfab908c0b899fcf0bbc30e268367d660d8656",
         "strip_prefix": "grpc-1.41.0",
@@ -991,6 +992,14 @@
         "sha256": "8e1604b3a27dcf639bc6d1a73103f1211848139e4cceb081d0a74a99e1e6f995",
         "urls": [
             "https://mirror.bazel.build/openjdk/azul-zulu11.37.17-ca-jdk11.0.6/zulu11.37.17-ca-jdk11.0.6-win_x64-allmodules-b23d4e05466f2aa1fdcd72d3d3a8e962206b64bf-1581689080.zip"
+        ]
+    },
+    "openjdk_win_arm64_vanilla": {
+        "downloaded_file_path": "zulu-win-arm64.zip",
+        "name": "openjdk_win_arm64_vanilla",
+        "sha256": "811d7e7591bac4f081dfb00ba6bd15b6fc5969e1f89f0f327ef75147027c3877",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.30.15-ca-jdk17.0.1-win_aarch64.zip"
         ]
     },
     "openjdk_win_minimal": {
