@@ -7,8 +7,7 @@
 
     java.url = "github:TawasalMessenger/jdk-flake";
     src = {
-      # url = "github:bazelbuild/bazel/6.0.0-pre.20220310.1";
-      url = "github:bazelbuild/bazel/164c747950f0c8cec59def42f5d09a8e6f9ed3b3";
+      url = "github:bazelbuild/bazel/6.0.0-pre.20220324.1";
       flake = false;
     };
   };
@@ -22,7 +21,7 @@
         jdk = java.packages.${system}.openjdk_18;
         bazel = import ./build.nix {
           inherit pkgs nixpkgs jdk src;
-          version = "master"; # sources.src.original.ref;
+          version = sources.src.original.ref;
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
         derivation = { inherit bazel; };
