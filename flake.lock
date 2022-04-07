@@ -47,11 +47,11 @@
         "zulu18_macos_tgz": "zulu18_macos_tgz"
       },
       "locked": {
-        "lastModified": 1649309764,
-        "narHash": "sha256-YpdKh/wSDoq8080gThrH1gjjB6VunS/jh/4Gc03wTKA=",
+        "lastModified": 1649312640,
+        "narHash": "sha256-xvPgRfIcdDhsNxAtqFDM1WAnDWhhDc2OvPdq7JH/UXA=",
         "owner": "TawasalMessenger",
         "repo": "jdk-flake",
-        "rev": "6080f23aaed6d926edf1a5a3cc7fc04cb2f45a59",
+        "rev": "956a3a42a2fb0ebce314974813a74b40aea34389",
         "type": "github"
       },
       "original": {
@@ -161,19 +161,20 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1648219316,
-        "narHash": "sha256-Ctij+dOi0ZZIfX5eMhgwugfvB+WZSrvVNAyAuANOsnQ=",
+        "lastModified": 1649283845,
+        "narHash": "sha256-upmtyRf/6rAQ63P2Jf5lzn2Esn3c9cv7KRoR05zLZBc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "30d3d79b7d3607d56546dd2a6b49e156ba0ec634",
+        "rev": "60f020d822ea80eb9ec40e993434f4446c342f43",
         "type": "github"
       },
       "original": {
         "id": "nixpkgs",
+        "ref": "release-21.11",
         "type": "indirect"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1649225869,
         "narHash": "sha256-u1zLtPmQzhT9mNXyM8Ey9pk7orDrIKdwooeGDEXm5xM=",
@@ -188,11 +189,27 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1649283845,
+        "narHash": "sha256-upmtyRf/6rAQ63P2Jf5lzn2Esn3c9cv7KRoR05zLZBc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "60f020d822ea80eb9ec40e993434f4446c342f43",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "release-21.11",
+        "type": "indirect"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "java": "java",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-unstable": "nixpkgs-unstable",
         "src": "src"
       }
     },
