@@ -15,24 +15,8 @@
         "type": "github"
       }
     },
-    "flake-utils_2": {
-      "locked": {
-        "lastModified": 1648297722,
-        "narHash": "sha256-W+qlPsiZd8F3XkzXOzAoR+mpFqzm3ekQkJNa+PIh1BQ=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "0f8662f1319ad6abf89b3380dd2722369fc51ade",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "java": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
         "jdk-loom": "jdk-loom",
         "jdk-panama": "jdk-panama",
         "jdk-valhalla": "jdk-valhalla",
@@ -42,16 +26,14 @@
         "nixpkgs": "nixpkgs",
         "zing17_linux_tgz": "zing17_linux_tgz",
         "zulu17_linux_tgz": "zulu17_linux_tgz",
-        "zulu17_macos_tgz": "zulu17_macos_tgz",
-        "zulu18_linux_tgz": "zulu18_linux_tgz",
-        "zulu18_macos_tgz": "zulu18_macos_tgz"
+        "zulu18_linux_tgz": "zulu18_linux_tgz"
       },
       "locked": {
-        "lastModified": 1649388162,
-        "narHash": "sha256-v4o6FtkyQPDWzROmM4arLKBVc3TT5GfTIGgvUB/q2bA=",
+        "lastModified": 1649411774,
+        "narHash": "sha256-UIc8Zg9hNEisTGblSwqN/S6ZN5XSli49lcNTVoCg4/8=",
         "owner": "TawasalMessenger",
         "repo": "jdk-flake",
-        "rev": "a5ca7d4ed4492bccacd89d61c3162f378de3164e",
+        "rev": "5046f3cf2671c04c0295c1d33932ab45d37d5f48",
         "type": "github"
       },
       "original": {
@@ -63,11 +45,11 @@
     "jdk-loom": {
       "flake": false,
       "locked": {
-        "lastModified": 1649380235,
-        "narHash": "sha256-Td3isiFgALBS+Sth5AwLID4uGf2VfA4LfvgFsS7LCdw=",
+        "lastModified": 1649406686,
+        "narHash": "sha256-v1eTKM03cxRdE9dcvncDAQ6F4LYKG1CZLjJVbOVlTJA=",
         "owner": "openjdk",
         "repo": "loom",
-        "rev": "9106ce2ce9ceea44b6ad02fa4e27ffe9cf5d9fd6",
+        "rev": "da44828a1358fc636ef5bd89b32841849f649b87",
         "type": "github"
       },
       "original": {
@@ -191,11 +173,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1649368816,
-        "narHash": "sha256-lVzCpg2xfTUrfcankjlym/mrh/7F/gpWQ7CYQM6BcPY=",
+        "lastModified": 1649411601,
+        "narHash": "sha256-T5Gg78FZHibcXB0iDciv4xvlxPLoRQtANmRI+HSckEk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "29abf698b384258b540e39a86b53ea980495ac4c",
+        "rev": "b01a688d4067a9327dc4e6f9df0bfedd69b24eca",
         "type": "github"
       },
       "original": {
@@ -254,18 +236,6 @@
         "url": "https://cdn.azul.com/zulu/bin/zulu17.30.15-ca-jdk17.0.1-linux_x64.tar.gz"
       }
     },
-    "zulu17_macos_tgz": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-h84njM80+QeEg6k/7mlvU1oX9Ys6yozBa85NWee5Iik=",
-        "type": "tarball",
-        "url": "https://cdn.azul.com/zulu/bin/zulu17.30.15-ca-jdk17.0.1-macosx_x64.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://cdn.azul.com/zulu/bin/zulu17.30.15-ca-jdk17.0.1-macosx_x64.tar.gz"
-      }
-    },
     "zulu18_linux_tgz": {
       "flake": false,
       "locked": {
@@ -276,18 +246,6 @@
       "original": {
         "type": "tarball",
         "url": "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_x64.tar.gz"
-      }
-    },
-    "zulu18_macos_tgz": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-xwno3jlmh+NHY5aCDDJW4EvQul+fg2pg/zZRocrEqM8=",
-        "type": "tarball",
-        "url": "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_x64.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_x64.tar.gz"
       }
     }
   },

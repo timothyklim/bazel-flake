@@ -3,7 +3,6 @@
 with pkgs;
 let
   sourceRoot = ".";
-  system = if stdenv.hostPlatform.isDarwin then "darwin" else "linux";
   arch = stdenv.hostPlatform.parsed.cpu.name;
   defaultShellUtils = [ bash coreutils findutils gawk gnugrep gnutar gnused gzip which unzip file zip python3 ];
   defaultShellPath = lib.makeBinPath defaultShellUtils;
@@ -41,8 +40,8 @@ let
         srcs.com_github_cares_cares
         srcs."java_tools-v11.6.zip"
 
-        srcs."remote_java_tools_${system}_for_testing"
-        srcs."remotejdk11_${if stdenv.hostPlatform.isDarwin then "macos" else "linux"}"
+        srcs."remote_java_tools_linux_for_testing"
+        srcs."remotejdk11_linux"
       ]
     );
 
@@ -53,9 +52,9 @@ let
   remote_java_tools = stdenv.mkDerivation {
     inherit sourceRoot;
 
-    name = "remote_java_tools_${system}";
+    name = "remote_java_tools_linux";
 
-    src = srcDepsSet."remote_java_tools_${system}_for_testing";
+    src = srcDepsSet."remote_java_tools_linux_for_testing";
 
     nativeBuildInputs = [ autoPatchelfHook unzip ];
     buildInputs = [ gcc-unwrapped ];
@@ -89,50 +88,6 @@ let
       try-import /etc/bazel.bazelrc
     '';
   };
-  darwinPatches = with darwin; with apple_sdk.frameworks; ''
-    bazelLinkFlags () {
-      eval set -- "$NIX_LDFLAGS"
-      local flag
-      for flag in "$@"; do
-        printf ' -Wl,%s' "$flag"
-      done
-    }
-
-    # Disable Bazel's Xcode toolchain detection which would configure compilers
-    # and linkers from Xcode instead of from PATH
-    export BAZEL_USE_CPP_ONLY_TOOLCHAIN=1
-
-    # Explicitly configure gcov since we don't have it on Darwin, so autodetection fails
-    export GCOV=${coreutils}/bin/false
-
-    # Framework search paths aren't added by bintools hook
-    # https://github.com/NixOS/nixpkgs/pull/41914
-    export NIX_LDFLAGS+=" -F${CoreFoundation}/Library/Frameworks -F${CoreServices}/Library/Frameworks -F${Foundation}/Library/Frameworks"
-
-    # libcxx includes aren't added by libcxx hook
-    # https://github.com/NixOS/nixpkgs/pull/41589
-    export NIX_CFLAGS_COMPILE="$NIX_CFLAGS_COMPILE -isystem ${lib.getDev libcxx}/include/c++/v1"
-
-    # don't use system installed Xcode to run clang, use Nix clang instead
-    sed -i -E "s;/usr/bin/xcrun (--sdk macosx )?clang;${stdenv.cc}/bin/clang $NIX_CFLAGS_COMPILE $(bazelLinkFlags) -framework CoreFoundation;g" \
-      scripts/bootstrap/compile.sh \
-      tools/osx/BUILD
-
-    substituteInPlace scripts/bootstrap/compile.sh --replace ' -mmacosx-version-min=10.9' ""
-
-    # nixpkgs's libSystem cannot use pthread headers directly, must import GCD headers instead
-    sed -i -e "/#include <pthread\/spawn.h>/i #include <dispatch/dispatch.h>" src/main/cpp/blaze_util_darwin.cc
-
-    # clang installed from Xcode has a compatibility wrapper that forwards
-    # invocations of gcc to clang, but vanilla clang doesn't
-    sed -i -e 's;_find_generic(repository_ctx, "gcc", "CC", overriden_tools);_find_generic(repository_ctx, "clang", "CC", overriden_tools);g' tools/cpp/unix_cc_configure.bzl
-
-    sed -i -e 's;/usr/bin/libtool;${cctools}/bin/libtool;g' tools/cpp/unix_cc_configure.bzl
-    wrappers=( tools/cpp/osx_cc_wrapper.sh tools/cpp/osx_cc_wrapper.sh.tpl )
-    for wrapper in "''${wrappers[@]}"; do
-      sed -i -e "s,/usr/bin/install_name_tool,${cctools}/bin/install_name_tool,g" $wrapper
-    done
-  '';
 in
 buildBazelPackage {
   inherit src version;
@@ -148,7 +103,7 @@ buildBazelPackage {
     unzip
     which
     zip
-  ] ++ lib.optionals (stdenv.isDarwin) (with darwin; with apple_sdk.frameworks; [ cctools libcxx CoreFoundation CoreServices Foundation Libsystem ]);
+  ];
 
   bazel = bazel_5;
   bazelTarget = "//src:bazel";
@@ -183,10 +138,7 @@ buildBazelPackage {
     '';
 
     # lib.fakeSha256
-    sha256 =
-      if stdenv.hostPlatform.isDarwin
-      then lib.fakeSha256
-      else "fUBvAGO6ZC6NNG2nv1B0hrnS1pnyANF4yzwiQl9IqS4=";
+    sha256 = "fUBvAGO6ZC6NNG2nv1B0hrnS1pnyANF4yzwiQl9IqS4=";
   };
 
   buildAttrs = {
@@ -207,7 +159,6 @@ buildBazelPackage {
       })
 
       ./patches/default_java_toolchain.patch
-      ./patches/no-arc.patch
     ];
 
     postPatch = ''
@@ -249,7 +200,7 @@ buildBazelPackage {
       mv runfiles.bash.tmp tools/bash/runfiles/runfiles.bash
 
       patchShebangs .
-    '' + lib.optionalString stdenv.hostPlatform.isDarwin darwinPatches;
+    '';
 
     installPhase = ''
       mkdir -p $out/bin
@@ -293,8 +244,6 @@ buildBazelPackage {
       mkdir -p $out/nix-support
       echo "${bash} ${defaultShellPath}" >> $out/nix-support/depends
       echo "${python3}" >> $out/nix-support/depends
-    '' + lib.optionalString stdenv.isDarwin ''
-      echo "${darwin.cctools}" >> $out/nix-support/depends
     '';
 
     dontStrip = true;
