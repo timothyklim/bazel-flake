@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, bazel_5, jdk, src, version }:
+{ pkgs, nixpkgs, jdk, src, version }:
 
 with pkgs;
 let
@@ -138,7 +138,7 @@ buildBazelPackage {
     '';
 
     # lib.fakeSha256
-    sha256 = "/BlnvXrKjEU+/Ze+nSL7/OXP8ch0zE1XCIDFCfT6xxQ=";
+    sha256 = "QvN/03Go9mEuiurCycfl2dpVZaPVTdaENeJgAdGEIJ8=";
   };
 
   buildAttrs = {
