@@ -15,6 +15,14 @@
             "https://github.com/bazelbuild/stardoc/archive/1ef781ced3b1443dca3ed05dec1989eca1a4e1cd.tar.gz"
         ]
     },
+    "20211102.0.tar.gz": {
+        "name": "20211102.0.tar.gz",
+        "sha256": "dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4",
+        "urls": [
+            "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz",
+            "https://github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz"
+        ]
+    },
     "2de300726a1ba2de9a468468dc5ff9ed17a3215f.tar.gz": {
         "name": "2de300726a1ba2de9a468468dc5ff9ed17a3215f.tar.gz",
         "sha256": "6a5f67874af66b239b709c572ac1a5a00fdb1b29beaf13c3e6f79b1ba10dc7c4",
@@ -45,14 +53,6 @@
         "urls": [
             "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/7e4afce6fe62dbff0a4a03450143146f9f2d7488.tar.gz",
             "https://github.com/bazelbuild/rules_proto/archive/7e4afce6fe62dbff0a4a03450143146f9f2d7488.tar.gz"
-        ]
-    },
-    "997aaf3a28308eba1b9156aa35ab7bca9688e9f6.tar.gz": {
-        "name": "997aaf3a28308eba1b9156aa35ab7bca9688e9f6.tar.gz",
-        "sha256": "35f22ef5cb286f09954b7cc4c85b5a3f6221c9d4df6b8c4a1e9d399555b366ee",
-        "urls": [
-            "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/997aaf3a28308eba1b9156aa35ab7bca9688e9f6.tar.gz",
-            "https://github.com/abseil/abseil-cpp/archive/997aaf3a28308eba1b9156aa35ab7bca9688e9f6.tar.gz"
         ]
     },
     "aecba11114cf1fac5497aeb844b6966106de3eb6.tar.gz": {
@@ -277,14 +277,14 @@
         ]
     },
     "com_google_absl": {
-        "generator_function": "grpc_deps",
+        "generator_function": "dist_http_archive",
         "generator_name": "com_google_absl",
         "name": "com_google_absl",
-        "sha256": "35f22ef5cb286f09954b7cc4c85b5a3f6221c9d4df6b8c4a1e9d399555b366ee",
-        "strip_prefix": "abseil-cpp-997aaf3a28308eba1b9156aa35ab7bca9688e9f6",
+        "sha256": "dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4",
+        "strip_prefix": "abseil-cpp-20211102.0",
         "urls": [
-            "https://storage.googleapis.com/grpc-bazel-mirror/github.com/abseil/abseil-cpp/archive/997aaf3a28308eba1b9156aa35ab7bca9688e9f6.tar.gz",
-            "https://github.com/abseil/abseil-cpp/archive/997aaf3a28308eba1b9156aa35ab7bca9688e9f6.tar.gz"
+            "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz",
+            "https://github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz"
         ]
     },
     "com_google_googleapis": {
