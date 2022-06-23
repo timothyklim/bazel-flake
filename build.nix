@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, jdk, src, version }:
+{ pkgs, nixpkgs, bazel_5, jdk, src, version }:
 
 with pkgs;
 let

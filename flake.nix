@@ -2,7 +2,8 @@
   description = "Bazel flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.05";
+    nixpkgs.url = "nixpkgs/nixos-21.11";
+    nixpkgs-2205.url = "nixpkgs/nixos-22.05";
     flake-utils.url = "github:numtide/flake-utils";
 
     java.url = "github:TawasalMessenger/jdk-flake";
@@ -12,14 +13,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, java, src }:
+  outputs = { self, nixpkgs, nixpkgs-2205, flake-utils, java, src }:
     let
       system = "x86_64-linux";
       sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
       pkgs = nixpkgs.legacyPackages.${system};
       jdk = java.packages.${system}.openjdk_18;
+      bazel_5 = nixpkgs-2205.legacyPackages.${system}.bazel_5;
       bazel = import ./build.nix {
-        inherit pkgs nixpkgs jdk src;
+        inherit pkgs nixpkgs bazel_5 jdk src;
         version = sources.src.original.ref;
       };
       bazel-app = flake-utils.lib.mkApp { drv = bazel; };
