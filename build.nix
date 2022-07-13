@@ -26,7 +26,7 @@ let
         srcs.platforms
         srcs."coverage_output_generator-v2.6.zip"
         srcs.build_bazel_rules_nodejs
-        srcs."android_tools_pkg-0.24.0.tar.gz"
+        srcs."android_tools_pkg-0.26.0.tar.gz"
         srcs.bazel_toolchains
         srcs.com_github_grpc_grpc
         srcs.upb
@@ -38,7 +38,7 @@ let
         srcs.com_google_absl
         srcs.com_googlesource_code_re2
         srcs.com_github_cares_cares
-        srcs."java_tools-v11.7.1.zip"
+        srcs."java_tools-v11.8.zip"
 
         srcs."remote_java_tools_linux_for_testing"
         srcs."remotejdk11_linux"
@@ -138,7 +138,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "JQFo047JuoBMjDZqUpVbhgBXfuegdeWYUaunpiyfyco=";
+    sha256 = "KvVpQdkXzf0nfkMl4wWH3/FfyB1cUhGdQLEZNyzd9Sc=";
   };
 
   buildAttrs = {
