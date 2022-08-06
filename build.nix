@@ -81,9 +81,6 @@ let
       fetch --override_repository=${remote_java_tools.name}=${remote_java_tools}
       query --override_repository=${remote_java_tools.name}=${remote_java_tools}
 
-      # Provide a default java toolchain, this will be the same as ${jdk.home}
-      build --host_javabase='@local_jdk//:jdk'
-
       # load default location for the system wide configuration
       try-import /etc/bazel.bazelrc
     '';
