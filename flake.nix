@@ -17,7 +17,7 @@
       system = "x86_64-linux";
       sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
       pkgs = nixpkgs.legacyPackages.${system};
-      jdk = java.packages.${system}.openjdk_18;
+      jdk = java.packages.${system}.openjdk_19;
       bazel_5 = pkgs.bazel_5;
       bazel = import ./build.nix {
         inherit pkgs nixpkgs bazel_5 jdk src;
