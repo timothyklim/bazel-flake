@@ -42,8 +42,23 @@ let
 
         srcs."remote_java_tools_linux_for_testing"
         srcs."remotejdk11_linux"
+
+        # Tests
+        srcs.bazelci_rules
+        srcs.rules_license
+        srcs."2f9af297c84c55c8b871ba4495e01ade42476c92.tar.gz"
+        srcs."4694024279bdac52b77e22dc87808bd0fd732b69.tar.gz"
+        srcs."bazel-gazelle-v0.24.0.tar.gz"
+        srcs."rules_nodejs-core-5.5.0.tar.gz"
       ]
     );
+  jvm_flags = [
+    "--java_language_version=11"
+    "--java_runtime_version=11"
+    "--tool_java_language_version=11"
+    "--tool_java_runtime_version=11"
+    "--extra_toolchains=@local_jdk//:all"
+  ];
 
   distDir = runCommand "bazel-deps" { } ''
     mkdir -p $out
@@ -107,14 +122,9 @@ buildBazelPackage {
   bazelFetchFlags = [
     "--loading_phase_threads=HOST_CPUS"
   ];
-  bazelFlags = [
+  bazelFlags = jvm_flags ++ [
     "-c opt"
     "--override_repository=${remote_java_tools.name}=${remote_java_tools}"
-    "--java_language_version=11"
-    "--java_runtime_version=11"
-    "--tool_java_language_version=11"
-    "--tool_java_runtime_version=11"
-    "--extra_toolchains=@local_jdk//:all"
   ];
   fetchConfigured = true;
 
@@ -204,37 +214,38 @@ buildBazelPackage {
       mv bazel-bin/src/bazel $out/bin/bazel
     '';
 
-    # doInstallCheck = true;
-    # installCheckPhase = ''
-    #   export TEST_TMPDIR=$(pwd)
+    doInstallCheck = true;
+    installCheckPhase = ''
+      export TEST_TMPDIR=$(pwd)
 
-    #   hello_test () {
-    #     $out/bin/bazel test \
-    #       --test_output=errors \
-    #       examples/cpp:hello-success_test \
-    #       examples/java-native/src/test/java/com/example/myproject:hello
-    #   }
+      hello_test () {
+        $out/bin/bazel test \
+          ${lib.concatStringsSep " " jvm_flags} \
+          --test_output=errors \
+          examples/cpp:hello-success_test \
+          examples/java-native/src/test/java/com/example/myproject:hello
+      }
 
-    #   # test whether $WORKSPACE_ROOT/tools/bazel works
+      # test whether $WORKSPACE_ROOT/tools/bazel works
 
-    #   mkdir -p tools
-    #   cat > tools/bazel <<"EOF"
-    #   #!${runtimeShell} -e
-    #   exit 1
-    #   EOF
-    #   chmod +x tools/bazel
+      mkdir -p tools
+      cat > tools/bazel <<"EOF"
+      #!${runtimeShell} -e
+      exit 1
+      EOF
+      chmod +x tools/bazel
 
-    #   # first call should fail if tools/bazel is used
-    #   ! hello_test
+      # first call should fail if tools/bazel is used
+      ! hello_test
 
-    #   cat > tools/bazel <<"EOF"
-    #   #!${runtimeShell} -e
-    #   exec "$BAZEL_REAL" "$@"
-    #   EOF
+      cat > tools/bazel <<"EOF"
+      #!${runtimeShell} -e
+      exec "$BAZEL_REAL" "$@"
+      EOF
 
-    #   # second call succeeds because it defers to $out/bin/bazel-{version}-{os_arch}
-    #   hello_test
-    # '';
+      # second call succeeds because it defers to $out/bin/bazel-{version}-{os_arch}
+      hello_test
+    '';
 
     # Save paths to hardcoded dependencies so Nix can detect them.
     postFixup = ''
