@@ -26,7 +26,7 @@ let
         srcs.platforms
         srcs."coverage_output_generator-v2.6.zip"
         srcs.build_bazel_rules_nodejs
-        srcs."android_tools_pkg-0.26.0.tar.gz"
+        srcs."android_tools_pkg-0.27.0.tar.gz"
         srcs.bazel_toolchains
         srcs.com_github_grpc_grpc
         srcs.upb
@@ -145,7 +145,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "d1XYzrPvwS3vuIviF6qEECrNsT6S7ertkCmsznSKWHE=";
+    sha256 = "sha256-s6+a6LCv82ypr60Pwq8X16/DIGzzJgF01lXDi1JiLXo=";
   };
 
   buildAttrs = {
