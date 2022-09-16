@@ -23,22 +23,6 @@
             "https://github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz"
         ]
     },
-    "21767c654d31d2dccdde4330529775c6c5fd5389.tar.gz": {
-        "name": "21767c654d31d2dccdde4330529775c6c5fd5389.tar.gz",
-        "sha256": "ef47b0fbe646d69a2fc5ba012cb278de8e8946a8e9649f83a807cc05559f0eff",
-        "urls": [
-            "https://mirror.bazel.build/github.com/madler/zlib/archive/21767c654d31d2dccdde4330529775c6c5fd5389.tar.gz",
-            "https://github.com/madler/zlib/archive/21767c654d31d2dccdde4330529775c6c5fd5389.tar.gz"
-        ]
-    },
-    "2de300726a1ba2de9a468468dc5ff9ed17a3215f.tar.gz": {
-        "name": "2de300726a1ba2de9a468468dc5ff9ed17a3215f.tar.gz",
-        "sha256": "6a5f67874af66b239b709c572ac1a5a00fdb1b29beaf13c3e6f79b1ba10dc7c4",
-        "urls": [
-            "https://mirror.bazel.build/github.com/protocolbuffers/upb/archive/2de300726a1ba2de9a468468dc5ff9ed17a3215f.tar.gz",
-            "https://github.com/protocolbuffers/upb/archive/2de300726a1ba2de9a468468dc5ff9ed17a3215f.tar.gz"
-        ]
-    },
     "2f9af297c84c55c8b871ba4495e01ade42476c92.tar.gz": {
         "name": "2f9af297c84c55c8b871ba4495e01ade42476c92.tar.gz",
         "sha256": "5bb6b0253ccf64b53d6c7249625a7e3f6c3bc6402abd52d3778bfa48258703a0",
@@ -2083,6 +2067,22 @@
         "urls": [
             "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.30.15-ca-jdk17.0.1-win_aarch64.zip",
             "https://cdn.azul.com/zulu/bin/zulu17.30.15-ca-jdk17.0.1-win_aarch64.zip"
+        ]
+    },
+    "zulu17.32.13-ca-jdk17.0.2-linux_aarch64.tar.gz": {
+        "name": "zulu17.32.13-ca-jdk17.0.2-linux_aarch64.tar.gz",
+        "sha256": "2b8066bbdbc5cff422bb6b6db1b8f8d362b576340cce8492f1255502af632b06",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.32.13-ca-jdk17.0.2-linux_aarch64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu17.32.13-ca-jdk17.0.2-linux_aarch64.tar.gz"
+        ]
+    },
+    "zulu18.28.13-ca-jdk18.0.0-linux_aarch64.tar.gz": {
+        "name": "zulu18.28.13-ca-jdk18.0.0-linux_aarch64.tar.gz",
+        "sha256": "a1d5f78172f32f819d08e9043b0f82fa7af738b37c55c6ca8d6092c61d204d53",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_aarch64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_aarch64.tar.gz"
         ]
     },
     "zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip": {
