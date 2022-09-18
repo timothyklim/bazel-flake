@@ -4,7 +4,23 @@ with pkgs;
 let
   sourceRoot = ".";
   arch = stdenv.hostPlatform.parsed.cpu.name;
-  defaultShellUtils = [ bash coreutils findutils gawk gnugrep gnutar gnused gzip which unzip file zip python3 ];
+  defaultShellUtils = [
+    bash
+    binutils-unwrapped
+    coreutils
+    file
+    findutils
+    gawk
+    gnugrep
+    gnumake
+    gnused
+    gnutar
+    gzip
+    python3
+    unzip
+    which
+    zip
+  ];
   defaultShellPath = lib.makeBinPath defaultShellUtils;
   srcDeps = lib.attrsets.attrValues srcDepsSet;
   srcDepsSet =
