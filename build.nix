@@ -161,7 +161,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-kzHRADhLtQ12+732kS5SYGqRC5k+u1M029GhNEMxONA=";
+    sha256 = "sha256-D3/KrH0kQZNOpKaJ+eg9Af1GDhNoOyHPqMl6qTtRczQ=";
   };
 
   buildAttrs = {
@@ -180,8 +180,6 @@ buildBazelPackage {
         src = ./patches/bazel_rc.patch;
         bazelSystemBazelRCPath = bazelRC;
       })
-
-      ./patches/default_java_toolchain.patch
     ];
 
     postPatch = ''
