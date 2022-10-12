@@ -1,0 +1,10 @@
+name: "Build Nix package on Ubuntu"
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v17
+      - name: Building package
+        run: nix build --experimental-features "nix-command flakes"
