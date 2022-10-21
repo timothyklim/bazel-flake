@@ -48,7 +48,8 @@ let
         srcs.upb
         srcs.com_google_protobuf
         srcs.rules_pkg
-        srcs.rules_cc
+        # srcs.rules_cc
+        srcs."rules_cc-0.0.2.tar.gz"
         srcs.rules_java
         srcs.rules_proto
         srcs.com_google_absl
@@ -161,7 +162,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-D3/KrH0kQZNOpKaJ+eg9Af1GDhNoOyHPqMl6qTtRczQ=";
+    sha256 = "sha256-EZ6Gjyi1DlJhPyvzyTaABRl2XP7od39EpjKkX3IZ1/o=";
   };
 
   buildAttrs = {

@@ -44,19 +44,21 @@
         "jdk19": "jdk19",
         "jextract-src": "jextract-src",
         "jmc_linux_tgz": "jmc_linux_tgz",
+        "jprofiler_tgz": "jprofiler_tgz",
         "jtreg-src": "jtreg-src",
         "nixpkgs": "nixpkgs",
         "visualvm_zip": "visualvm_zip",
+        "yourkit_zip": "yourkit_zip",
         "zing17_linux_tgz": "zing17_linux_tgz",
         "zulu17_linux_tgz": "zulu17_linux_tgz",
         "zulu18_linux_tgz": "zulu18_linux_tgz"
       },
       "locked": {
-        "lastModified": 1664626515,
-        "narHash": "sha256-/IJWw7Gglf57vcGkrtZh/GJuKse/gyS4hEv4HbDjYg0=",
+        "lastModified": 1666175295,
+        "narHash": "sha256-t0M7IApLlEMtS/5xAHe9by0HAFoPQ7yFGYjOJX1m8rM=",
         "owner": "TawasalMessenger",
         "repo": "jdk-flake",
-        "rev": "49fc50ba4c777c3757894181af3b3f216d2f4f49",
+        "rev": "430a02e586e09b85f592e37d2057cb33fba86129",
         "type": "github"
       },
       "original": {
@@ -68,11 +70,11 @@
     "jdk": {
       "flake": false,
       "locked": {
-        "lastModified": 1664623246,
-        "narHash": "sha256-Y41mvnHTxx2ucHZ4FsYqg/ITlSjVaPmUE+Ku/8Au7yk=",
+        "lastModified": 1666171445,
+        "narHash": "sha256-IIAtFGu7qL4DSqMYHtN9idG41ruSoeOIXF9xWg5FBb4=",
         "owner": "openjdk",
         "repo": "jdk",
-        "rev": "b8b9b97a1a3e07777da2e39ac4779ef7b77434c7",
+        "rev": "857b0f9b05bc711f3282a0da85fcff131fffab91",
         "type": "github"
       },
       "original": {
@@ -84,11 +86,11 @@
     "jdk-loom": {
       "flake": false,
       "locked": {
-        "lastModified": 1664473293,
-        "narHash": "sha256-jsk0LBGhWpV3MGMEINAJnGND5WzgXlJv4JBkytKojNQ=",
+        "lastModified": 1666141906,
+        "narHash": "sha256-BBBw+epNfa0vQNhK4GkIK9Me9qx4HcA+JiZmpnF/BIM=",
         "owner": "openjdk",
         "repo": "loom",
-        "rev": "3afb61b8fcc150595d6e5d2f7981b99dacf3b5be",
+        "rev": "8bf8d1f50203adbce7f6c0419f5ab06722491ae5",
         "type": "github"
       },
       "original": {
@@ -118,11 +120,11 @@
     "jdk-valhalla": {
       "flake": false,
       "locked": {
-        "lastModified": 1664561733,
-        "narHash": "sha256-+p3RqKZbDb1SDCIi3fiPkuF6Ezb27eI4vBgoxmviehQ=",
+        "lastModified": 1666156271,
+        "narHash": "sha256-bt9/oEI9+Uc/Z/9QpCr0WdJ4d9vqlpPPfbT9MILU21E=",
         "owner": "openjdk",
         "repo": "valhalla",
-        "rev": "9039a70b87719a4889931a601466b2a8900620bf",
+        "rev": "688186b3fd7c7173c83069fe9d4fc87cfce63778",
         "type": "github"
       },
       "original": {
@@ -135,11 +137,11 @@
     "jdk17": {
       "flake": false,
       "locked": {
-        "lastModified": 1663895940,
-        "narHash": "sha256-tmnSHLA0pN/IkJLndEPB/8lUZTrgeTfeAR+Tu6Bk35w=",
+        "lastModified": 1665407242,
+        "narHash": "sha256-2k1Mm36ds6MZheZVsLvXkoqQG4zYeIRWzbP1aZ72Vqs=",
         "owner": "openjdk",
         "repo": "jdk17u",
-        "rev": "114f0c400548675bf2ecd2b3dbf10aeecda539d9",
+        "rev": "0a6252780a862e6d5646a28c2b22a1c03eff37bf",
         "type": "github"
       },
       "original": {
@@ -167,11 +169,11 @@
     "jdk19": {
       "flake": false,
       "locked": {
-        "lastModified": 1664428192,
-        "narHash": "sha256-ccwqxeWC8Y3n649W1UWW03AbqlF8n0qKTnqCf34fy7w=",
+        "lastModified": 1666125307,
+        "narHash": "sha256-JMpTQb1JSzDS+PA/MdaCtIJhUOTIGIT08z09XINz3bA=",
         "owner": "openjdk",
         "repo": "jdk19u",
-        "rev": "152d2f1c0a343c6cdcb06fd9416c2189bb098df6",
+        "rev": "bc946a44506e27194cbaacc63ffa3b623a76cbd6",
         "type": "github"
       },
       "original": {
@@ -183,11 +185,11 @@
     "jextract-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1663850796,
-        "narHash": "sha256-D+SJHU9kqid/TxrPE1knmZCDfzqRaR61+cXwmlxuWPA=",
+        "lastModified": 1665500334,
+        "narHash": "sha256-IBR0nG9dQTm4hw5vA+vr1crdvMyTNX9RUryXlrkBJ58=",
         "owner": "openjdk",
         "repo": "jextract",
-        "rev": "914bf813d7a2cb07f259270bfc5446e24777ddf7",
+        "rev": "f70e8d2dc7a7d49068c82b5039bb88fd76860dbe",
         "type": "github"
       },
       "original": {
@@ -208,14 +210,26 @@
         "url": "https://download.java.net/java/GA/jmc8/03/binaries/jmc-8.2.1_linux-x64.tar.gz"
       }
     },
+    "jprofiler_tgz": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-l+Nx4YZ8BtKSWOcjx0yQz7Pszndrc/uY5AXx+n72v6k=",
+        "type": "tarball",
+        "url": "https://download.ej-technologies.com/jprofiler/jprofiler_linux_13_0_3.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://download.ej-technologies.com/jprofiler/jprofiler_linux_13_0_3.tar.gz"
+      }
+    },
     "jtreg-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1664211780,
-        "narHash": "sha256-+Gg/wOScfnjNFdRiFx5epEfN9KQNNShexo0cmRVsLGs=",
+        "lastModified": 1666131786,
+        "narHash": "sha256-wTWnFzDvMzxummlxQqihDudgGfVTz/605nBOeMcfSBI=",
         "owner": "openjdk",
         "repo": "jtreg",
-        "rev": "de2c21676fb20317e153005c44d645b1cc76f2c2",
+        "rev": "3b1aba87a170e0ada30ec9075aaaf1b800140328",
         "type": "github"
       },
       "original": {
@@ -226,11 +240,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1664491521,
-        "narHash": "sha256-1Zj7Vi7zswETSHXueX8Oh1OA2f68DS7TOHoelLukA1U=",
+        "lastModified": 1666056570,
+        "narHash": "sha256-e7EkIY68Tp7NKyp9JSHh6CgPPdsKYYWxiL4wZQN8Cwg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c9389643ae662834fd584ffa1898dc52956e1fba",
+        "rev": "47edaa313fc3767ce3026037a5b62352f22f3602",
         "type": "github"
       },
       "original": {
@@ -241,11 +255,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1665197809,
-        "narHash": "sha256-dRUzv/zNYV2EYtnxFG31pPBk0nErT+MBTu6ZJHm1o2A=",
+        "lastModified": 1666275482,
+        "narHash": "sha256-P5cxOmp1Yi2miEDLQas8GLQQ4W54zYgHd2frvs+lERQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7b06206fa24198912cea58de690aa4943f238fbf",
+        "rev": "d639b2dfacdb3464faa11936a8c751ea3ff57775",
         "type": "github"
       },
       "original": {
@@ -256,11 +270,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1665132027,
-        "narHash": "sha256-zoHPqSQSENt96zTk6Mt1AP+dMNqQDshXKQ4I6MfjP80=",
+        "lastModified": 1666249138,
+        "narHash": "sha256-CzK8NA8xEMKAhvHXB8UMODckcH97sZXm6lziKNWLv0M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9ecc270f02b09b2f6a76b98488554dd842797357",
+        "rev": "44fc3cb097324c9f9f93313dd3f103e78d722968",
         "type": "github"
       },
       "original": {
@@ -281,16 +295,16 @@
     "src": {
       "flake": false,
       "locked": {
-        "lastModified": 1664558894,
-        "narHash": "sha256-Bqnej64ReN+wBvVJSY1vUBiP8BPXeXMhWW7VmzXiypE=",
+        "lastModified": 1666293498,
+        "narHash": "sha256-zZIMMHRUfdsUT+PIBOFSYZCHz75T+nafm3aKadMCpXs=",
         "owner": "bazelbuild",
         "repo": "bazel",
-        "rev": "05c6738b23b0dae66357d2dfaf4530eb56c8aad9",
+        "rev": "4665ec2fe865681f3bb098d1cbbcf54690cae0b1",
         "type": "github"
       },
       "original": {
         "owner": "bazelbuild",
-        "ref": "6.0.0-pre.20220922.1",
+        "ref": "6.0.0-pre.20221007.4",
         "repo": "bazel",
         "type": "github"
       }
@@ -305,6 +319,18 @@
       "original": {
         "type": "tarball",
         "url": "https://github.com/oracle/visualvm/releases/download/2.1.4/visualvm_214.zip"
+      }
+    },
+    "yourkit_zip": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-SJodFdVYoe8lNOJqyyEyu1GQC8LEEF7R8wHpLFNSZpI=",
+        "type": "tarball",
+        "url": "https://download.yourkit.com/yjp/2022.9/YourKit-JavaProfiler-2022.9-b166.zip"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://download.yourkit.com/yjp/2022.9/YourKit-JavaProfiler-2022.9-b166.zip"
       }
     },
     "zing17_linux_tgz": {
