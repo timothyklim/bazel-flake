@@ -6,9 +6,9 @@
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
-    java.url = "github:TawasalMessenger/jdk-flake";
+    java.url = "github:timothyklim/jdk-flake";
     src = {
-      url = "github:bazelbuild/bazel/6.0.0-pre.20221007.4";
+      url = "github:bazelbuild/bazel/6.0.0-pre.20221012.2";
       flake = false;
     };
   };
