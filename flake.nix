@@ -8,7 +8,7 @@
 
     java.url = "github:timothyklim/jdk-flake";
     src = {
-      url = "github:bazelbuild/bazel/6.0.0-pre.20221012.2";
+      url = "github:bazelbuild/bazel/6.0.0-pre.20221020.1";
       flake = false;
     };
   };
