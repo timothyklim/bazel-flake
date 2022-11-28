@@ -1,4 +1,4 @@
-{ pkgs, src, bazel }:
+{ pkgs, src, }:
 
 with pkgs;
 let
@@ -16,7 +16,7 @@ in
 mkShell {
   name = "bazel-env";
 
-  buildInputs = [ python3 bazel ];
+  buildInputs = [ python3 ];
 
   shellHook = ''
     ${updater} > ./src-deps.json

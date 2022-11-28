@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, bazel_5, jdk, src, version }:
+{ pkgs, nixpkgs, jdk, src, version }:
 
 with pkgs;
 let
@@ -134,7 +134,7 @@ buildBazelPackage {
     zip
   ];
 
-  bazel = bazel_5;
+  bazel = bazel_6.overrideAttrs(_: { runJdk = openjdk17_headless; });
   bazelTarget = "//src:bazel";
   bazelFetchFlags = [
     "--loading_phase_threads=HOST_CPUS"
@@ -162,7 +162,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-tCPwi+2Yx0q0QtJBzTo96g9Fu5VI/bZTbROhrw9XmHc=";
+    sha256 = "sha256-zDq/mYPnKhkX440K+rAUK8x+2QJdzDvalnoe1gXXAlw=";
   };
 
   buildAttrs = {
