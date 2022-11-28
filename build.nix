@@ -70,10 +70,10 @@ let
       ]
     );
   jvm_flags = [
-    "--java_language_version=11"
-    "--java_runtime_version=11"
-    "--tool_java_language_version=11"
-    "--tool_java_runtime_version=11"
+    "--java_language_version=17"
+    "--java_runtime_version=17"
+    "--tool_java_language_version=17"
+    "--tool_java_runtime_version=17"
     "--extra_toolchains=@local_jdk//:all"
   ];
 
@@ -122,19 +122,18 @@ buildBazelPackage {
   inherit src version;
   pname = "bazel";
 
-  buildInputs = [ python3 jdk11_headless ];
+  buildInputs = [ python3 openjdk17_headless ];
   nativeBuildInputs = [
     bash
     coreutils
     installShellFiles
     makeWrapper
-    python3
     unzip
     which
     zip
   ];
 
-  bazel = bazel_6.overrideAttrs(_: { runJdk = openjdk17_headless; });
+  bazel = bazel_6;
   bazelTarget = "//src:bazel";
   bazelFetchFlags = [
     "--loading_phase_threads=HOST_CPUS"
@@ -142,6 +141,7 @@ buildBazelPackage {
   bazelFlags = jvm_flags ++ [
     "-c opt"
     "--override_repository=${remote_java_tools.name}=${remote_java_tools}"
+    "--sandbox_tmpfs_path=/tmp" # https://github.com/bazelbuild/bazel/issues/11401
   ];
   fetchConfigured = true;
 
@@ -162,7 +162,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-zDq/mYPnKhkX440K+rAUK8x+2QJdzDvalnoe1gXXAlw=";
+    sha256 = "sha256-OzjDl5gdHLhwSoAeAv08GwQoqCtJt3p0c3yY+ipGwwo=";
   };
 
   buildAttrs = {
