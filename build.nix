@@ -38,16 +38,14 @@ let
         srcs.desugar_jdk_libs
         srcs.io_bazel_skydoc
         srcs.bazel_skylib
-        srcs.io_bazel_rules_sass
         srcs.platforms
         srcs."coverage_output_generator-v2.6.zip"
-        srcs.build_bazel_rules_nodejs
         srcs."android_tools_pkg-0.27.0.tar.gz"
         srcs.bazel_toolchains
         srcs.com_github_grpc_grpc
         srcs.upb
         srcs.com_google_protobuf
-        srcs.rules_pkg
+        # srcs.rules_pkg
         # srcs.rules_cc
         srcs."rules_cc-0.0.2.tar.gz"
         srcs.rules_java
@@ -66,7 +64,7 @@ let
         srcs."2f9af297c84c55c8b871ba4495e01ade42476c92.tar.gz"
         srcs."4694024279bdac52b77e22dc87808bd0fd732b69.tar.gz"
         srcs."bazel-gazelle-v0.24.0.tar.gz"
-        srcs."rules_nodejs-core-5.5.0.tar.gz"
+        srcs."rules_pkg-0.8.0.tar.gz"
       ]
     );
   jvm_flags = [
@@ -162,7 +160,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-OzjDl5gdHLhwSoAeAv08GwQoqCtJt3p0c3yY+ipGwwo=";
+    sha256 = "sha256-ra8sOZOdCcHT2uI44bil/xTQ26FLexF42Mf5OL68TFY=";
   };
 
   buildAttrs = {
