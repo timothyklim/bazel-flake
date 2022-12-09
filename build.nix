@@ -132,7 +132,7 @@ buildBazelPackage {
   ];
 
   bazel = bazel_6;
-  bazelTarget = "//src:bazel";
+  bazelTarget = "//src:bazel_nojdk";
   bazelFetchFlags = [
     "--loading_phase_threads=HOST_CPUS"
   ];
@@ -160,7 +160,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-ra8sOZOdCcHT2uI44bil/xTQ26FLexF42Mf5OL68TFY=";
+    sha256 = "sha256-Z4E0U6iY3jXb/4xcFUsiwM52gyY5F6l6laW0WjHhnD8=";
   };
 
   buildAttrs = {
@@ -224,7 +224,7 @@ buildBazelPackage {
 
     installPhase = ''
       mkdir -p $out/bin
-      mv bazel-bin/src/bazel $out/bin/bazel
+      mv bazel-bin/src/bazel_nojdk $out/bin/bazel
     '';
 
     doInstallCheck = true;
