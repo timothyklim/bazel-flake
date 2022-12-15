@@ -53,7 +53,7 @@ let
         srcs.com_google_absl
         srcs.com_googlesource_code_re2
         srcs.com_github_cares_cares
-        srcs."java_tools-v11.8.zip"
+        srcs."java_tools-v11.9.zip"
 
         srcs."remote_java_tools_linux_for_testing"
         srcs."remotejdk11_linux"
@@ -160,7 +160,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-p+owyczuEqRLwKgjqMFquAT07Hj4FKqE4ev3IgKP06k=";
+    sha256 = "sha256-k7oH0m/XaUy/oZUVvzM3QZ56mxTWaeLLDZu6cqhl+QI=";
   };
 
   buildAttrs = {
