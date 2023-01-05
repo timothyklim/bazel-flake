@@ -28,43 +28,41 @@ let
       srcs = (builtins.fromJSON (builtins.readFile ./src-deps.json));
       toFetchurl = d: lib.attrsets.nameValuePair d.name (
         fetchurl {
-          urls = d.urls;
+          urls = d.urls or [d.url];
           sha256 = d.sha256;
         }
       );
     in
     builtins.listToAttrs (
       map toFetchurl [
+        srcs.android_tools_for_testing
+        srcs.bazel_skylib
+        srcs.bazel_toolchains
+        srcs.com_github_cares_cares
+        srcs.com_github_grpc_grpc
+        srcs.com_google_absl
+        srcs.com_google_protobuf
+        srcs.com_googlesource_code_re2
         srcs.desugar_jdk_libs
         srcs.io_bazel_skydoc
-        srcs.bazel_skylib
         srcs.platforms
-        srcs."coverage_output_generator-v2.6.zip"
-        srcs."android_tools_pkg-0.27.0.tar.gz"
-        srcs.bazel_toolchains
-        srcs.com_github_grpc_grpc
-        srcs.upb
-        srcs.com_google_protobuf
-        # srcs.rules_pkg
-        # srcs.rules_cc
-        srcs."rules_cc-0.0.2.tar.gz"
+        srcs.rules_cc
         srcs.rules_java
+        srcs.rules_pkg
         srcs.rules_proto
-        srcs.com_google_absl
-        srcs.com_googlesource_code_re2
-        srcs.com_github_cares_cares
+        srcs.upb
+        srcs."coverage_output_generator-v2.6.zip"
         srcs."java_tools-v11.9.zip"
 
-        srcs."remote_java_tools_linux_for_testing"
-        srcs."remotejdk11_linux"
+        srcs.remote_java_tools_linux_for_testing
+        srcs.remotejdk11_linux
 
         # Tests
+        srcs.bazel_gazelle
         srcs.bazelci_rules
+        srcs.com_envoyproxy_protoc_gen_validate
+        srcs.com_google_googleapis
         srcs.rules_license
-        srcs."2f9af297c84c55c8b871ba4495e01ade42476c92.tar.gz"
-        srcs."4694024279bdac52b77e22dc87808bd0fd732b69.tar.gz"
-        srcs."bazel-gazelle-v0.24.0.tar.gz"
-        srcs."rules_pkg-0.8.0.tar.gz"
       ]
     );
   jvm_flags = [
