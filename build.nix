@@ -53,6 +53,7 @@ let
         srcs.remotejdk11_linux
         srcs.rules_cc
         srcs.rules_java
+        srcs.rules_jvm_external
         srcs.rules_pkg
         srcs.rules_proto
         srcs.upb
@@ -158,7 +159,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-zzz6nh1BsivMoZDoD4AVoHGqa8//hPIQXe8IHckLF98=";
+    sha256 = "sha256-C4XA95vYCPaCcJxxksibdXjjwebd66He3cQw2ItBHH0=";
   };
 
   buildAttrs = {
