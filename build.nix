@@ -28,7 +28,7 @@ let
       srcs = (builtins.fromJSON (builtins.readFile ./src-deps.json));
       toFetchurl = d: lib.attrsets.nameValuePair d.name (
         fetchurl {
-          urls = d.urls or [d.url];
+          urls = d.urls or [ d.url ];
           sha256 = d.sha256;
         }
       );
@@ -159,7 +159,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-C4XA95vYCPaCcJxxksibdXjjwebd66He3cQw2ItBHH0=";
+    sha256 = "sha256-2GukUNzsuGXnfxUSSr6OUPhyc4Fw4gp5nlRyXugL1v4=";
   };
 
   buildAttrs = {
