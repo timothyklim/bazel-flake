@@ -519,6 +519,17 @@
             "https://maven.google.com/com/fasterxml/jackson/core/jackson-core/2.11.3/jackson-core-2.11.3.jar"
         ]
     },
+    "com_github_ben_manes_caffeine_caffeine_3_0_5": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/github/ben-manes/caffeine/caffeine/3.0.5/caffeine-3.0.5.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_github_ben_manes_caffeine_caffeine_3_0_5",
+        "name": "com_github_ben_manes_caffeine_caffeine_3_0_5",
+        "netrc": "../maven/netrc",
+        "sha256": "8a9b54d3506a3b92ee46b217bcee79196b21ca6d52dc2967c686a205fb2f9c15",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/github/ben-manes/caffeine/caffeine/3.0.5/caffeine-3.0.5.jar"
+        ]
+    },
     "com_github_cares_cares": {
         "build_file": "@com_github_grpc_grpc//third_party:cares/cares.BUILD",
         "generator_function": "grpc_deps",
@@ -577,6 +588,17 @@
             "https://github.com/grpc/grpc/archive/v1.47.0.tar.gz"
         ]
     },
+    "com_github_kevinstern_software_and_algorithms_1_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_github_kevinstern_software_and_algorithms_1_0",
+        "name": "com_github_kevinstern_software_and_algorithms_1_0",
+        "netrc": "../maven/netrc",
+        "sha256": "61ab82439cef37343b14f53154c461619375373a56b9338e895709fb54e0864c",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/github/kevinstern/software-and-algorithms/1.0/software-and-algorithms-1.0.jar"
+        ]
+    },
     "com_github_libuv_libuv": {
         "build_file": "@com_github_grpc_grpc//third_party:libuv.BUILD",
         "generator_function": "grpc_deps",
@@ -597,8 +619,7 @@
         "netrc": "../maven/netrc",
         "sha256": "4fccff8382aafc589962c4edb262f6aa595e34f1e11e61057d1c6a96e8fc7323",
         "urls": [
-            "https://repo1.maven.org/maven2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar",
-            "https://dl.google.com/android/maven2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar"
+            "https://repo1.maven.org/maven2/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar"
         ]
     },
     "com_google_absl": {
@@ -610,6 +631,17 @@
         "urls": [
             "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz",
             "https://github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz"
+        ]
+    },
+    "com_google_android_annotations_4_1_1_4": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_android_annotations_4_1_1_4",
+        "name": "com_google_android_annotations_4_1_1_4",
+        "netrc": "../maven/netrc",
+        "sha256": "ba734e1e84c09d615af6a09d33034b4f0442f8772dec120efb376d86a565ae15",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4.jar"
         ]
     },
     "com_google_api_api_common_1_10_1": {
@@ -634,6 +666,28 @@
         "urls": [
             "https://repo1.maven.org/maven2/com/google/api-client/google-api-client/1.30.11/google-api-client-1.30.11.jar",
             "https://maven.google.com/com/google/api-client/google-api-client/1.30.11/google-api-client-1.30.11.jar"
+        ]
+    },
+    "com_google_api_client_google_api_client_1_35_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/api-client/google-api-client/1.35.2/google-api-client-1.35.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_api_client_google_api_client_1_35_2",
+        "name": "com_google_api_client_google_api_client_1_35_2",
+        "netrc": "../maven/netrc",
+        "sha256": "f195cd6228d3f99fa7e30ff2dee60ad0f2c7923be31399a7dcdc1abd679aa22e",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/api-client/google-api-client/1.35.2/google-api-client-1.35.2.jar"
+        ]
+    },
+    "com_google_api_client_google_api_client_gson_1_35_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/api-client/google-api-client-gson/1.35.2/google-api-client-gson-1.35.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_api_client_google_api_client_gson_1_35_2",
+        "name": "com_google_api_client_google_api_client_gson_1_35_2",
+        "netrc": "../maven/netrc",
+        "sha256": "54e5be675e5c2ab0958647fcaa35c14bd8f7c08358c634f5ab786e4ed7268576",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/api-client/google-api-client-gson/1.35.2/google-api-client-gson-1.35.2.jar"
         ]
     },
     "com_google_api_gax_1_60_0": {
@@ -662,14 +716,13 @@
     },
     "com_google_api_grpc_proto_google_common_protos_2_0_1": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.0.1/proto-google-common-protos-2.0.1.jar",
-        "generator_function": "rules_jvm_external_setup",
+        "generator_function": "pinned_maven_install",
         "generator_name": "com_google_api_grpc_proto_google_common_protos_2_0_1",
         "name": "com_google_api_grpc_proto_google_common_protos_2_0_1",
-        "netrc": "../rules_jvm_external_deps/netrc",
+        "netrc": "../maven/netrc",
         "sha256": "5ce71656118618731e34a5d4c61aa3a031be23446dc7de8b5a5e77b66ebcd6ef",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.0.1/proto-google-common-protos-2.0.1.jar",
-            "https://maven.google.com/com/google/api/grpc/proto-google-common-protos/2.0.1/proto-google-common-protos-2.0.1.jar"
+            "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.0.1/proto-google-common-protos-2.0.1.jar"
         ]
     },
     "com_google_api_grpc_proto_google_iam_v1_1_0_3": {
@@ -708,6 +761,17 @@
             "https://maven.google.com/com/google/auth/google-auth-library-credentials/0.22.0/google-auth-library-credentials-0.22.0.jar"
         ]
     },
+    "com_google_auth_google_auth_library_credentials_1_6_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auth/google-auth-library-credentials/1.6.0/google-auth-library-credentials-1.6.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_auth_google_auth_library_credentials_1_6_0",
+        "name": "com_google_auth_google_auth_library_credentials_1_6_0",
+        "netrc": "../maven/netrc",
+        "sha256": "153fa3cdc153ac3ee25649e8037aeda4438256153d35acf3c27e83e4ee6165a4",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/auth/google-auth-library-credentials/1.6.0/google-auth-library-credentials-1.6.0.jar"
+        ]
+    },
     "com_google_auth_google_auth_library_oauth2_http_0_22_0": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auth/google-auth-library-oauth2-http/0.22.0/google-auth-library-oauth2-http-0.22.0.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -720,28 +784,59 @@
             "https://maven.google.com/com/google/auth/google-auth-library-oauth2-http/0.22.0/google-auth-library-oauth2-http-0.22.0.jar"
         ]
     },
-    "com_google_auto_value_auto_value_1_7": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auto/value/auto-value/1.7/auto-value-1.7.jar",
+    "com_google_auth_google_auth_library_oauth2_http_1_6_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auth/google-auth-library-oauth2-http/1.6.0/google-auth-library-oauth2-http-1.6.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_auto_value_auto_value_1_7",
-        "name": "com_google_auto_value_auto_value_1_7",
+        "generator_name": "com_google_auth_google_auth_library_oauth2_http_1_6_0",
+        "name": "com_google_auth_google_auth_library_oauth2_http_1_6_0",
         "netrc": "../maven/netrc",
-        "sha256": "b66df6984d5c29f15a6253514c817fb046e8e242efffc79e42c33f2dde0edf41",
+        "sha256": "2220f02fcfc480e3798bab43b2618d158319f9fcb357c9eb04b4a68117699808",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/auto/value/auto-value/1.7/auto-value-1.7.jar",
-            "https://dl.google.com/android/maven2/com/google/auto/value/auto-value/1.7/auto-value-1.7.jar"
+            "https://repo1.maven.org/maven2/com/google/auth/google-auth-library-oauth2-http/1.6.0/google-auth-library-oauth2-http-1.6.0.jar"
         ]
     },
-    "com_google_auto_value_auto_value_annotations_1_7": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auto/value/auto-value-annotations/1.7/auto-value-annotations-1.7.jar",
+    "com_google_auto_auto_common_1_2_1": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auto/auto-common/1.2.1/auto-common-1.2.1.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_auto_value_auto_value_annotations_1_7",
-        "name": "com_google_auto_value_auto_value_annotations_1_7",
+        "generator_name": "com_google_auto_auto_common_1_2_1",
+        "name": "com_google_auto_auto_common_1_2_1",
         "netrc": "../maven/netrc",
-        "sha256": "b134bab5082e9f49f2b45802573c78e0726e059b645323645da03e328e501f86",
+        "sha256": "f43f29fe2a6ebaf04b2598cdeec32a4e346d49a9404e990f5fc19c19f3a28d0e",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/auto/value/auto-value-annotations/1.7/auto-value-annotations-1.7.jar",
-            "https://dl.google.com/android/maven2/com/google/auto/value/auto-value-annotations/1.7/auto-value-annotations-1.7.jar"
+            "https://repo1.maven.org/maven2/com/google/auto/auto-common/1.2.1/auto-common-1.2.1.jar"
+        ]
+    },
+    "com_google_auto_service_auto_service_1_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auto/service/auto-service/1.0/auto-service-1.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_auto_service_auto_service_1_0",
+        "name": "com_google_auto_service_auto_service_1_0",
+        "netrc": "../maven/netrc",
+        "sha256": "4ae44dd05b49a1109a463c0d2aaf920c24f76d1e996bb89f29481c4ff75ec526",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/auto/service/auto-service/1.0/auto-service-1.0.jar"
+        ]
+    },
+    "com_google_auto_service_auto_service_annotations_1_0_1": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auto/service/auto-service-annotations/1.0.1/auto-service-annotations-1.0.1.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_auto_service_auto_service_annotations_1_0_1",
+        "name": "com_google_auto_service_auto_service_annotations_1_0_1",
+        "netrc": "../maven/netrc",
+        "sha256": "c7bec54b7b5588b5967e870341091c5691181d954cf2039f1bf0a6eeb837473b",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/auto/service/auto-service-annotations/1.0.1/auto-service-annotations-1.0.1.jar"
+        ]
+    },
+    "com_google_auto_value_auto_value_1_8_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auto/value/auto-value/1.8.2/auto-value-1.8.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_auto_value_auto_value_1_8_2",
+        "name": "com_google_auto_value_auto_value_1_8_2",
+        "netrc": "../maven/netrc",
+        "sha256": "2067b788d4c1c96fd621ad861053a5c4d8a801cfafc77fec20d49a6e9340a745",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/auto/value/auto-value/1.8.2/auto-value-1.8.2.jar"
         ]
     },
     "com_google_auto_value_auto_value_annotations_1_7_4": {
@@ -754,6 +849,17 @@
         "urls": [
             "https://repo1.maven.org/maven2/com/google/auto/value/auto-value-annotations/1.7.4/auto-value-annotations-1.7.4.jar",
             "https://maven.google.com/com/google/auto/value/auto-value-annotations/1.7.4/auto-value-annotations-1.7.4.jar"
+        ]
+    },
+    "com_google_auto_value_auto_value_annotations_1_9": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/auto/value/auto-value-annotations/1.9/auto-value-annotations-1.9.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_auto_value_auto_value_annotations_1_9",
+        "name": "com_google_auto_value_auto_value_annotations_1_9",
+        "netrc": "../maven/netrc",
+        "sha256": "fa5469f4c44ee598a2d8f033ab0a9dcbc6498a0c5e0c998dfa0c2adf51358044",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/auto/value/auto-value-annotations/1.9/auto-value-annotations-1.9.jar"
         ]
     },
     "com_google_cloud_google_cloud_core_1_93_10": {
@@ -818,26 +924,46 @@
     },
     "com_google_code_gson_gson_2_9_0": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar",
-        "generator_function": "rules_jvm_external_setup",
+        "generator_function": "pinned_maven_install",
         "generator_name": "com_google_code_gson_gson_2_9_0",
         "name": "com_google_code_gson_gson_2_9_0",
-        "netrc": "../rules_jvm_external_deps/netrc",
+        "netrc": "../maven/netrc",
         "sha256": "c96d60551331a196dac54b745aa642cd078ef89b6f267146b705f2c2cbef052d",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar",
-            "https://maven.google.com/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar"
+            "https://repo1.maven.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_annotations_2_16": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.16/error_prone_annotations-2.16.jar",
+    "com_google_code_java_allocation_instrumenter_java_allocation_instrumenter_3_3_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/code/java-allocation-instrumenter/java-allocation-instrumenter/3.3.0/java-allocation-instrumenter-3.3.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_annotations_2_16",
-        "name": "com_google_errorprone_error_prone_annotations_2_16",
+        "generator_name": "com_google_code_java_allocation_instrumenter_java_allocation_instrumenter_3_3_0",
+        "name": "com_google_code_java_allocation_instrumenter_java_allocation_instrumenter_3_3_0",
         "netrc": "../maven/netrc",
-        "sha256": "2668536a354cda63d19885fcabdecd8d6298aec4260cdfdf34b722e964d60396",
+        "sha256": "1ef5535a8bd41cf3072469f381b9ee6ab28275311a7499f53d6e52adf976fef0",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.16/error_prone_annotations-2.16.jar",
-            "https://dl.google.com/android/maven2/com/google/errorprone/error_prone_annotations/2.16/error_prone_annotations-2.16.jar"
+            "https://repo1.maven.org/maven2/com/google/code/java-allocation-instrumenter/java-allocation-instrumenter/3.3.0/java-allocation-instrumenter-3.3.0.jar"
+        ]
+    },
+    "com_google_errorprone_error_prone_annotation_2_18_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotation/2.18.0/error_prone_annotation-2.18.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_errorprone_error_prone_annotation_2_18_0",
+        "name": "com_google_errorprone_error_prone_annotation_2_18_0",
+        "netrc": "../maven/netrc",
+        "sha256": "6e5c594971265b03d39b8fb40a5d92f073ae1d98e47d37a3a3f2702e4e31f267",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotation/2.18.0/error_prone_annotation-2.18.0.jar"
+        ]
+    },
+    "com_google_errorprone_error_prone_annotations_2_18_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_errorprone_error_prone_annotations_2_18_0",
+        "name": "com_google_errorprone_error_prone_annotations_2_18_0",
+        "netrc": "../maven/netrc",
+        "sha256": "9e6814cb71816988a4fd1b07a993a8f21bb7058d522c162b1de849e19bea54ae",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar"
         ]
     },
     "com_google_errorprone_error_prone_annotations_2_3_4": {
@@ -864,16 +990,70 @@
             "https://maven.google.com/com/google/errorprone/error_prone_annotations/2.4.0/error_prone_annotations-2.4.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_type_annotations_2_16": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.16/error_prone_type_annotations-2.16.jar",
+    "com_google_errorprone_error_prone_check_api_2_18_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_check_api/2.18.0/error_prone_check_api-2.18.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_type_annotations_2_16",
-        "name": "com_google_errorprone_error_prone_type_annotations_2_16",
+        "generator_name": "com_google_errorprone_error_prone_check_api_2_18_0",
+        "name": "com_google_errorprone_error_prone_check_api_2_18_0",
         "netrc": "../maven/netrc",
-        "sha256": "32cbcd4b937fb41e38968386525e7ed9de27fb724777d5b4b1b126aeb960ff38",
+        "sha256": "6c34578691c4fae9bced50b2a3fe8b4e0420469fb0770655a3ea41ed2a9e40a4",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.16/error_prone_type_annotations-2.16.jar",
-            "https://dl.google.com/android/maven2/com/google/errorprone/error_prone_type_annotations/2.16/error_prone_type_annotations-2.16.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_check_api/2.18.0/error_prone_check_api-2.18.0.jar"
+        ]
+    },
+    "com_google_errorprone_error_prone_core_2_18_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_core/2.18.0/error_prone_core-2.18.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_errorprone_error_prone_core_2_18_0",
+        "name": "com_google_errorprone_error_prone_core_2_18_0",
+        "netrc": "../maven/netrc",
+        "sha256": "eabbecefbb40c8ab7c2f17b5ef1715a8065f6b9718d4a02cf91850e65bfcc241",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_core/2.18.0/error_prone_core-2.18.0.jar"
+        ]
+    },
+    "com_google_errorprone_error_prone_type_annotations_2_18_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.18.0/error_prone_type_annotations-2.18.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_errorprone_error_prone_type_annotations_2_18_0",
+        "name": "com_google_errorprone_error_prone_type_annotations_2_18_0",
+        "netrc": "../maven/netrc",
+        "sha256": "d2ab73bc6807277f7463391504313e47bc3465ab1916339c8e82be633a9ab375",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.18.0/error_prone_type_annotations-2.18.0.jar"
+        ]
+    },
+    "com_google_flogger_flogger_0_5_1": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/flogger/flogger/0.5.1/flogger-0.5.1.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_flogger_flogger_0_5_1",
+        "name": "com_google_flogger_flogger_0_5_1",
+        "netrc": "../maven/netrc",
+        "sha256": "b5ecd1483e041197012786f749968a62063c1964d3ecfbf96ba92a95797bb8f5",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/flogger/flogger/0.5.1/flogger-0.5.1.jar"
+        ]
+    },
+    "com_google_flogger_flogger_system_backend_0_5_1": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/flogger/flogger-system-backend/0.5.1/flogger-system-backend-0.5.1.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_flogger_flogger_system_backend_0_5_1",
+        "name": "com_google_flogger_flogger_system_backend_0_5_1",
+        "netrc": "../maven/netrc",
+        "sha256": "685de33b53eb313049bbeee7f4b7a80dd09e8e754e96b048a3edab2cebb36442",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/flogger/flogger-system-backend/0.5.1/flogger-system-backend-0.5.1.jar"
+        ]
+    },
+    "com_google_flogger_google_extensions_0_5_1": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/flogger/google-extensions/0.5.1/google-extensions-0.5.1.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_flogger_google_extensions_0_5_1",
+        "name": "com_google_flogger_google_extensions_0_5_1",
+        "netrc": "../maven/netrc",
+        "sha256": "8b0862cad85b9549f355fe383c6c63816d2f19529634e033ae06d0107ab110b9",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/flogger/google-extensions/0.5.1/google-extensions-0.5.1.jar"
         ]
     },
     "com_google_googleapis": {
@@ -940,8 +1120,7 @@
         "netrc": "../maven/netrc",
         "sha256": "a42edc9cab792e39fe39bb94f3fca655ed157ff87a8af78e1d6ba5b07c4a00ab",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar",
-            "https://dl.google.com/android/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"
+            "https://repo1.maven.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"
         ]
     },
     "com_google_guava_guava_testlib_31_1_jre": {
@@ -952,8 +1131,7 @@
         "netrc": "../maven/netrc",
         "sha256": "aadc71b10d5c3ac474dd16be84cfb18d257e584d1e0a59f8cab64ef4376226ce",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/guava/guava-testlib/31.1-jre/guava-testlib-31.1-jre.jar",
-            "https://dl.google.com/android/maven2/com/google/guava/guava-testlib/31.1-jre/guava-testlib-31.1-jre.jar"
+            "https://repo1.maven.org/maven2/com/google/guava/guava-testlib/31.1-jre/guava-testlib-31.1-jre.jar"
         ]
     },
     "com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava": {
@@ -980,6 +1158,28 @@
             "https://maven.google.com/com/google/http-client/google-http-client/1.38.0/google-http-client-1.38.0.jar"
         ]
     },
+    "com_google_http_client_google_http_client_1_42_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/http-client/google-http-client/1.42.0/google-http-client-1.42.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_http_client_google_http_client_1_42_0",
+        "name": "com_google_http_client_google_http_client_1_42_0",
+        "netrc": "../maven/netrc",
+        "sha256": "82ca0e08171846d1768d5ac3f13244d6fe5a54102c14735ef40bf15d57d478e5",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/http-client/google-http-client/1.42.0/google-http-client-1.42.0.jar"
+        ]
+    },
+    "com_google_http_client_google_http_client_apache_v2_1_42_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/http-client/google-http-client-apache-v2/1.42.0/google-http-client-apache-v2-1.42.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_http_client_google_http_client_apache_v2_1_42_0",
+        "name": "com_google_http_client_google_http_client_apache_v2_1_42_0",
+        "netrc": "../maven/netrc",
+        "sha256": "1fc4964236b67cf3c5651d7ac1dff668f73b7810c7f1dc0862a0e5bc01608785",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/http-client/google-http-client-apache-v2/1.42.0/google-http-client-apache-v2-1.42.0.jar"
+        ]
+    },
     "com_google_http_client_google_http_client_appengine_1_38_0": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/http-client/google-http-client-appengine/1.38.0/google-http-client-appengine-1.38.0.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -990,6 +1190,17 @@
         "urls": [
             "https://repo1.maven.org/maven2/com/google/http-client/google-http-client-appengine/1.38.0/google-http-client-appengine-1.38.0.jar",
             "https://maven.google.com/com/google/http-client/google-http-client-appengine/1.38.0/google-http-client-appengine-1.38.0.jar"
+        ]
+    },
+    "com_google_http_client_google_http_client_gson_1_42_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/http-client/google-http-client-gson/1.42.0/google-http-client-gson-1.42.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_http_client_google_http_client_gson_1_42_0",
+        "name": "com_google_http_client_google_http_client_gson_1_42_0",
+        "netrc": "../maven/netrc",
+        "sha256": "cb852272c1cb0c8449d8b1a70f3e0f2c1efb2063e543183faa43078fb446f540",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/http-client/google-http-client-gson/1.42.0/google-http-client-gson-1.42.0.jar"
         ]
     },
     "com_google_http_client_google_http_client_jackson2_1_38_0": {
@@ -1038,6 +1249,17 @@
         "urls": [
             "https://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client/1.31.1/google-oauth-client-1.31.1.jar",
             "https://maven.google.com/com/google/oauth-client/google-oauth-client/1.31.1/google-oauth-client-1.31.1.jar"
+        ]
+    },
+    "com_google_oauth_client_google_oauth_client_1_34_1": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client/1.34.1/google-oauth-client-1.34.1.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_oauth_client_google_oauth_client_1_34_1",
+        "name": "com_google_oauth_client_google_oauth_client_1_34_1",
+        "netrc": "../maven/netrc",
+        "sha256": "193edf97aefa28b93c5892bdc598bac34fa4c396588030084f290b1440e8b98a",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client/1.34.1/google-oauth-client-1.34.1.jar"
         ]
     },
     "com_google_protobuf": {
@@ -1142,8 +1364,7 @@
         "netrc": "../maven/netrc",
         "sha256": "261be84be30a56994e132d718a85efcd579197a2edb9426b84c5722c56955eca",
         "urls": [
-            "https://repo1.maven.org/maven2/com/ryanharter/auto/value/auto-value-gson-extension/1.3.1/auto-value-gson-extension-1.3.1.jar",
-            "https://dl.google.com/android/maven2/com/ryanharter/auto/value/auto-value-gson-extension/1.3.1/auto-value-gson-extension-1.3.1.jar"
+            "https://repo1.maven.org/maven2/com/ryanharter/auto/value/auto-value-gson-extension/1.3.1/auto-value-gson-extension-1.3.1.jar"
         ]
     },
     "com_ryanharter_auto_value_auto_value_gson_factory_1_3_1": {
@@ -1154,8 +1375,7 @@
         "netrc": "../maven/netrc",
         "sha256": "5a76c3d401c984999d59868f08df05a15613d1428f7764fed80b722e2a277f6c",
         "urls": [
-            "https://repo1.maven.org/maven2/com/ryanharter/auto/value/auto-value-gson-factory/1.3.1/auto-value-gson-factory-1.3.1.jar",
-            "https://dl.google.com/android/maven2/com/ryanharter/auto/value/auto-value-gson-factory/1.3.1/auto-value-gson-factory-1.3.1.jar"
+            "https://repo1.maven.org/maven2/com/ryanharter/auto/value/auto-value-gson-factory/1.3.1/auto-value-gson-factory-1.3.1.jar"
         ]
     },
     "com_ryanharter_auto_value_auto_value_gson_runtime_1_3_1": {
@@ -1166,8 +1386,7 @@
         "netrc": "../maven/netrc",
         "sha256": "84ee23b7989d4bf19930b5bd3d03c0f2efb9e73bcee3a0208a9d1b2e1979c049",
         "urls": [
-            "https://repo1.maven.org/maven2/com/ryanharter/auto/value/auto-value-gson-runtime/1.3.1/auto-value-gson-runtime-1.3.1.jar",
-            "https://dl.google.com/android/maven2/com/ryanharter/auto/value/auto-value-gson-runtime/1.3.1/auto-value-gson-runtime-1.3.1.jar"
+            "https://repo1.maven.org/maven2/com/ryanharter/auto/value/auto-value-gson-runtime/1.3.1/auto-value-gson-runtime-1.3.1.jar"
         ]
     },
     "com_squareup_javapoet_1_12_0": {
@@ -1178,8 +1397,7 @@
         "netrc": "../maven/netrc",
         "sha256": "2b70cdfa8c9e997b4007035a266c273c0df341f9c57c9d0b45a680ae3fd882db",
         "urls": [
-            "https://repo1.maven.org/maven2/com/squareup/javapoet/1.12.0/javapoet-1.12.0.jar",
-            "https://dl.google.com/android/maven2/com/squareup/javapoet/1.12.0/javapoet-1.12.0.jar"
+            "https://repo1.maven.org/maven2/com/squareup/javapoet/1.12.0/javapoet-1.12.0.jar"
         ]
     },
     "com_squareup_javawriter_2_5_0": {
@@ -1276,6 +1494,28 @@
         "urls": [
             "https://repo1.maven.org/maven2/commons-codec/commons-codec/1.11/commons-codec-1.11.jar",
             "https://maven.google.com/commons-codec/commons-codec/1.11/commons-codec-1.11.jar"
+        ]
+    },
+    "commons_collections_commons_collections_3_2_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "commons_collections_commons_collections_3_2_2",
+        "name": "commons_collections_commons_collections_3_2_2",
+        "netrc": "../maven/netrc",
+        "sha256": "eeeae917917144a68a741d4c0dff66aa5c5c5fd85593ff217bced3fc8ca783b8",
+        "urls": [
+            "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar"
+        ]
+    },
+    "commons_lang_commons_lang_2_6": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "commons_lang_commons_lang_2_6",
+        "name": "commons_lang_commons_lang_2_6",
+        "netrc": "../maven/netrc",
+        "sha256": "50f11b09f877c294d56f24463f47d28f929cf5044f648661c0f0cfbae9a2f49c",
+        "urls": [
+            "https://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar"
         ]
     },
     "commons_logging_commons_logging_1_2": {
@@ -1395,6 +1635,39 @@
             "https://github.com/bazelbuild/stardoc/archive/1ef781ced3b1443dca3ed05dec1989eca1a4e1cd.tar.gz"
         ]
     },
+    "io_github_java_diff_utils_java_diff_utils_4_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.0/java-diff-utils-4.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_github_java_diff_utils_java_diff_utils_4_0",
+        "name": "io_github_java_diff_utils_java_diff_utils_4_0",
+        "netrc": "../maven/netrc",
+        "sha256": "810232374e76a954949f0e2185cd7d9515addb918cf3da3481f77e07c356b49a",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.0/java-diff-utils-4.0.jar"
+        ]
+    },
+    "io_grpc_grpc_api_1_47_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-api/1.47.0/grpc-api-1.47.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_grpc_grpc_api_1_47_0",
+        "name": "io_grpc_grpc_api_1_47_0",
+        "netrc": "../maven/netrc",
+        "sha256": "1f010f2b5c3a2eb36e006c134908bb710300add1587184c54b00f395967a59de",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/grpc/grpc-api/1.47.0/grpc-api-1.47.0.jar"
+        ]
+    },
+    "io_grpc_grpc_auth_1_47_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-auth/1.47.0/grpc-auth-1.47.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_grpc_grpc_auth_1_47_0",
+        "name": "io_grpc_grpc_auth_1_47_0",
+        "netrc": "../maven/netrc",
+        "sha256": "7093b13b735a51e1c7a2f08c66f3c0b78b1e95ff7deee4efb122f70b4c5a50fe",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/grpc/grpc-auth/1.47.0/grpc-auth-1.47.0.jar"
+        ]
+    },
     "io_grpc_grpc_context_1_33_1": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-context/1.33.1/grpc-context-1.33.1.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1405,6 +1678,72 @@
         "urls": [
             "https://repo1.maven.org/maven2/io/grpc/grpc-context/1.33.1/grpc-context-1.33.1.jar",
             "https://maven.google.com/io/grpc/grpc-context/1.33.1/grpc-context-1.33.1.jar"
+        ]
+    },
+    "io_grpc_grpc_context_1_47_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-context/1.47.0/grpc-context-1.47.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_grpc_grpc_context_1_47_0",
+        "name": "io_grpc_grpc_context_1_47_0",
+        "netrc": "../maven/netrc",
+        "sha256": "96be1500d7cf441aa254a064d6dfea3c5bd96e018051724fa0bf73e14b8634e8",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/grpc/grpc-context/1.47.0/grpc-context-1.47.0.jar"
+        ]
+    },
+    "io_grpc_grpc_core_1_47_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-core/1.47.0/grpc-core-1.47.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_grpc_grpc_core_1_47_0",
+        "name": "io_grpc_grpc_core_1_47_0",
+        "netrc": "../maven/netrc",
+        "sha256": "9bdff03bc11d98101498e791c0057c9834c9a926c9726896a7c2832099130640",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/grpc/grpc-core/1.47.0/grpc-core-1.47.0.jar"
+        ]
+    },
+    "io_grpc_grpc_netty_1_47_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-netty/1.47.0/grpc-netty-1.47.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_grpc_grpc_netty_1_47_0",
+        "name": "io_grpc_grpc_netty_1_47_0",
+        "netrc": "../maven/netrc",
+        "sha256": "4ce9ff08146dfa61c4a54ae454df3501443c5e72193e0ac47d9748a14db91125",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/grpc/grpc-netty/1.47.0/grpc-netty-1.47.0.jar"
+        ]
+    },
+    "io_grpc_grpc_protobuf_1_47_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-protobuf/1.47.0/grpc-protobuf-1.47.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_grpc_grpc_protobuf_1_47_0",
+        "name": "io_grpc_grpc_protobuf_1_47_0",
+        "netrc": "../maven/netrc",
+        "sha256": "c7f140ba5c533f718416619cf1ccae18e0bd00a842def28c3c569cba569ea49a",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/grpc/grpc-protobuf/1.47.0/grpc-protobuf-1.47.0.jar"
+        ]
+    },
+    "io_grpc_grpc_protobuf_lite_1_47_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-protobuf-lite/1.47.0/grpc-protobuf-lite-1.47.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_grpc_grpc_protobuf_lite_1_47_0",
+        "name": "io_grpc_grpc_protobuf_lite_1_47_0",
+        "netrc": "../maven/netrc",
+        "sha256": "9ba0a5033b1392c01b70934740b2ecb14ec23f125342270617fac81d0dc9502c",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/grpc/grpc-protobuf-lite/1.47.0/grpc-protobuf-lite-1.47.0.jar"
+        ]
+    },
+    "io_grpc_grpc_stub_1_47_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/grpc/grpc-stub/1.47.0/grpc-stub-1.47.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_grpc_grpc_stub_1_47_0",
+        "name": "io_grpc_grpc_stub_1_47_0",
+        "netrc": "../maven/netrc",
+        "sha256": "c467070e7e3748302465e022b491b4c073b98ae1e9753283a286ddee9ba43e7b",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/grpc/grpc-stub/1.47.0/grpc-stub-1.47.0.jar"
         ]
     },
     "io_netty_netty_buffer_4_1_72_Final": {
@@ -1419,6 +1758,17 @@
             "https://maven.google.com/io/netty/netty-buffer/4.1.72.Final/netty-buffer-4.1.72.Final.jar"
         ]
     },
+    "io_netty_netty_buffer_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-buffer/4.1.87.Final/netty-buffer-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_buffer_4_1_87_Final",
+        "name": "io_netty_netty_buffer_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "4e3abdf4ddb8810f5fb4a2b57c9144407873b359faa1894007673ed1465dd3e8",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-buffer/4.1.87.Final/netty-buffer-4.1.87.Final.jar"
+        ]
+    },
     "io_netty_netty_codec_4_1_72_Final": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-codec/4.1.72.Final/netty-codec-4.1.72.Final.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1429,6 +1779,28 @@
         "urls": [
             "https://repo1.maven.org/maven2/io/netty/netty-codec/4.1.72.Final/netty-codec-4.1.72.Final.jar",
             "https://maven.google.com/io/netty/netty-codec/4.1.72.Final/netty-codec-4.1.72.Final.jar"
+        ]
+    },
+    "io_netty_netty_codec_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-codec/4.1.87.Final/netty-codec-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_codec_4_1_87_Final",
+        "name": "io_netty_netty_codec_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "c643fe8318b7c7405acec13ed98e8f634f917960b20486295efbc5a690bac694",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-codec/4.1.87.Final/netty-codec-4.1.87.Final.jar"
+        ]
+    },
+    "io_netty_netty_codec_dns_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-codec-dns/4.1.87.Final/netty-codec-dns-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_codec_dns_4_1_87_Final",
+        "name": "io_netty_netty_codec_dns_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "c19f96d217e91ddf76a122d4d542566239b64399a2b5f49533ca37acf63ef74f",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-codec-dns/4.1.87.Final/netty-codec-dns-4.1.87.Final.jar"
         ]
     },
     "io_netty_netty_codec_http2_4_1_72_Final": {
@@ -1443,6 +1815,17 @@
             "https://maven.google.com/io/netty/netty-codec-http2/4.1.72.Final/netty-codec-http2-4.1.72.Final.jar"
         ]
     },
+    "io_netty_netty_codec_http2_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http2/4.1.87.Final/netty-codec-http2-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_codec_http2_4_1_87_Final",
+        "name": "io_netty_netty_codec_http2_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "e5d01b8db385b23103de67d3666c6fa9fa144d42217a3c8266b2a5efe425f093",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-codec-http2/4.1.87.Final/netty-codec-http2-4.1.87.Final.jar"
+        ]
+    },
     "io_netty_netty_codec_http_4_1_72_Final": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.72.Final/netty-codec-http-4.1.72.Final.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1453,6 +1836,28 @@
         "urls": [
             "https://repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.72.Final/netty-codec-http-4.1.72.Final.jar",
             "https://maven.google.com/io/netty/netty-codec-http/4.1.72.Final/netty-codec-http-4.1.72.Final.jar"
+        ]
+    },
+    "io_netty_netty_codec_http_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.87.Final/netty-codec-http-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_codec_http_4_1_87_Final",
+        "name": "io_netty_netty_codec_http_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "39368c15595b791dbe26e7639cf2e71b6647bab8838fa5781cf7a80762eac927",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.87.Final/netty-codec-http-4.1.87.Final.jar"
+        ]
+    },
+    "io_netty_netty_codec_socks_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-codec-socks/4.1.87.Final/netty-codec-socks-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_codec_socks_4_1_87_Final",
+        "name": "io_netty_netty_codec_socks_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "41a76a64514f8f8f50ab8527254073521394138e8a96191905e8c143368b2006",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-codec-socks/4.1.87.Final/netty-codec-socks-4.1.87.Final.jar"
         ]
     },
     "io_netty_netty_common_4_1_72_Final": {
@@ -1467,6 +1872,17 @@
             "https://maven.google.com/io/netty/netty-common/4.1.72.Final/netty-common-4.1.72.Final.jar"
         ]
     },
+    "io_netty_netty_common_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-common/4.1.87.Final/netty-common-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_common_4_1_87_Final",
+        "name": "io_netty_netty_common_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "811443fc1411a9ef7c1f7b02a750e2a6688f1eec0ae7361ed07812a85d982c86",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-common/4.1.87.Final/netty-common-4.1.87.Final.jar"
+        ]
+    },
     "io_netty_netty_handler_4_1_72_Final": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-handler/4.1.72.Final/netty-handler-4.1.72.Final.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1477,6 +1893,28 @@
         "urls": [
             "https://repo1.maven.org/maven2/io/netty/netty-handler/4.1.72.Final/netty-handler-4.1.72.Final.jar",
             "https://maven.google.com/io/netty/netty-handler/4.1.72.Final/netty-handler-4.1.72.Final.jar"
+        ]
+    },
+    "io_netty_netty_handler_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-handler/4.1.87.Final/netty-handler-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_handler_4_1_87_Final",
+        "name": "io_netty_netty_handler_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "31a20e1de13b06a677a4719fd5aa95635982114a32c1d034739a48cceada2383",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-handler/4.1.87.Final/netty-handler-4.1.87.Final.jar"
+        ]
+    },
+    "io_netty_netty_handler_proxy_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-handler-proxy/4.1.87.Final/netty-handler-proxy-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_handler_proxy_4_1_87_Final",
+        "name": "io_netty_netty_handler_proxy_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "65276b2ab687b1b7c1ceabcc941d6e2cce1038f35b581218d7dbf46b16c5b4ac",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-handler-proxy/4.1.87.Final/netty-handler-proxy-4.1.87.Final.jar"
         ]
     },
     "io_netty_netty_resolver_4_1_72_Final": {
@@ -1491,6 +1929,83 @@
             "https://maven.google.com/io/netty/netty-resolver/4.1.72.Final/netty-resolver-4.1.72.Final.jar"
         ]
     },
+    "io_netty_netty_resolver_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-resolver/4.1.87.Final/netty-resolver-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_resolver_4_1_87_Final",
+        "name": "io_netty_netty_resolver_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "ee11d22d240b4b125edaed23ec7cc35ad9241b1b8fdd50630de20411ec345fc7",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-resolver/4.1.87.Final/netty-resolver-4.1.87.Final.jar"
+        ]
+    },
+    "io_netty_netty_resolver_dns_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-resolver-dns/4.1.87.Final/netty-resolver-dns-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_resolver_dns_4_1_87_Final",
+        "name": "io_netty_netty_resolver_dns_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "33eaaf06577eb2b56d69dd6c8b82ebb0439c2e3d30c2d46608c90c6748dc0608",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-resolver-dns/4.1.87.Final/netty-resolver-dns-4.1.87.Final.jar"
+        ]
+    },
+    "io_netty_netty_tcnative_boringssl_static_jar_linux_aarch_64_2_0_56_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-linux-aarch_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_tcnative_boringssl_static_jar_linux_aarch_64_2_0_56_Final",
+        "name": "io_netty_netty_tcnative_boringssl_static_jar_linux_aarch_64_2_0_56_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "8e5a30fc4a9514714367813f8027df4c9672746797b0699d83958d678e5cfeca",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-linux-aarch_64.jar"
+        ]
+    },
+    "io_netty_netty_tcnative_boringssl_static_jar_linux_x86_64_2_0_56_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-linux-x86_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_tcnative_boringssl_static_jar_linux_x86_64_2_0_56_Final",
+        "name": "io_netty_netty_tcnative_boringssl_static_jar_linux_x86_64_2_0_56_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "725c26b4dd58a1aa782020952ad949bdb607235dd20ee49e5a5875c15456ca86",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-linux-x86_64.jar"
+        ]
+    },
+    "io_netty_netty_tcnative_boringssl_static_jar_osx_aarch_64_2_0_56_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-osx-aarch_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_tcnative_boringssl_static_jar_osx_aarch_64_2_0_56_Final",
+        "name": "io_netty_netty_tcnative_boringssl_static_jar_osx_aarch_64_2_0_56_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "3b962ce1361b479ec7375f04e5d149e7b374a99ecf4f583c9aa0f0a92e5fa415",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-osx-aarch_64.jar"
+        ]
+    },
+    "io_netty_netty_tcnative_boringssl_static_jar_osx_x86_64_2_0_56_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-osx-x86_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_tcnative_boringssl_static_jar_osx_x86_64_2_0_56_Final",
+        "name": "io_netty_netty_tcnative_boringssl_static_jar_osx_x86_64_2_0_56_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "9a77e8910af04becbdb535592c6a1e1a9accecde522aa1bb925a023c2c59d6dc",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-osx-x86_64.jar"
+        ]
+    },
+    "io_netty_netty_tcnative_boringssl_static_jar_windows_x86_64_2_0_56_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-windows-x86_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_tcnative_boringssl_static_jar_windows_x86_64_2_0_56_Final",
+        "name": "io_netty_netty_tcnative_boringssl_static_jar_windows_x86_64_2_0_56_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "b0d9505b09427ab655369506a802358966762edcb7cf08fc162dc2b368a2041c",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.56.Final/netty-tcnative-boringssl-static-2.0.56.Final-windows-x86_64.jar"
+        ]
+    },
     "io_netty_netty_tcnative_classes_2_0_46_Final": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-tcnative-classes/2.0.46.Final/netty-tcnative-classes-2.0.46.Final.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1501,6 +2016,17 @@
         "urls": [
             "https://repo1.maven.org/maven2/io/netty/netty-tcnative-classes/2.0.46.Final/netty-tcnative-classes-2.0.46.Final.jar",
             "https://maven.google.com/io/netty/netty-tcnative-classes/2.0.46.Final/netty-tcnative-classes-2.0.46.Final.jar"
+        ]
+    },
+    "io_netty_netty_tcnative_classes_2_0_56_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-tcnative-classes/2.0.56.Final/netty-tcnative-classes-2.0.56.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_tcnative_classes_2_0_56_Final",
+        "name": "io_netty_netty_tcnative_classes_2_0_56_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "eede807f0dd5eb1ad74ea1ae1094430631da63fcde00d4dc20eb0cd048bb0ac3",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-tcnative-classes/2.0.56.Final/netty-tcnative-classes-2.0.56.Final.jar"
         ]
     },
     "io_netty_netty_transport_4_1_72_Final": {
@@ -1515,6 +2041,17 @@
             "https://maven.google.com/io/netty/netty-transport/4.1.72.Final/netty-transport-4.1.72.Final.jar"
         ]
     },
+    "io_netty_netty_transport_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport/4.1.87.Final/netty-transport-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_4_1_87_Final",
+        "name": "io_netty_netty_transport_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "17ed465cf5b1579b72379e47be3ba7fccb09dda8d95d47c8d668118483b08f43",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport/4.1.87.Final/netty-transport-4.1.87.Final.jar"
+        ]
+    },
     "io_netty_netty_transport_classes_epoll_4_1_72_Final": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-classes-epoll/4.1.72.Final/netty-transport-classes-epoll-4.1.72.Final.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1527,6 +2064,72 @@
             "https://maven.google.com/io/netty/netty-transport-classes-epoll/4.1.72.Final/netty-transport-classes-epoll-4.1.72.Final.jar"
         ]
     },
+    "io_netty_netty_transport_classes_epoll_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-classes-epoll/4.1.87.Final/netty-transport-classes-epoll-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_classes_epoll_4_1_87_Final",
+        "name": "io_netty_netty_transport_classes_epoll_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "0b50ae7e1cb32f89c3a8b38a29605cfe6bd797693b3374fbf2577fbc03719297",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-classes-epoll/4.1.87.Final/netty-transport-classes-epoll-4.1.87.Final.jar"
+        ]
+    },
+    "io_netty_netty_transport_classes_kqueue_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-classes-kqueue/4.1.87.Final/netty-transport-classes-kqueue-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_classes_kqueue_4_1_87_Final",
+        "name": "io_netty_netty_transport_classes_kqueue_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "94abb9234691ce082bbc0d1d533e186cfd1a312d7515a47647896945e7fdbf87",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-classes-kqueue/4.1.87.Final/netty-transport-classes-kqueue-4.1.87.Final.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_epoll_jar_linux_aarch_64_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.87.Final/netty-transport-native-epoll-4.1.87.Final-linux-aarch_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_epoll_jar_linux_aarch_64_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_epoll_jar_linux_aarch_64_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "e83c645de0623d28d6fc72a5a2b6322b2758f01aee83fa5af73f353bebdf028e",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.87.Final/netty-transport-native-epoll-4.1.87.Final-linux-aarch_64.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_epoll_jar_linux_x86_64_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.87.Final/netty-transport-native-epoll-4.1.87.Final-linux-x86_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_epoll_jar_linux_x86_64_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_epoll_jar_linux_x86_64_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "bb3752881a027efa99388bef21f3287a6553299930f4226a6ea683da21c957f2",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.87.Final/netty-transport-native-epoll-4.1.87.Final-linux-x86_64.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_kqueue_jar_osx_aarch_64_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-kqueue/4.1.87.Final/netty-transport-native-kqueue-4.1.87.Final-osx-aarch_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_kqueue_jar_osx_aarch_64_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_kqueue_jar_osx_aarch_64_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "27e5bd891a4b8b70db2bf1a4c419fc666714a385d98194fbe3c856cac99610bd",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-kqueue/4.1.87.Final/netty-transport-native-kqueue-4.1.87.Final-osx-aarch_64.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_kqueue_jar_osx_x86_64_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-kqueue/4.1.87.Final/netty-transport-native-kqueue-4.1.87.Final-osx-x86_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_kqueue_jar_osx_x86_64_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_kqueue_jar_osx_x86_64_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "dba5794dabbbfa7d97f659b135a14f37544b20cf4438165f4b0ff65bbe525f51",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-kqueue/4.1.87.Final/netty-transport-native-kqueue-4.1.87.Final-osx-x86_64.jar"
+        ]
+    },
     "io_netty_netty_transport_native_unix_common_4_1_72_Final": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.72.Final/netty-transport-native-unix-common-4.1.72.Final.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1537,6 +2140,72 @@
         "urls": [
             "https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.72.Final/netty-transport-native-unix-common-4.1.72.Final.jar",
             "https://maven.google.com/io/netty/netty-transport-native-unix-common/4.1.72.Final/netty-transport-native-unix-common-4.1.72.Final.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_unix_common_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_unix_common_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_unix_common_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "cc2d013c933c206605da01be39f4c2c1f4586a1b9103a665bd724bdd46d9cd0c",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_unix_common_jar_linux_aarch_64_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final-linux-aarch_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_unix_common_jar_linux_aarch_64_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_unix_common_jar_linux_aarch_64_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "41bbedd9e89a290970d4d3428c6d0d72808c58f3301331055518b028318aa442",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final-linux-aarch_64.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_unix_common_jar_linux_x86_64_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final-linux-x86_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_unix_common_jar_linux_x86_64_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_unix_common_jar_linux_x86_64_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "c64d927132dbe7c42d26eeabee37237900729b7e2eccf86376b285120978afba",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final-linux-x86_64.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_unix_common_jar_osx_aarch_64_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final-osx-aarch_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_unix_common_jar_osx_aarch_64_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_unix_common_jar_osx_aarch_64_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "4be35bfc0b950ff95d16359e5ac8ef6920f84247b13b2997ae0af607ba41e76c",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final-osx-aarch_64.jar"
+        ]
+    },
+    "io_netty_netty_transport_native_unix_common_jar_osx_x86_64_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final-osx-x86_64.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_native_unix_common_jar_osx_x86_64_4_1_87_Final",
+        "name": "io_netty_netty_transport_native_unix_common_jar_osx_x86_64_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "c57d14fd8c694325d887be1e396671f00fcd72e0471d14eb86c507bd2fabd247",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.87.Final/netty-transport-native-unix-common-4.1.87.Final-osx-x86_64.jar"
+        ]
+    },
+    "io_netty_netty_transport_sctp_4_1_87_Final": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/netty/netty-transport-sctp/4.1.87.Final/netty-transport-sctp-4.1.87.Final.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_netty_netty_transport_sctp_4_1_87_Final",
+        "name": "io_netty_netty_transport_sctp_4_1_87_Final",
+        "netrc": "../maven/netrc",
+        "sha256": "600bc9b708885dd8807b09afaae0a848c4192bace1fc91802066bf6a2e643005",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/netty/netty-transport-sctp/4.1.87.Final/netty-transport-sctp-4.1.87.Final.jar"
         ]
     },
     "io_opencensus_cpp": {
@@ -1562,6 +2231,17 @@
             "https://maven.google.com/io/opencensus/opencensus-api/0.24.0/opencensus-api-0.24.0.jar"
         ]
     },
+    "io_opencensus_opencensus_api_0_31_1": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/opencensus/opencensus-api/0.31.1/opencensus-api-0.31.1.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_opencensus_opencensus_api_0_31_1",
+        "name": "io_opencensus_opencensus_api_0_31_1",
+        "netrc": "../maven/netrc",
+        "sha256": "f1474d47f4b6b001558ad27b952e35eda5cc7146788877fc52938c6eba24b382",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/opencensus/opencensus-api/0.31.1/opencensus-api-0.31.1.jar"
+        ]
+    },
     "io_opencensus_opencensus_contrib_http_util_0_24_0": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/opencensus/opencensus-contrib-http-util/0.24.0/opencensus-contrib-http-util-0.24.0.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1574,6 +2254,39 @@
             "https://maven.google.com/io/opencensus/opencensus-contrib-http-util/0.24.0/opencensus-contrib-http-util-0.24.0.jar"
         ]
     },
+    "io_opencensus_opencensus_contrib_http_util_0_31_1": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_opencensus_opencensus_contrib_http_util_0_31_1",
+        "name": "io_opencensus_opencensus_contrib_http_util_0_31_1",
+        "netrc": "../maven/netrc",
+        "sha256": "3ea995b55a4068be22989b70cc29a4d788c2d328d1d50613a7a9afd13fdd2d0a",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar"
+        ]
+    },
+    "io_perfmark_perfmark_api_0_25_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/perfmark/perfmark-api/0.25.0/perfmark-api-0.25.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_perfmark_perfmark_api_0_25_0",
+        "name": "io_perfmark_perfmark_api_0_25_0",
+        "netrc": "../maven/netrc",
+        "sha256": "2044542933fcdf40ad18441bec37646d150c491871157f288847e29cb81de4cb",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/perfmark/perfmark-api/0.25.0/perfmark-api-0.25.0.jar"
+        ]
+    },
+    "io_reactivex_rxjava3_rxjava_3_1_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/reactivex/rxjava3/rxjava/3.1.2/rxjava-3.1.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "io_reactivex_rxjava3_rxjava_3_1_2",
+        "name": "io_reactivex_rxjava3_rxjava_3_1_2",
+        "netrc": "../maven/netrc",
+        "sha256": "8d784075bec0b7c55042c109a4de8923b3b6d2ebd2e00912d518f07240f9c23a",
+        "urls": [
+            "https://repo1.maven.org/maven2/io/reactivex/rxjava3/rxjava/3.1.2/rxjava-3.1.2.jar"
+        ]
+    },
     "io_sweers_autotransient_autotransient_1_0_0": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/io/sweers/autotransient/autotransient/1.0.0/autotransient-1.0.0.jar",
         "generator_function": "pinned_maven_install",
@@ -1582,8 +2295,7 @@
         "netrc": "../maven/netrc",
         "sha256": "914ce84508410ee1419514925f93b1855a9f7a7b5b5d02fc07f411d2a45f1bba",
         "urls": [
-            "https://repo1.maven.org/maven2/io/sweers/autotransient/autotransient/1.0.0/autotransient-1.0.0.jar",
-            "https://dl.google.com/android/maven2/io/sweers/autotransient/autotransient/1.0.0/autotransient-1.0.0.jar"
+            "https://repo1.maven.org/maven2/io/sweers/autotransient/autotransient/1.0.0/autotransient-1.0.0.jar"
         ]
     },
     "it_unimi_dsi_fastutil_8_4_0": {
@@ -1654,16 +2366,26 @@
             "https://github.com/bazelbuild/java_tools/releases/download/java_v11.11/java_tools_windows-v11.11.zip"
         ]
     },
+    "javax_activation_javax_activation_api_1_2_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "javax_activation_javax_activation_api_1_2_0",
+        "name": "javax_activation_javax_activation_api_1_2_0",
+        "netrc": "../maven/netrc",
+        "sha256": "43fdef0b5b6ceb31b0424b208b930c74ab58fac2ceeb7b3f6fd3aeb8b5ca4393",
+        "urls": [
+            "https://repo1.maven.org/maven2/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar"
+        ]
+    },
     "javax_annotation_javax_annotation_api_1_3_2": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar",
-        "generator_function": "rules_jvm_external_setup",
+        "generator_function": "pinned_maven_install",
         "generator_name": "javax_annotation_javax_annotation_api_1_3_2",
         "name": "javax_annotation_javax_annotation_api_1_3_2",
-        "netrc": "../rules_jvm_external_deps/netrc",
+        "netrc": "../maven/netrc",
         "sha256": "e04ba5195bcd555dc95650f7cc614d151e4bcd52d29a10b8aa2197f3ab89ab9b",
         "urls": [
-            "https://repo1.maven.org/maven2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar",
-            "https://maven.google.com/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar"
+            "https://repo1.maven.org/maven2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar"
         ]
     },
     "javax_inject_javax_inject_1": {
@@ -1686,8 +2408,7 @@
         "netrc": "../maven/netrc",
         "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3",
         "urls": [
-            "https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
-            "https://dl.google.com/android/maven2/junit/junit/4.13.2/junit-4.13.2.jar"
+            "https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar"
         ]
     },
     "microsoft-jdk-11.0.13.8.1-windows-aarch64.zip": {
@@ -1695,6 +2416,28 @@
         "sha256": "b8a28e6e767d90acf793ea6f5bed0bb595ba0ba5ebdf8b99f395266161e53ec2",
         "urls": [
             "https://mirror.bazel.build/aka.ms/download-jdk/microsoft-jdk-11.0.13.8.1-windows-aarch64.zip"
+        ]
+    },
+    "net_bytebuddy_byte_buddy_1_9_7": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.9.7/byte-buddy-1.9.7.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "net_bytebuddy_byte_buddy_1_9_7",
+        "name": "net_bytebuddy_byte_buddy_1_9_7",
+        "netrc": "../maven/netrc",
+        "sha256": "69a9140c11de463789a1badfe6c3dcdc17608c4304cb443c5c3a179585b78b39",
+        "urls": [
+            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.9.7/byte-buddy-1.9.7.jar"
+        ]
+    },
+    "net_bytebuddy_byte_buddy_agent_1_9_7": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.9.7/byte-buddy-agent-1.9.7.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "net_bytebuddy_byte_buddy_agent_1_9_7",
+        "name": "net_bytebuddy_byte_buddy_agent_1_9_7",
+        "netrc": "../maven/netrc",
+        "sha256": "145ce0fab5390374e69b2b4070d65fedaa2b07c3cfad06b330bea1b6dcfa826f",
+        "urls": [
+            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.9.7/byte-buddy-agent-1.9.7.jar"
         ]
     },
     "net_java_dev_jna_jna_5_6_0": {
@@ -1995,64 +2738,52 @@
             "https://cdn.azul.com/zulu/bin/zulu17.38.21-ca-jdk17.0.5-win_aarch64.zip"
         ]
     },
-    "openjdk18_darwin_aarch64_archive": {
+    "openjdk19_darwin_aarch64_archive": {
         "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
         "generator_function": "dist_http_archive",
-        "generator_name": "openjdk18_darwin_aarch64_archive",
-        "name": "openjdk18_darwin_aarch64_archive",
-        "sha256": "9595e001451e201fdf33c1952777968a3ac18fe37273bdeaea5b5ed2c4950432",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-macosx_aarch64",
+        "generator_name": "openjdk19_darwin_aarch64_archive",
+        "name": "openjdk19_darwin_aarch64_archive",
+        "sha256": "177d058d968b2fbe7a5ff5eceb18cdc16f6376ce291004f1a3139e78b2fb6391",
+        "strip_prefix": "zulu19.32.13-ca-jdk19.0.2-macosx_aarch64",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_aarch64.tar.gz",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_aarch64.tar.gz"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_aarch64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_aarch64.tar.gz"
         ]
     },
-    "openjdk18_darwin_archive": {
+    "openjdk19_darwin_archive": {
         "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
         "generator_function": "dist_http_archive",
-        "generator_name": "openjdk18_darwin_archive",
-        "name": "openjdk18_darwin_archive",
-        "sha256": "780a9aa4bda95a6793bf41d13f837c59ef915e9bfd0e0c5fd4c70e4cdaa88541",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-macosx_x64",
+        "generator_name": "openjdk19_darwin_archive",
+        "name": "openjdk19_darwin_archive",
+        "sha256": "2804575ae9ac63e39caa910e57610bf52b0f9e2d671928a98d18e2fcc9f62ac1",
+        "strip_prefix": "zulu19.32.13-ca-jdk19.0.2-macosx_x64",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_x64.tar.gz",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_x64.tar.gz"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_x64.tar.gz"
         ]
     },
-    "openjdk18_linux_archive": {
+    "openjdk19_linux_archive": {
         "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
         "generator_function": "dist_http_archive",
-        "generator_name": "openjdk18_linux_archive",
-        "name": "openjdk18_linux_archive",
-        "sha256": "959a94ca4097dcaabc7886784cec10dfdf2b0a3bff890ea8943cc09c5fff29cb",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-linux_x64",
+        "generator_name": "openjdk19_linux_archive",
+        "name": "openjdk19_linux_archive",
+        "sha256": "4a994aded1d9b35258d543a59d4963d2687a1094a818b79a21f00273fbbc5bca",
+        "strip_prefix": "zulu19.32.13-ca-jdk19.0.2-linux_x64",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_x64.tar.gz",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_x64.tar.gz"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz"
         ]
     },
-    "openjdk18_windows_archive": {
+    "openjdk19_windows_archive": {
         "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
         "generator_function": "dist_http_archive",
-        "generator_name": "openjdk18_windows_archive",
-        "name": "openjdk18_windows_archive",
-        "sha256": "6c75498163b047595386fdb909cb6d4e04282c3a81799743c5e1f9316391fe16",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-win_x64",
+        "generator_name": "openjdk19_windows_archive",
+        "name": "openjdk19_windows_archive",
+        "sha256": "d6c768c5ec3252f936bd0562c25458f7c753c62835ca3e91166f975f7a5fe9f1",
+        "strip_prefix": "zulu19.32.13-ca-jdk19.0.2-win_x64",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_x64.zip",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_x64.zip"
-        ]
-    },
-    "openjdk18_windows_arm64_archive": {
-        "build_file_content": "\njava_runtime(name = 'runtime', srcs =  glob(['**']), visibility = ['//visibility:public'])\nexports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])\n",
-        "generator_function": "dist_http_archive",
-        "generator_name": "openjdk18_windows_arm64_archive",
-        "name": "openjdk18_windows_arm64_archive",
-        "sha256": "9b52b259516e4140ee56b91f77750667bffbc543e78ad8c39082449d4c377b54",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-win_aarch64",
-        "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-win_x64.zip",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-win_x64.zip"
         ]
     },
     "openjdk_linux_aarch64_vanilla": {
@@ -2143,6 +2874,17 @@
             "https://cdn.azul.com/zulu/bin/zulu17.38.21-ca-jdk17.0.5-win_x64.zip"
         ]
     },
+    "org_apache_commons_commons_compress_1_19": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/apache/commons/commons-compress/1.19/commons-compress-1.19.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_apache_commons_commons_compress_1_19",
+        "name": "org_apache_commons_commons_compress_1_19",
+        "netrc": "../maven/netrc",
+        "sha256": "ff2d59fad74e867630fbc7daab14c432654712ac624dbee468d220677b124dd5",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/apache/commons/commons-compress/1.19/commons-compress-1.19.jar"
+        ]
+    },
     "org_apache_commons_commons_compress_1_20": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar",
         "generator_function": "pinned_maven_install",
@@ -2165,6 +2907,17 @@
         "urls": [
             "https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar",
             "https://maven.google.com/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar"
+        ]
+    },
+    "org_apache_commons_commons_pool2_2_8_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.8.0/commons-pool2-2.8.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_apache_commons_commons_pool2_2_8_0",
+        "name": "org_apache_commons_commons_pool2_2_8_0",
+        "netrc": "../maven/netrc",
+        "sha256": "5efa9fbb54a58b1a12205a5fac565f6982abfeb0ff45bdbc318748ef5fd3a3ff",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.8.0/commons-pool2-2.8.0.jar"
         ]
     },
     "org_apache_httpcomponents_httpclient_4_5_13": {
@@ -2239,6 +2992,28 @@
             "https://maven.google.com/org/apache/maven/maven-artifact/3.8.6/maven-artifact-3.8.6.jar"
         ]
     },
+    "org_apache_tomcat_tomcat_annotations_api_8_0_5": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/apache/tomcat/tomcat-annotations-api/8.0.5/tomcat-annotations-api-8.0.5.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_apache_tomcat_tomcat_annotations_api_8_0_5",
+        "name": "org_apache_tomcat_tomcat_annotations_api_8_0_5",
+        "netrc": "../maven/netrc",
+        "sha256": "748677bebb1651a313317dfd93e984ed8f8c9e345538fa8b0ab0cbb804631953",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-annotations-api/8.0.5/tomcat-annotations-api-8.0.5.jar"
+        ]
+    },
+    "org_apache_velocity_velocity_1_7": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/apache/velocity/velocity/1.7/velocity-1.7.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_apache_velocity_velocity_1_7",
+        "name": "org_apache_velocity_velocity_1_7",
+        "netrc": "../maven/netrc",
+        "sha256": "ec92dae810034f4b46dbb16ef4364a4013b0efb24a8c5dd67435cae46a290d8e",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/apache/velocity/velocity/1.7/velocity-1.7.jar"
+        ]
+    },
     "org_bouncycastle_bcpkix_jdk15on_1_56": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/bouncycastle/bcpkix-jdk15on/1.56/bcpkix-jdk15on-1.56.jar",
         "generator_function": "pinned_maven_install",
@@ -2263,6 +3038,17 @@
             "https://dl.google.com/android/maven2/org/bouncycastle/bcprov-jdk15on/1.56/bcprov-jdk15on-1.56.jar"
         ]
     },
+    "org_checkerframework_checker_compat_qual_2_5_3": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/checkerframework/checker-compat-qual/2.5.3/checker-compat-qual-2.5.3.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_checkerframework_checker_compat_qual_2_5_3",
+        "name": "org_checkerframework_checker_compat_qual_2_5_3",
+        "netrc": "../maven/netrc",
+        "sha256": "d76b9afea61c7c082908023f0cbc1427fab9abd2df915c8b8a3e7a509bccbc6d",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/checkerframework/checker-compat-qual/2.5.3/checker-compat-qual-2.5.3.jar"
+        ]
+    },
     "org_checkerframework_checker_compat_qual_2_5_5": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -2275,16 +3061,15 @@
             "https://maven.google.com/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar"
         ]
     },
-    "org_checkerframework_checker_qual_3_12_0": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar",
+    "org_checkerframework_checker_qual_3_19_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/checkerframework/checker-qual/3.19.0/checker-qual-3.19.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "org_checkerframework_checker_qual_3_12_0",
-        "name": "org_checkerframework_checker_qual_3_12_0",
+        "generator_name": "org_checkerframework_checker_qual_3_19_0",
+        "name": "org_checkerframework_checker_qual_3_19_0",
         "netrc": "../maven/netrc",
-        "sha256": "ff10785ac2a357ec5de9c293cb982a2cbb605c0309ea4cc1cb9b9bc6dbe7f3cb",
+        "sha256": "a827c49183f3a632277d27a0a4673686cb341507447b9d570261094bd748aa68",
         "urls": [
-            "https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar",
-            "https://dl.google.com/android/maven2/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar"
+            "https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.19.0/checker-qual-3.19.0.jar"
         ]
     },
     "org_checkerframework_checker_qual_3_5_0": {
@@ -2297,6 +3082,28 @@
         "urls": [
             "https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar",
             "https://dl.google.com/android/maven2/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar"
+        ]
+    },
+    "org_checkerframework_dataflow_errorprone_3_27_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/checkerframework/dataflow-errorprone/3.27.0/dataflow-errorprone-3.27.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_checkerframework_dataflow_errorprone_3_27_0",
+        "name": "org_checkerframework_dataflow_errorprone_3_27_0",
+        "netrc": "../maven/netrc",
+        "sha256": "fd40ebe6d514e56f8d8fac1b1a2afb1654b2053b571ddce1098b910f0bb395bd",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/checkerframework/dataflow-errorprone/3.27.0/dataflow-errorprone-3.27.0.jar"
+        ]
+    },
+    "org_codehaus_mojo_animal_sniffer_annotations_1_19": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.19/animal-sniffer-annotations-1.19.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_codehaus_mojo_animal_sniffer_annotations_1_19",
+        "name": "org_codehaus_mojo_animal_sniffer_annotations_1_19",
+        "netrc": "../maven/netrc",
+        "sha256": "e67ec27ceeaf13ab5d54cf5fdbcc544c41b4db8d02d9f006678cca2c7c13ee9d",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.19/animal-sniffer-annotations-1.19.jar"
         ]
     },
     "org_codehaus_plexus_plexus_utils_3_3_1": {
@@ -2343,8 +3150,7 @@
         "netrc": "../maven/netrc",
         "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
         "urls": [
-            "https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
-            "https://dl.google.com/android/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"
+            "https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"
         ]
     },
     "org_jetbrains_annotations_13_0": {
@@ -2455,6 +3261,17 @@
             "https://dl.google.com/android/maven2/org/ow2/asm/asm/9.1/asm-9.1.jar"
         ]
     },
+    "org_ow2_asm_asm_9_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_ow2_asm_asm_9_2",
+        "name": "org_ow2_asm_asm_9_2",
+        "netrc": "../maven/netrc",
+        "sha256": "b9d4fe4d71938df38839f0eca42aaaa64cf8b313d678da036f0cb3ca199b47f5",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.jar"
+        ]
+    },
     "org_ow2_asm_asm_analysis_9_1": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.1/asm-analysis-9.1.jar",
         "generator_function": "pinned_maven_install",
@@ -2465,6 +3282,17 @@
         "urls": [
             "https://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.1/asm-analysis-9.1.jar",
             "https://dl.google.com/android/maven2/org/ow2/asm/asm-analysis/9.1/asm-analysis-9.1.jar"
+        ]
+    },
+    "org_ow2_asm_asm_analysis_9_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_ow2_asm_asm_analysis_9_2",
+        "name": "org_ow2_asm_asm_analysis_9_2",
+        "netrc": "../maven/netrc",
+        "sha256": "878fbe521731c072d14d2d65b983b1beae6ad06fda0007b6a8bae81f73f433c4",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.jar"
         ]
     },
     "org_ow2_asm_asm_commons_9_1": {
@@ -2479,6 +3307,17 @@
             "https://dl.google.com/android/maven2/org/ow2/asm/asm-commons/9.1/asm-commons-9.1.jar"
         ]
     },
+    "org_ow2_asm_asm_commons_9_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_ow2_asm_asm_commons_9_2",
+        "name": "org_ow2_asm_asm_commons_9_2",
+        "netrc": "../maven/netrc",
+        "sha256": "be4ce53138a238bb522cd781cf91f3ba5ce2f6ca93ec62d46a162a127225e0a6",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.jar"
+        ]
+    },
     "org_ow2_asm_asm_tree_9_1": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.1/asm-tree-9.1.jar",
         "generator_function": "pinned_maven_install",
@@ -2489,6 +3328,17 @@
         "urls": [
             "https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.1/asm-tree-9.1.jar",
             "https://dl.google.com/android/maven2/org/ow2/asm/asm-tree/9.1/asm-tree-9.1.jar"
+        ]
+    },
+    "org_ow2_asm_asm_tree_9_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_ow2_asm_asm_tree_9_2",
+        "name": "org_ow2_asm_asm_tree_9_2",
+        "netrc": "../maven/netrc",
+        "sha256": "aabf9bd23091a4ebfc109c1f3ee7cf3e4b89f6ba2d3f51c5243f16b3cffae011",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.jar"
         ]
     },
     "org_ow2_asm_asm_util_9_1": {
@@ -2503,16 +3353,37 @@
             "https://dl.google.com/android/maven2/org/ow2/asm/asm-util/9.1/asm-util-9.1.jar"
         ]
     },
+    "org_ow2_asm_asm_util_9_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/ow2/asm/asm-util/9.2/asm-util-9.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_ow2_asm_asm_util_9_2",
+        "name": "org_ow2_asm_asm_util_9_2",
+        "netrc": "../maven/netrc",
+        "sha256": "ff5b3cd331ae8a9a804768280da98f50f424fef23dd3c788bb320e08c94ee598",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/ow2/asm/asm-util/9.2/asm-util-9.2.jar"
+        ]
+    },
+    "org_pcollections_pcollections_3_1_4": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/pcollections/pcollections/3.1.4/pcollections-3.1.4.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_pcollections_pcollections_3_1_4",
+        "name": "org_pcollections_pcollections_3_1_4",
+        "netrc": "../maven/netrc",
+        "sha256": "34f579ba075c8da2c8a0fedd0f04e21eac2fb6c660d90d0fabb573e8b4dc6918",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/pcollections/pcollections/3.1.4/pcollections-3.1.4.jar"
+        ]
+    },
     "org_reactivestreams_reactive_streams_1_0_3": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar",
-        "generator_function": "rules_jvm_external_setup",
+        "generator_function": "pinned_maven_install",
         "generator_name": "org_reactivestreams_reactive_streams_1_0_3",
         "name": "org_reactivestreams_reactive_streams_1_0_3",
-        "netrc": "../rules_jvm_external_deps/netrc",
+        "netrc": "../maven/netrc",
         "sha256": "1dee0481072d19c929b623e155e14d2f6085dc011529a0a0dbefc84cf571d865",
         "urls": [
-            "https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar",
-            "https://maven.google.com/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar"
+            "https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar"
         ]
     },
     "org_slf4j_slf4j_api_1_7_30": {
@@ -2536,6 +3407,17 @@
             "https://mirror.bazel.build/bitbucket.org/asomov/snakeyaml/get/snakeyaml-1.28.tar.gz"
         ]
     },
+    "org_threeten_threeten_extra_1_5_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/threeten/threeten-extra/1.5.0/threeten-extra-1.5.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_threeten_threeten_extra_1_5_0",
+        "name": "org_threeten_threeten_extra_1_5_0",
+        "netrc": "../maven/netrc",
+        "sha256": "e7def554536188fbaf8aac1a0a2f956b039cbbb5696edc3b8336c442c56ae445",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/threeten/threeten-extra/1.5.0/threeten-extra-1.5.0.jar"
+        ]
+    },
     "org_threeten_threetenbp_1_5_0": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/threeten/threetenbp/1.5.0/threetenbp-1.5.0.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -2548,22 +3430,33 @@
             "https://maven.google.com/org/threeten/threetenbp/1.5.0/threetenbp-1.5.0.jar"
         ]
     },
+    "org_tukaani_xz_1_9": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_tukaani_xz_1_9",
+        "name": "org_tukaani_xz_1_9",
+        "netrc": "../maven/netrc",
+        "sha256": "211b306cfc44f8f96df3a0a3ddaf75ba8c5289eed77d60d72f889bb855f535e5",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar"
+        ]
+    },
     "platforms": {
         "generator_function": "dist_http_archive",
         "generator_name": "platforms",
         "name": "platforms",
-        "sha256": "379113459b0feaf6bfbb584a91874c065078aa673222846ac765f86661c27407",
+        "sha256": "5308fc1d8865406a49427ba24a9ab53087f17f5266a7aabbfc28823f3916e1ca",
         "urls": [
-            "https://mirror.bazel.build/github.com/bazelbuild/platforms/releases/download/0.0.5/platforms-0.0.5.tar.gz",
-            "https://github.com/bazelbuild/platforms/releases/download/0.0.5/platforms-0.0.5.tar.gz"
+            "https://mirror.bazel.build/github.com/bazelbuild/platforms/releases/download/0.0.6/platforms-0.0.6.tar.gz",
+            "https://github.com/bazelbuild/platforms/releases/download/0.0.6/platforms-0.0.6.tar.gz"
         ]
     },
-    "platforms-0.0.5.tar.gz": {
-        "name": "platforms-0.0.5.tar.gz",
-        "sha256": "379113459b0feaf6bfbb584a91874c065078aa673222846ac765f86661c27407",
+    "platforms-0.0.6.tar.gz": {
+        "name": "platforms-0.0.6.tar.gz",
+        "sha256": "5308fc1d8865406a49427ba24a9ab53087f17f5266a7aabbfc28823f3916e1ca",
         "urls": [
-            "https://mirror.bazel.build/github.com/bazelbuild/platforms/releases/download/0.0.5/platforms-0.0.5.tar.gz",
-            "https://github.com/bazelbuild/platforms/releases/download/0.0.5/platforms-0.0.5.tar.gz"
+            "https://mirror.bazel.build/github.com/bazelbuild/platforms/releases/download/0.0.6/platforms-0.0.6.tar.gz",
+            "https://github.com/bazelbuild/platforms/releases/download/0.0.6/platforms-0.0.6.tar.gz"
         ]
     },
     "python-3.7.0": {
@@ -3187,11 +4080,11 @@
             "https://cdn.azul.com/zulu/bin/zulu17.38.21-ca-jdk17.0.5-win_x64.zip"
         ]
     },
-    "remotejdk18_linux_for_testing": {
+    "remotejdk19_linux_for_testing": {
         "build_file": "@local_jdk//:BUILD.bazel",
         "generator_function": "dist_http_archive",
-        "generator_name": "remotejdk18_linux_for_testing",
-        "name": "remotejdk18_linux_for_testing",
+        "generator_name": "remotejdk19_linux_for_testing",
+        "name": "remotejdk19_linux_for_testing",
         "patch_cmds": [
             "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
             "echo >> BUILD.bazel",
@@ -3200,18 +4093,18 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "959a94ca4097dcaabc7886784cec10dfdf2b0a3bff890ea8943cc09c5fff29cb",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-linux_x64",
+        "sha256": "4a994aded1d9b35258d543a59d4963d2687a1094a818b79a21f00273fbbc5bca",
+        "strip_prefix": "zulu19.32.13-ca-jdk19.0.2-linux_x64",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_x64.tar.gz",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_x64.tar.gz"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz"
         ]
     },
-    "remotejdk18_macos_aarch64_for_testing": {
+    "remotejdk19_macos_aarch64_for_testing": {
         "build_file": "@local_jdk//:BUILD.bazel",
         "generator_function": "dist_http_archive",
-        "generator_name": "remotejdk18_macos_aarch64_for_testing",
-        "name": "remotejdk18_macos_aarch64_for_testing",
+        "generator_name": "remotejdk19_macos_aarch64_for_testing",
+        "name": "remotejdk19_macos_aarch64_for_testing",
         "patch_cmds": [
             "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
             "echo >> BUILD.bazel",
@@ -3220,18 +4113,18 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "9595e001451e201fdf33c1952777968a3ac18fe37273bdeaea5b5ed2c4950432",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-macosx_aarch64",
+        "sha256": "177d058d968b2fbe7a5ff5eceb18cdc16f6376ce291004f1a3139e78b2fb6391",
+        "strip_prefix": "zulu19.32.13-ca-jdk19.0.2-macosx_aarch64",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_aarch64.tar.gz",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_aarch64.tar.gz"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_aarch64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_aarch64.tar.gz"
         ]
     },
-    "remotejdk18_macos_for_testing": {
+    "remotejdk19_macos_for_testing": {
         "build_file": "@local_jdk//:BUILD.bazel",
         "generator_function": "dist_http_archive",
-        "generator_name": "remotejdk18_macos_for_testing",
-        "name": "remotejdk18_macos_for_testing",
+        "generator_name": "remotejdk19_macos_for_testing",
+        "name": "remotejdk19_macos_for_testing",
         "patch_cmds": [
             "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
             "echo >> BUILD.bazel",
@@ -3240,18 +4133,18 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "780a9aa4bda95a6793bf41d13f837c59ef915e9bfd0e0c5fd4c70e4cdaa88541",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-macosx_x64",
+        "sha256": "2804575ae9ac63e39caa910e57610bf52b0f9e2d671928a98d18e2fcc9f62ac1",
+        "strip_prefix": "zulu19.32.13-ca-jdk19.0.2-macosx_x64",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_x64.tar.gz",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-macosx_x64.tar.gz"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_x64.tar.gz"
         ]
     },
-    "remotejdk18_win_arm64_for_testing": {
+    "remotejdk19_win_for_testing": {
         "build_file": "@local_jdk//:BUILD.bazel",
         "generator_function": "dist_http_archive",
-        "generator_name": "remotejdk18_win_arm64_for_testing",
-        "name": "remotejdk18_win_arm64_for_testing",
+        "generator_name": "remotejdk19_win_for_testing",
+        "name": "remotejdk19_win_for_testing",
         "patch_cmds": [
             "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
             "echo >> BUILD.bazel",
@@ -3260,31 +4153,11 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "9b52b259516e4140ee56b91f77750667bffbc543e78ad8c39082449d4c377b54",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-win_aarch64",
+        "sha256": "d6c768c5ec3252f936bd0562c25458f7c753c62835ca3e91166f975f7a5fe9f1",
+        "strip_prefix": "zulu19.32.13-ca-jdk19.0.2-win_x64",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip"
-        ]
-    },
-    "remotejdk18_win_for_testing": {
-        "build_file": "@local_jdk//:BUILD.bazel",
-        "generator_function": "dist_http_archive",
-        "generator_name": "remotejdk18_win_for_testing",
-        "name": "remotejdk18_win_for_testing",
-        "patch_cmds": [
-            "test -f BUILD.bazel && chmod u+w BUILD.bazel || true",
-            "echo >> BUILD.bazel",
-            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD.bazel"
-        ],
-        "patch_cmds_win": [
-            "Add-Content -Path BUILD.bazel -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
-        ],
-        "sha256": "6c75498163b047595386fdb909cb6d4e04282c3a81799743c5e1f9316391fe16",
-        "strip_prefix": "zulu18.28.13-ca-jdk18.0.0-win_x64",
-        "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_x64.zip",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_x64.zip"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-win_x64.zip",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-win_x64.zip"
         ]
     },
     "rules_cc": {
@@ -3299,16 +4172,17 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "58bff40957ace85c2de21ebfc72e53ed3a0d33af8cc20abd0ceec55c63be7de2",
+        "sha256": "3d9e271e2876ba42e114c9b9bc51454e379cbf0ec9ef9d40e2ae4cec61a31b40",
+        "strip_prefix": "rules_cc-0.0.6",
         "urls": [
-            "https://github.com/bazelbuild/rules_cc/releases/download/0.0.2/rules_cc-0.0.2.tar.gz"
+            "https://github.com/bazelbuild/rules_cc/releases/download/0.0.6/rules_cc-0.0.6.tar.gz"
         ]
     },
-    "rules_cc-0.0.2.tar.gz": {
-        "name": "rules_cc-0.0.2.tar.gz",
-        "sha256": "58bff40957ace85c2de21ebfc72e53ed3a0d33af8cc20abd0ceec55c63be7de2",
+    "rules_cc-0.0.6.tar.gz": {
+        "name": "rules_cc-0.0.6.tar.gz",
+        "sha256": "3d9e271e2876ba42e114c9b9bc51454e379cbf0ec9ef9d40e2ae4cec61a31b40",
         "urls": [
-            "https://github.com/bazelbuild/rules_cc/releases/download/0.0.2/rules_cc-0.0.2.tar.gz"
+            "https://github.com/bazelbuild/rules_cc/releases/download/0.0.6/rules_cc-0.0.6.tar.gz"
         ]
     },
     "rules_java": {
@@ -3323,17 +4197,17 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "9b87757af5c77e9db5f7c000579309afae75cf6517da745de01ba0c6e4870951",
+        "sha256": "a1f82b730b9c6395d3653032bd7e3a660f9d5ddb1099f427c1e1fe768f92e395",
         "strip_prefix": "",
         "urls": [
-            "https://github.com/bazelbuild/rules_java/releases/download/5.4.0/rules_java-5.4.0.tar.gz"
+            "https://github.com/bazelbuild/rules_java/releases/download/5.4.1/rules_java-5.4.1.tar.gz"
         ]
     },
-    "rules_java-5.4.0.tar.gz": {
-        "name": "rules_java-5.4.0.tar.gz",
-        "sha256": "9b87757af5c77e9db5f7c000579309afae75cf6517da745de01ba0c6e4870951",
+    "rules_java-5.4.1.tar.gz": {
+        "name": "rules_java-5.4.1.tar.gz",
+        "sha256": "a1f82b730b9c6395d3653032bd7e3a660f9d5ddb1099f427c1e1fe768f92e395",
         "urls": [
-            "https://github.com/bazelbuild/rules_java/releases/download/5.4.0/rules_java-5.4.0.tar.gz"
+            "https://github.com/bazelbuild/rules_java/releases/download/5.4.1/rules_java-5.4.1.tar.gz"
         ]
     },
     "rules_jvm_external": {
@@ -3862,20 +4736,44 @@
             "https://cdn.azul.com/zulu/bin/zulu17.38.21-ca-jdk17.0.5-win_x64.zip"
         ]
     },
-    "zulu18.28.13-ca-jdk18.0.0-linux_aarch64.tar.gz": {
-        "name": "zulu18.28.13-ca-jdk18.0.0-linux_aarch64.tar.gz",
-        "sha256": "a1d5f78172f32f819d08e9043b0f82fa7af738b37c55c6ca8d6092c61d204d53",
+    "zulu19.32.13-ca-jdk19.0.2-linux_aarch64.tar.gz": {
+        "name": "zulu19.32.13-ca-jdk19.0.2-linux_aarch64.tar.gz",
+        "sha256": "76216efa69e448fe487d57310372aea0df1cf15b82974c84a8cb0d97eb934165",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_aarch64.tar.gz",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-linux_aarch64.tar.gz"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_aarch64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_aarch64.tar.gz"
         ]
     },
-    "zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip": {
-        "name": "zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip",
-        "sha256": "9b52b259516e4140ee56b91f77750667bffbc543e78ad8c39082449d4c377b54",
+    "zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz": {
+        "name": "zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz",
+        "sha256": "4a994aded1d9b35258d543a59d4963d2687a1094a818b79a21f00273fbbc5bca",
         "urls": [
-            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip",
-            "https://cdn.azul.com/zulu/bin/zulu18.28.13-ca-jdk18.0.0-win_aarch64.zip"
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz"
+        ]
+    },
+    "zulu19.32.13-ca-jdk19.0.2-macosx_aarch64.tar.gz": {
+        "name": "zulu19.32.13-ca-jdk19.0.2-macosx_aarch64.tar.gz",
+        "sha256": "177d058d968b2fbe7a5ff5eceb18cdc16f6376ce291004f1a3139e78b2fb6391",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_aarch64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_aarch64.tar.gz"
+        ]
+    },
+    "zulu19.32.13-ca-jdk19.0.2-macosx_x64.tar.gz": {
+        "name": "zulu19.32.13-ca-jdk19.0.2-macosx_x64.tar.gz",
+        "sha256": "2804575ae9ac63e39caa910e57610bf52b0f9e2d671928a98d18e2fcc9f62ac1",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_x64.tar.gz",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-macosx_x64.tar.gz"
+        ]
+    },
+    "zulu19.32.13-ca-jdk19.0.2-win_x64.zip": {
+        "name": "zulu19.32.13-ca-jdk19.0.2-win_x64.zip",
+        "sha256": "d6c768c5ec3252f936bd0562c25458f7c753c62835ca3e91166f975f7a5fe9f1",
+        "urls": [
+            "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-win_x64.zip",
+            "https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-win_x64.zip"
         ]
     }
 }
