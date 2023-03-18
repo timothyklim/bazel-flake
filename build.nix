@@ -56,6 +56,7 @@ let
         srcs.rules_jvm_external
         srcs.rules_pkg
         srcs.rules_proto
+        srcs.rules_python
         srcs.upb
 
         # Tests
@@ -159,7 +160,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-rw4MFfJmkodL5i/Msb6G7I8PaGYO0WBy/kscN28KHsA=";
+    sha256 = "sha256-WSu5VWt40zlXJCxX9STDZoFmNigepo86AKjRPO6J2fQ=";
   };
 
   buildAttrs = {
