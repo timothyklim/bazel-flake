@@ -78,7 +78,7 @@ let
 
   distDir = runCommand "bazel-deps" { } ''
     mkdir -p $out
-    for i in ${builtins.toString srcDeps}; do cp $i $out/$(stripHash $i); done
+    for i in ${builtins.toString srcDeps}; do cp -f $i $out/$(stripHash $i); done
   '';
   remote_java_tools = stdenv.mkDerivation {
     inherit sourceRoot;
@@ -161,7 +161,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-wuAIPAGYrf3w7eXnDke2rdna+3T/CwgyObx+70g5CV0";
+    sha256 = "sha256-wuAIPAGYrf3w7eXnDke2rdna+3T/CwgyObx+70g5CV0=";
   };
 
   buildAttrs = {
