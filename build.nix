@@ -87,7 +87,7 @@ let
 
     src = srcDepsSet."remote_java_tools_linux_for_testing";
 
-    nativeBuildInputs = [ autoPatchelfHook unzip ];
+    nativeBuildInputs = [ unzip ] ++ lib.optionals stdenv.isLinux [ autoPatchelfHook ];
     buildInputs = [ gcc-unwrapped ];
 
     buildPhase = ''

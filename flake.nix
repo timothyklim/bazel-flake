@@ -13,7 +13,7 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, java, src }:
-    with flake-utils.lib; eachSystem [ system.x86_64-linux system.aarch64-linux ] (system:
+    with flake-utils.lib; eachSystem [ system.x86_64-linux system.aarch64-linux system.aarch64-darwin ] (system:
       let
         sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
