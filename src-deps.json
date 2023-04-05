@@ -125,6 +125,42 @@
             "https://mirror.bazel.build/bazel_android_tools/android_tools_pkg-0.28.0.tar"
         ]
     },
+    "androidx_databinding_databinding_common_3_4_0_alpha10": {
+        "downloaded_file_path": "v1/https/dl.google.com/android/maven2/androidx/databinding/databinding-common/3.4.0-alpha10/databinding-common-3.4.0-alpha10.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "androidx_databinding_databinding_common_3_4_0_alpha10",
+        "name": "androidx_databinding_databinding_common_3_4_0_alpha10",
+        "netrc": "../maven_android/netrc",
+        "sha256": "1b2cfc3beaf6139e1851dd4a888cda8192ba0ad4be3de43450d5f30569845303",
+        "urls": [
+            "https://dl.google.com/android/maven2/androidx/databinding/databinding-common/3.4.0-alpha10/databinding-common-3.4.0-alpha10.jar",
+            "https://repo1.maven.org/maven2/androidx/databinding/databinding-common/3.4.0-alpha10/databinding-common-3.4.0-alpha10.jar"
+        ]
+    },
+    "androidx_databinding_databinding_compiler_3_4_0_alpha10": {
+        "downloaded_file_path": "v1/https/dl.google.com/android/maven2/androidx/databinding/databinding-compiler/3.4.0-alpha10/databinding-compiler-3.4.0-alpha10.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "androidx_databinding_databinding_compiler_3_4_0_alpha10",
+        "name": "androidx_databinding_databinding_compiler_3_4_0_alpha10",
+        "netrc": "../maven_android/netrc",
+        "sha256": "2d741da6cc20a3f0136b6fdce6babf92d8b5115b37b05c61dd8ce6832499d629",
+        "urls": [
+            "https://dl.google.com/android/maven2/androidx/databinding/databinding-compiler/3.4.0-alpha10/databinding-compiler-3.4.0-alpha10.jar",
+            "https://repo1.maven.org/maven2/androidx/databinding/databinding-compiler/3.4.0-alpha10/databinding-compiler-3.4.0-alpha10.jar"
+        ]
+    },
+    "androidx_databinding_databinding_compiler_common_3_4_0_alpha10": {
+        "downloaded_file_path": "v1/https/dl.google.com/android/maven2/androidx/databinding/databinding-compiler-common/3.4.0-alpha10/databinding-compiler-common-3.4.0-alpha10.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "androidx_databinding_databinding_compiler_common_3_4_0_alpha10",
+        "name": "androidx_databinding_databinding_compiler_common_3_4_0_alpha10",
+        "netrc": "../maven_android/netrc",
+        "sha256": "7e1ffef1c21064f2b065b17a69bc217270e14b6723311cf795f4276a05b83750",
+        "urls": [
+            "https://dl.google.com/android/maven2/androidx/databinding/databinding-compiler-common/3.4.0-alpha10/databinding-compiler-common-3.4.0-alpha10.jar",
+            "https://repo1.maven.org/maven2/androidx/databinding/databinding-compiler-common/3.4.0-alpha10/databinding-compiler-common-3.4.0-alpha10.jar"
+        ]
+    },
     "bazel-gazelle-v0.24.0.tar.gz": {
         "name": "bazel-gazelle-v0.24.0.tar.gz",
         "sha256": "de69a09dc70417580aabf20a28619bb3ef60d038470c7cf8442fafcf627c21cb",
@@ -255,6 +291,18 @@
         "urls": [
             "https://mirror.bazel.build/github.com/cncf/xds/archive/cb28da3451f158a947dfc45090fe92b07b243bc1.tar.gz",
             "https://github.com/cncf/xds/archive/cb28da3451f158a947dfc45090fe92b07b243bc1.tar.gz"
+        ]
+    },
+    "com_android_databinding_baseLibrary_3_4_0_alpha10": {
+        "downloaded_file_path": "v1/https/dl.google.com/android/maven2/com/android/databinding/baseLibrary/3.4.0-alpha10/baseLibrary-3.4.0-alpha10.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_android_databinding_baseLibrary_3_4_0_alpha10",
+        "name": "com_android_databinding_baseLibrary_3_4_0_alpha10",
+        "netrc": "../maven_android/netrc",
+        "sha256": "1aed4f3e46bf83c80a1722ce6cc64a8133c4554a668c483f6b3d0f2c06dd7461",
+        "urls": [
+            "https://dl.google.com/android/maven2/com/android/databinding/baseLibrary/3.4.0-alpha10/baseLibrary-3.4.0-alpha10.jar",
+            "https://repo1.maven.org/maven2/com/android/databinding/baseLibrary/3.4.0-alpha10/baseLibrary-3.4.0-alpha10.jar"
         ]
     },
     "com_android_signflinger_7_1_3": {
@@ -389,6 +437,18 @@
             "https://repo1.maven.org/maven2/com/android/tools/build/builder-test-api/7.1.3/builder-test-api-7.1.3.jar"
         ]
     },
+    "com_android_tools_build_jetifier_jetifier_core_1_0_0_beta02": {
+        "downloaded_file_path": "v1/https/dl.google.com/android/maven2/com/android/tools/build/jetifier/jetifier-core/1.0.0-beta02/jetifier-core-1.0.0-beta02.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_android_tools_build_jetifier_jetifier_core_1_0_0_beta02",
+        "name": "com_android_tools_build_jetifier_jetifier_core_1_0_0_beta02",
+        "netrc": "../maven_android/netrc",
+        "sha256": "ef61f84302f8b41dce3858c1fc7e7a90ec74a263a0213b1f65e80c56145a4793",
+        "urls": [
+            "https://dl.google.com/android/maven2/com/android/tools/build/jetifier/jetifier-core/1.0.0-beta02/jetifier-core-1.0.0-beta02.jar",
+            "https://repo1.maven.org/maven2/com/android/tools/build/jetifier/jetifier-core/1.0.0-beta02/jetifier-core-1.0.0-beta02.jar"
+        ]
+    },
     "com_android_tools_build_manifest_merger_30_1_3": {
         "downloaded_file_path": "v1/https/dl.google.com/android/maven2/com/android/tools/build/manifest-merger/30.1.3/manifest-merger-30.1.3.jar",
         "generator_function": "pinned_maven_install",
@@ -495,6 +555,17 @@
         "urls": [
             "https://dl.google.com/android/maven2/com/android/zipflinger/7.1.3/zipflinger-7.1.3.jar",
             "https://repo1.maven.org/maven2/com/android/zipflinger/7.1.3/zipflinger-7.1.3.jar"
+        ]
+    },
+    "com_beust_jcommander_1_48": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/beust/jcommander/1.48/jcommander-1.48.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_beust_jcommander_1_48",
+        "name": "com_beust_jcommander_1_48",
+        "netrc": "../maven/netrc",
+        "sha256": "a7313fcfde070930e40ec79edf3c5948cf34e4f0d25cb3a09f9963d8bdd84113",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/beust/jcommander/1.48/jcommander-1.48.jar"
         ]
     },
     "com_envoyproxy_protoc_gen_validate": {
@@ -1352,6 +1423,18 @@
             "https://dl.google.com/android/maven2/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar"
         ]
     },
+    "com_googlecode_juniversalchardet_juniversalchardet_1_0_3": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_googlecode_juniversalchardet_juniversalchardet_1_0_3",
+        "name": "com_googlecode_juniversalchardet_juniversalchardet_1_0_3",
+        "netrc": "../maven_android/netrc",
+        "sha256": "757bfe906193b8b651e79dc26cd67d6b55d0770a2cdfb0381591504f779d4a76",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar",
+            "https://dl.google.com/android/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar"
+        ]
+    },
     "com_googlesource_code_re2": {
         "generator_function": "grpc_deps",
         "generator_name": "com_googlesource_code_re2",
@@ -1405,6 +1488,18 @@
         "sha256": "2b70cdfa8c9e997b4007035a266c273c0df341f9c57c9d0b45a680ae3fd882db",
         "urls": [
             "https://repo1.maven.org/maven2/com/squareup/javapoet/1.12.0/javapoet-1.12.0.jar"
+        ]
+    },
+    "com_squareup_javapoet_1_8_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/squareup/javapoet/1.8.0/javapoet-1.8.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_squareup_javapoet_1_8_0",
+        "name": "com_squareup_javapoet_1_8_0",
+        "netrc": "../maven_android/netrc",
+        "sha256": "8e108c92027bb428196f10fa11cffbe589f7648a6af2016d652279385fdfd789",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/squareup/javapoet/1.8.0/javapoet-1.8.0.jar",
+            "https://dl.google.com/android/maven2/com/squareup/javapoet/1.8.0/javapoet-1.8.0.jar"
         ]
     },
     "com_squareup_javawriter_2_5_0": {
@@ -1512,6 +1607,18 @@
         "sha256": "eeeae917917144a68a741d4c0dff66aa5c5c5fd85593ff217bced3fc8ca783b8",
         "urls": [
             "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar"
+        ]
+    },
+    "commons_io_commons_io_2_4": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "commons_io_commons_io_2_4",
+        "name": "commons_io_commons_io_2_4",
+        "netrc": "../maven_android/netrc",
+        "sha256": "cc6a41dc3eaacc9e440a6bd0d2890b20d36b4ee408fe2d67122f328bb6e01581",
+        "urls": [
+            "https://repo1.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar",
+            "https://dl.google.com/android/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar"
         ]
     },
     "commons_lang_commons_lang_2_6": {
@@ -2341,36 +2448,44 @@
             "https://dl.google.com/android/maven2/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar"
         ]
     },
-    "java_tools-v11.12.zip": {
-        "name": "java_tools-v11.12.zip",
-        "sha256": "af20366f926b1dadf8c084a51936116ef2f0db90e73e94b406c4ad8180f0788d",
+    "java_tools-v12.0.zip": {
+        "name": "java_tools-v12.0.zip",
+        "sha256": "6efab6ca6e16e02c90e62bbd08ca65f61527984ab78564ea7ad7a2692b2ffdbb",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools-v12.0.zip"
         ]
     },
-    "java_tools_darwin-v11.12.zip": {
-        "name": "java_tools_darwin-v11.12.zip",
-        "sha256": "aed319892b638efabd08405b8f835770e13e2465d20459876c5f457f2b6426f3",
+    "java_tools_darwin_arm64-v12.0.zip": {
+        "name": "java_tools_darwin_arm64-v12.0.zip",
+        "sha256": "24a47a5557ee2ccdacd10a54fe4c15d627c6aeaf7596a5dccf2e11a866a5a32a",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_darwin-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_darwin-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_arm64-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_arm64-v12.0.zip"
         ]
     },
-    "java_tools_linux-v11.12.zip": {
-        "name": "java_tools_linux-v11.12.zip",
-        "sha256": "37f79597f5b8c1501b9c66ded8ac68c61205ad39ef3ceda0e24fbd0afa3cd97f",
+    "java_tools_darwin_x86_64-v12.0.zip": {
+        "name": "java_tools_darwin_x86_64-v12.0.zip",
+        "sha256": "abc434be713ee9e1fd6525d7a7bd9d7cdff6e27ae3ca9d96420490e7ff6e28a3",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_linux-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_linux-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_x86_64-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_x86_64-v12.0.zip"
         ]
     },
-    "java_tools_windows-v11.12.zip": {
-        "name": "java_tools_windows-v11.12.zip",
-        "sha256": "43432ce4814513d6497661b4fede691982b3bdef7a1907808b096291f56a8001",
+    "java_tools_linux-v12.0.zip": {
+        "name": "java_tools_linux-v12.0.zip",
+        "sha256": "4b8366b780387fc5ce69527ed287f2b444ee429d3325305ad062c92ac43c7fb6",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_windows-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_windows-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_linux-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_linux-v12.0.zip"
+        ]
+    },
+    "java_tools_windows-v12.0.zip": {
+        "name": "java_tools_windows-v12.0.zip",
+        "sha256": "7b938f0c67d9d390f10489b1b9a4dabb51e39ecc94532c3acdf8c4c16900457f",
+        "urls": [
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_windows-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_windows-v12.0.zip"
         ]
     },
     "javax_activation_javax_activation_api_1_2_0": {
@@ -2914,6 +3029,18 @@
         "urls": [
             "https://mirror.bazel.build/cdn.azul.com/zulu/bin/zulu17.38.21-ca-jdk17.0.5-win_x64.zip",
             "https://cdn.azul.com/zulu/bin/zulu17.38.21-ca-jdk17.0.5-win_x64.zip"
+        ]
+    },
+    "org_antlr_antlr4_4_5_3": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/antlr/antlr4/4.5.3/antlr4-4.5.3.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_antlr_antlr4_4_5_3",
+        "name": "org_antlr_antlr4_4_5_3",
+        "netrc": "../maven_android/netrc",
+        "sha256": "a32de739cfdf515774e696f91aa9697d2e7731e5cb5045ca8a4b657f8b1b4fb4",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/antlr/antlr4/4.5.3/antlr4-4.5.3.jar",
+            "https://dl.google.com/android/maven2/org/antlr/antlr4/4.5.3/antlr4-4.5.3.jar"
         ]
     },
     "org_apache_commons_commons_compress_1_19": {
@@ -3514,11 +3641,11 @@
             "https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz"
         ]
     },
-    "r8-4.0.48.jar": {
-        "name": "r8-4.0.48.jar",
-        "sha256": "f77d9a9ebda9e32092eac4dd8e11644a7362dfa60ed6a3a9d0d32de570bbf524",
+    "r8-8.0.34.jar": {
+        "name": "r8-8.0.34.jar",
+        "sha256": "805b16bbcee90c35fcba76a1b8cfe1771ef1e16d95bc83aa9e371208e43ffc8b",
         "urls": [
-            "https://maven.google.com/com/android/tools/r8/4.0.48/r8-4.0.48.jar"
+            "https://maven.google.com/com/android/tools/r8/8.0.34/r8-8.0.34.jar"
         ]
     },
     "remote_coverage_tools": {
@@ -3538,6 +3665,24 @@
             "https://github.com/bazelbuild/java_tools/releases/download/javac11_v10.6/java_tools_javac11_darwin-v10.6.zip"
         ]
     },
+    "remote_java_tools_darwin_arm64_for_testing": {
+        "generator_function": "dist_http_archive",
+        "generator_name": "remote_java_tools_darwin_arm64_for_testing",
+        "name": "remote_java_tools_darwin_arm64_for_testing",
+        "patch_cmds": [
+            "test -f BUILD && chmod u+w BUILD || true",
+            "echo >> BUILD",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "24a47a5557ee2ccdacd10a54fe4c15d627c6aeaf7596a5dccf2e11a866a5a32a",
+        "urls": [
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_arm64-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_arm64-v12.0.zip"
+        ]
+    },
     "remote_java_tools_darwin_for_testing": {
         "generator_function": "dist_http_archive",
         "generator_name": "remote_java_tools_darwin_for_testing",
@@ -3550,10 +3695,28 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "aed319892b638efabd08405b8f835770e13e2465d20459876c5f457f2b6426f3",
+        "sha256": "abc434be713ee9e1fd6525d7a7bd9d7cdff6e27ae3ca9d96420490e7ff6e28a3",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_darwin-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_darwin-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_x86_64-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_x86_64-v12.0.zip"
+        ]
+    },
+    "remote_java_tools_darwin_x86_64_for_testing": {
+        "generator_function": "dist_http_archive",
+        "generator_name": "remote_java_tools_darwin_x86_64_for_testing",
+        "name": "remote_java_tools_darwin_x86_64_for_testing",
+        "patch_cmds": [
+            "test -f BUILD && chmod u+w BUILD || true",
+            "echo >> BUILD",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "abc434be713ee9e1fd6525d7a7bd9d7cdff6e27ae3ca9d96420490e7ff6e28a3",
+        "urls": [
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_x86_64-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_x86_64-v12.0.zip"
         ]
     },
     "remote_java_tools_for_testing": {
@@ -3568,10 +3731,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "af20366f926b1dadf8c084a51936116ef2f0db90e73e94b406c4ad8180f0788d",
+        "sha256": "6efab6ca6e16e02c90e62bbd08ca65f61527984ab78564ea7ad7a2692b2ffdbb",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools-v12.0.zip"
         ]
     },
     "remote_java_tools_linux": {
@@ -3596,10 +3759,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "37f79597f5b8c1501b9c66ded8ac68c61205ad39ef3ceda0e24fbd0afa3cd97f",
+        "sha256": "4b8366b780387fc5ce69527ed287f2b444ee429d3325305ad062c92ac43c7fb6",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_linux-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_linux-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_linux-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_linux-v12.0.zip"
         ]
     },
     "remote_java_tools_test": {
@@ -3614,10 +3777,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "af20366f926b1dadf8c084a51936116ef2f0db90e73e94b406c4ad8180f0788d",
+        "sha256": "6efab6ca6e16e02c90e62bbd08ca65f61527984ab78564ea7ad7a2692b2ffdbb",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools-v12.0.zip"
         ]
     },
     "remote_java_tools_test_darwin": {
@@ -3632,10 +3795,46 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "aed319892b638efabd08405b8f835770e13e2465d20459876c5f457f2b6426f3",
+        "sha256": "abc434be713ee9e1fd6525d7a7bd9d7cdff6e27ae3ca9d96420490e7ff6e28a3",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_darwin-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_darwin-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_x86_64-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_x86_64-v12.0.zip"
+        ]
+    },
+    "remote_java_tools_test_darwin_arm64": {
+        "generator_function": "dist_http_archive",
+        "generator_name": "remote_java_tools_test_darwin_arm64",
+        "name": "remote_java_tools_test_darwin_arm64",
+        "patch_cmds": [
+            "test -f BUILD && chmod u+w BUILD || true",
+            "echo >> BUILD",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "24a47a5557ee2ccdacd10a54fe4c15d627c6aeaf7596a5dccf2e11a866a5a32a",
+        "urls": [
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_arm64-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_arm64-v12.0.zip"
+        ]
+    },
+    "remote_java_tools_test_darwin_x86_64": {
+        "generator_function": "dist_http_archive",
+        "generator_name": "remote_java_tools_test_darwin_x86_64",
+        "name": "remote_java_tools_test_darwin_x86_64",
+        "patch_cmds": [
+            "test -f BUILD && chmod u+w BUILD || true",
+            "echo >> BUILD",
+            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD"
+        ],
+        "patch_cmds_win": [
+            "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
+        ],
+        "sha256": "abc434be713ee9e1fd6525d7a7bd9d7cdff6e27ae3ca9d96420490e7ff6e28a3",
+        "urls": [
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_x86_64-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_x86_64-v12.0.zip"
         ]
     },
     "remote_java_tools_test_linux": {
@@ -3650,10 +3849,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "37f79597f5b8c1501b9c66ded8ac68c61205ad39ef3ceda0e24fbd0afa3cd97f",
+        "sha256": "4b8366b780387fc5ce69527ed287f2b444ee429d3325305ad062c92ac43c7fb6",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_linux-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_linux-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_linux-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_linux-v12.0.zip"
         ]
     },
     "remote_java_tools_test_windows": {
@@ -3668,10 +3867,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "43432ce4814513d6497661b4fede691982b3bdef7a1907808b096291f56a8001",
+        "sha256": "7b938f0c67d9d390f10489b1b9a4dabb51e39ecc94532c3acdf8c4c16900457f",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_windows-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_windows-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_windows-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_windows-v12.0.zip"
         ]
     },
     "remote_java_tools_windows": {
@@ -3696,10 +3895,10 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "43432ce4814513d6497661b4fede691982b3bdef7a1907808b096291f56a8001",
+        "sha256": "7b938f0c67d9d390f10489b1b9a4dabb51e39ecc94532c3acdf8c4c16900457f",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v11.12/java_tools_windows-v11.12.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v11.12/java_tools_windows-v11.12.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_windows-v12.0.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_windows-v12.0.zip"
         ]
     },
     "remotejdk11_linux": {

@@ -50,6 +50,7 @@ let
         srcs.platforms
         srcs.remote_java_tools_for_testing
         srcs.remote_java_tools_linux_for_testing
+        srcs.remote_java_tools_test
         srcs.remotejdk11_linux
         srcs.rules_cc
         srcs.rules_java
