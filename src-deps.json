@@ -1317,6 +1317,17 @@
             "https://dl.google.com/android/maven2/com/google/jimfs/jimfs/1.1/jimfs-1.1.jar"
         ]
     },
+    "com_google_jimfs_jimfs_1_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_jimfs_jimfs_1_2",
+        "name": "com_google_jimfs_jimfs_1_2",
+        "netrc": "../maven/netrc",
+        "sha256": "de16d5c8489729a8512f1a02fbd81f58f89249b72066987da4cc5c87ecb9f72d",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar"
+        ]
+    },
     "com_google_oauth_client_google_oauth_client_1_31_1": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client/1.31.1/google-oauth-client-1.31.1.jar",
         "generator_function": "rules_jvm_external_setup",
@@ -1401,6 +1412,17 @@
             "https://maven.google.com/com/google/protobuf/protobuf-java-util/3.13.0/protobuf-java-util-3.13.0.jar"
         ]
     },
+    "com_google_testing_compile_compile_testing_0_18": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/testing/compile/compile-testing/0.18/compile-testing-0.18.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_testing_compile_compile_testing_0_18",
+        "name": "com_google_testing_compile_compile_testing_0_18",
+        "netrc": "../maven/netrc",
+        "sha256": "92cfbee5ad356a403d36688ab7bae74be65db9a117478ace34ac3ab4d1f9feb9",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/testing/compile/compile-testing/0.18/compile-testing-0.18.jar"
+        ]
+    },
     "com_google_testparameterinjector": {
         "build_file_content": "\njava_library(\n    name = \"testparameterinjector\",\n    testonly = True,\n    srcs = glob([\"src/main/**/*.java\"]),\n    deps = [\n      \"@org_snakeyaml//:snakeyaml\",\n      \"@//third_party:auto_value\",\n      \"@//third_party:guava\",\n      \"@//third_party:junit4\",\n      \"@//third_party/protobuf:protobuf_java\",\n    ],\n    visibility = [\"//visibility:public\"],\n)\n",
         "name": "com_google_testparameterinjector",
@@ -1409,6 +1431,50 @@
         "urls": [
             "https://mirror.bazel.build/github.com/google/TestParameterInjector/archive/v1.0.tar.gz",
             "https://github.com/google/TestParameterInjector/archive/v1.0.tar.gz"
+        ]
+    },
+    "com_google_truth_extensions_truth_java8_extension_1_1_3": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/truth/extensions/truth-java8-extension/1.1.3/truth-java8-extension-1.1.3.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_truth_extensions_truth_java8_extension_1_1_3",
+        "name": "com_google_truth_extensions_truth_java8_extension_1_1_3",
+        "netrc": "../maven/netrc",
+        "sha256": "2bbd32dd2fa9470d17f1bbda4f52b33b60bce4574052c1d46610a0aa371fc446",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/truth/extensions/truth-java8-extension/1.1.3/truth-java8-extension-1.1.3.jar"
+        ]
+    },
+    "com_google_truth_extensions_truth_liteproto_extension_1_1_3": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/truth/extensions/truth-liteproto-extension/1.1.3/truth-liteproto-extension-1.1.3.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_truth_extensions_truth_liteproto_extension_1_1_3",
+        "name": "com_google_truth_extensions_truth_liteproto_extension_1_1_3",
+        "netrc": "../maven/netrc",
+        "sha256": "71cce6284554e546d1b5ba48e310ee4b4050676f09fb0eced136d779284ff78d",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/truth/extensions/truth-liteproto-extension/1.1.3/truth-liteproto-extension-1.1.3.jar"
+        ]
+    },
+    "com_google_truth_extensions_truth_proto_extension_1_1_3": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/truth/extensions/truth-proto-extension/1.1.3/truth-proto-extension-1.1.3.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_truth_extensions_truth_proto_extension_1_1_3",
+        "name": "com_google_truth_extensions_truth_proto_extension_1_1_3",
+        "netrc": "../maven/netrc",
+        "sha256": "821993e4794e7034ae4a7b68105ef83f1913f0de6112f2fe4b5a7130f6a2bf49",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/truth/extensions/truth-proto-extension/1.1.3/truth-proto-extension-1.1.3.jar"
+        ]
+    },
+    "com_google_truth_truth_1_1_3": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/truth/truth/1.1.3/truth-1.1.3.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_truth_truth_1_1_3",
+        "name": "com_google_truth_truth_1_1_3",
+        "netrc": "../maven/netrc",
+        "sha256": "fc0b67782289a2aabfddfdf99eff1dcd5edc890d49143fcd489214b107b8f4f3",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/truth/truth/1.1.3/truth-1.1.3.jar"
         ]
     },
     "com_googlecode_json_simple_json_simple_1_1": {
@@ -2540,26 +2606,26 @@
             "https://mirror.bazel.build/aka.ms/download-jdk/microsoft-jdk-11.0.13.8.1-windows-aarch64.zip"
         ]
     },
-    "net_bytebuddy_byte_buddy_1_9_7": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.9.7/byte-buddy-1.9.7.jar",
+    "net_bytebuddy_byte_buddy_1_11_13": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.11.13/byte-buddy-1.11.13.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "net_bytebuddy_byte_buddy_1_9_7",
-        "name": "net_bytebuddy_byte_buddy_1_9_7",
+        "generator_name": "net_bytebuddy_byte_buddy_1_11_13",
+        "name": "net_bytebuddy_byte_buddy_1_11_13",
         "netrc": "../maven/netrc",
-        "sha256": "69a9140c11de463789a1badfe6c3dcdc17608c4304cb443c5c3a179585b78b39",
+        "sha256": "e29fa75b903432ac64d05c18c19d0e3b9026e74abda52bbd6f9065e55f4a29f5",
         "urls": [
-            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.9.7/byte-buddy-1.9.7.jar"
+            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.11.13/byte-buddy-1.11.13.jar"
         ]
     },
-    "net_bytebuddy_byte_buddy_agent_1_9_7": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.9.7/byte-buddy-agent-1.9.7.jar",
+    "net_bytebuddy_byte_buddy_agent_1_11_13": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.11.13/byte-buddy-agent-1.11.13.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "net_bytebuddy_byte_buddy_agent_1_9_7",
-        "name": "net_bytebuddy_byte_buddy_agent_1_9_7",
+        "generator_name": "net_bytebuddy_byte_buddy_agent_1_11_13",
+        "name": "net_bytebuddy_byte_buddy_agent_1_11_13",
         "netrc": "../maven/netrc",
-        "sha256": "145ce0fab5390374e69b2b4070d65fedaa2b07c3cfad06b330bea1b6dcfa826f",
+        "sha256": "49b43b0d10f8bb1d800d56137bdf0f44628412ebe1fbd804e45f363d495860fa",
         "urls": [
-            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.9.7/byte-buddy-agent-1.9.7.jar"
+            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.11.13/byte-buddy-agent-1.11.13.jar"
         ]
     },
     "net_java_dev_jna_jna_5_6_0": {
@@ -3418,6 +3484,28 @@
             "https://dl.google.com/android/maven2/org/jvnet/staxex/stax-ex/1.8.1/stax-ex-1.8.1.jar"
         ]
     },
+    "org_mockito_mockito_core_3_12_4": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/mockito/mockito-core/3.12.4/mockito-core-3.12.4.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_mockito_mockito_core_3_12_4",
+        "name": "org_mockito_mockito_core_3_12_4",
+        "netrc": "../maven/netrc",
+        "sha256": "75d4b14ba7aef836e92ba7b2d53ca7d6b215dd7db5625afbc39252f1358835fe",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/mockito/mockito-core/3.12.4/mockito-core-3.12.4.jar"
+        ]
+    },
+    "org_objenesis_objenesis_3_2": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/objenesis/objenesis/3.2/objenesis-3.2.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "org_objenesis_objenesis_3_2",
+        "name": "org_objenesis_objenesis_3_2",
+        "netrc": "../maven/netrc",
+        "sha256": "03d960bd5aef03c653eb000413ada15eb77cdd2b8e4448886edf5692805e35f3",
+        "urls": [
+            "https://repo1.maven.org/maven2/org/objenesis/objenesis/3.2/objenesis-3.2.jar"
+        ]
+    },
     "org_ow2_asm_asm_9_1": {
         "downloaded_file_path": "v1/https/repo1.maven.org/maven2/org/ow2/asm/asm/9.1/asm-9.1.jar",
         "generator_function": "pinned_maven_install",
@@ -3641,11 +3729,11 @@
             "https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz"
         ]
     },
-    "r8-8.0.34.jar": {
-        "name": "r8-8.0.34.jar",
-        "sha256": "805b16bbcee90c35fcba76a1b8cfe1771ef1e16d95bc83aa9e371208e43ffc8b",
+    "r8-8.0.40.jar": {
+        "name": "r8-8.0.40.jar",
+        "sha256": "ab1379835c7d3e5f21f80347c3c81e2f762e0b9b02748ae5232c3afa14adf702",
         "urls": [
-            "https://maven.google.com/com/android/tools/r8/8.0.34/r8-8.0.34.jar"
+            "https://maven.google.com/com/android/tools/r8/8.0.40/r8-8.0.40.jar"
         ]
     },
     "remote_coverage_tools": {
@@ -3681,24 +3769,6 @@
         "urls": [
             "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_arm64-v12.0.zip",
             "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_arm64-v12.0.zip"
-        ]
-    },
-    "remote_java_tools_darwin_for_testing": {
-        "generator_function": "dist_http_archive",
-        "generator_name": "remote_java_tools_darwin_for_testing",
-        "name": "remote_java_tools_darwin_for_testing",
-        "patch_cmds": [
-            "test -f BUILD && chmod u+w BUILD || true",
-            "echo >> BUILD",
-            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD"
-        ],
-        "patch_cmds_win": [
-            "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
-        ],
-        "sha256": "abc434be713ee9e1fd6525d7a7bd9d7cdff6e27ae3ca9d96420490e7ff6e28a3",
-        "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_x86_64-v12.0.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_x86_64-v12.0.zip"
         ]
     },
     "remote_java_tools_darwin_x86_64_for_testing": {
@@ -3781,24 +3851,6 @@
         "urls": [
             "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools-v12.0.zip",
             "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools-v12.0.zip"
-        ]
-    },
-    "remote_java_tools_test_darwin": {
-        "generator_function": "dist_http_archive",
-        "generator_name": "remote_java_tools_test_darwin",
-        "name": "remote_java_tools_test_darwin",
-        "patch_cmds": [
-            "test -f BUILD && chmod u+w BUILD || true",
-            "echo >> BUILD",
-            "echo 'exports_files([\"WORKSPACE\"], visibility = [\"//visibility:public\"])' >> BUILD"
-        ],
-        "patch_cmds_win": [
-            "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
-        ],
-        "sha256": "abc434be713ee9e1fd6525d7a7bd9d7cdff6e27ae3ca9d96420490e7ff6e28a3",
-        "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.0/java_tools_darwin_x86_64-v12.0.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.0/java_tools_darwin_x86_64-v12.0.zip"
         ]
     },
     "remote_java_tools_test_darwin_arm64": {

@@ -66,6 +66,8 @@ let
         srcs.com_envoyproxy_protoc_gen_validate
         srcs.com_google_googleapis
         srcs.rules_license
+        srcs.org_hamcrest_hamcrest_core_1_3
+        srcs.junit_junit_4_13_2
       ]
     );
   jvm_flags = [
@@ -151,6 +153,9 @@ buildBazelPackage {
   dontAddBazelOpts = true;
 
   fetchAttrs = {
+    prePatch = ''
+      rm -f .bazelversion
+    '';
     postInstall = ''
       nix_build_top=$(echo $NIX_BUILD_TOP|sed "s/\/\//\//g")
       find $bazelOut/external -type l | while read symlink; do
@@ -161,7 +166,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-wuAIPAGYrf3w7eXnDke2rdna+3T/CwgyObx+70g5CV0=";
+    sha256 = "sha256-/vuO/i0zwYe1YbV9CGLARCl3SIEGVRkXhYAnVHVj2+Y";
   };
 
   buildAttrs = {
@@ -219,6 +224,8 @@ buildBazelPackage {
       echo "PATH=\$PATH:${defaultShellPath}" >> runfiles.bash.tmp
       cat tools/bash/runfiles/runfiles.bash >> runfiles.bash.tmp
       mv runfiles.bash.tmp tools/bash/runfiles/runfiles.bash
+
+      rm -f .bazelversion
 
       patchShebangs .
     '';

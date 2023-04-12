@@ -4,7 +4,10 @@ with pkgs;
 let
   updater = writeScript "update-bazel-deps.sh" ''
     #!${runtimeShell}
-    cd ${src} && \
+    checkout=$(mktemp -d)
+    cp -r ${src}/* $checkout && \
+    cd $checkout && \
+    rm -f .bazelversion && \
     BAZEL_USE_CPP_ONLY_TOOLCHAIN=1 \
       ${bazel_4}/bin/bazel \
         query 'kind(http_archive, //external:all) + kind(http_file, //external:all) + kind(distdir_tar, //external:all) + kind(git_repository, //external:all)' \
