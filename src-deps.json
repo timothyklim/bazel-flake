@@ -4871,6 +4871,17 @@
             "https://maven.google.com/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar"
         ]
     },
+    "tools_profiler_async_profiler_2_9": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/tools/profiler/async-profiler/2.9/async-profiler-2.9.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "tools_profiler_async_profiler_2_9",
+        "name": "tools_profiler_async_profiler_2_9",
+        "netrc": "../maven/netrc",
+        "sha256": "6c4e993c28cf2882964cac82a0f96e81a325840043884526565017b2f62c5ba4",
+        "urls": [
+            "https://repo1.maven.org/maven2/tools/profiler/async-profiler/2.9/async-profiler-2.9.jar"
+        ]
+    },
     "upb": {
         "generator_function": "dist_http_archive",
         "generator_name": "upb",
