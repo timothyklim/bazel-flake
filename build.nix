@@ -135,7 +135,7 @@ buildBazelPackage {
   ];
 
   bazel = bazel_6;
-  bazelTarget = "//src:bazel_nojdk";
+  bazelTargets = ["//src:bazel_nojdk"];
   bazelFetchFlags = [
     "--loading_phase_threads=HOST_CPUS"
   ];
@@ -166,7 +166,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-3aR/K9sHdkmVXCDDMABLs1VR727OFIRurJFIDee0iVo=";
+    sha256 = "sha256-ETHIDaDPz53qwkJx5mWEwIAN9v07LjIK3Y6W/nH/CBo=";
   };
 
   buildAttrs = {
