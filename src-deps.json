@@ -146,6 +146,17 @@
             "https://repo1.maven.org/maven2/androidx/databinding/databinding-compiler-common/3.4.0-alpha10/databinding-compiler-common-3.4.0-alpha10.jar"
         ]
     },
+    "aopalliance_aopalliance_1_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "aopalliance_aopalliance_1_0",
+        "name": "aopalliance_aopalliance_1_0",
+        "netrc": "../maven/netrc",
+        "sha256": "0addec670fedcd3f113c5c8091d783280d23f75e3acb841b61a9cdb079376a08",
+        "urls": [
+            "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"
+        ]
+    },
     "bazel-gazelle-v0.24.0.tar.gz": {
         "name": "bazel-gazelle-v0.24.0.tar.gz",
         "sha256": "de69a09dc70417580aabf20a28619bb3ef60d038470c7cf8442fafcf627c21cb",
@@ -1019,26 +1030,26 @@
             "https://repo1.maven.org/maven2/com/google/code/java-allocation-instrumenter/java-allocation-instrumenter/3.3.0/java-allocation-instrumenter-3.3.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_annotation_2_18_0": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotation/2.18.0/error_prone_annotation-2.18.0.jar",
+    "com_google_errorprone_error_prone_annotation_2_19_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotation/2.19.0/error_prone_annotation-2.19.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_annotation_2_18_0",
-        "name": "com_google_errorprone_error_prone_annotation_2_18_0",
+        "generator_name": "com_google_errorprone_error_prone_annotation_2_19_0",
+        "name": "com_google_errorprone_error_prone_annotation_2_19_0",
         "netrc": "../maven/netrc",
-        "sha256": "6e5c594971265b03d39b8fb40a5d92f073ae1d98e47d37a3a3f2702e4e31f267",
+        "sha256": "a2796ac0de6c258150fb9d72d60978315793e8a4d5608bb25095d28eff9a4d05",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotation/2.18.0/error_prone_annotation-2.18.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotation/2.19.0/error_prone_annotation-2.19.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_annotations_2_18_0": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar",
+    "com_google_errorprone_error_prone_annotations_2_19_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.19.0/error_prone_annotations-2.19.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_annotations_2_18_0",
-        "name": "com_google_errorprone_error_prone_annotations_2_18_0",
+        "generator_name": "com_google_errorprone_error_prone_annotations_2_19_0",
+        "name": "com_google_errorprone_error_prone_annotations_2_19_0",
         "netrc": "../maven/netrc",
-        "sha256": "9e6814cb71816988a4fd1b07a993a8f21bb7058d522c162b1de849e19bea54ae",
+        "sha256": "cb5c52ba0ec46466885b99d74d012fc4e6e871a615f77d0410648f8556e0a8eb",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.19.0/error_prone_annotations-2.19.0.jar"
         ]
     },
     "com_google_errorprone_error_prone_annotations_2_3_4": {
@@ -1065,37 +1076,37 @@
             "https://maven.google.com/com/google/errorprone/error_prone_annotations/2.4.0/error_prone_annotations-2.4.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_check_api_2_18_0": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_check_api/2.18.0/error_prone_check_api-2.18.0.jar",
+    "com_google_errorprone_error_prone_check_api_2_19_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_check_api/2.19.0/error_prone_check_api-2.19.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_check_api_2_18_0",
-        "name": "com_google_errorprone_error_prone_check_api_2_18_0",
+        "generator_name": "com_google_errorprone_error_prone_check_api_2_19_0",
+        "name": "com_google_errorprone_error_prone_check_api_2_19_0",
         "netrc": "../maven/netrc",
-        "sha256": "6c34578691c4fae9bced50b2a3fe8b4e0420469fb0770655a3ea41ed2a9e40a4",
+        "sha256": "9b5a0a74e8fabb283e13b38a7641c5f18e8659bedafdc8e45a114089c44b4acf",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_check_api/2.18.0/error_prone_check_api-2.18.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_check_api/2.19.0/error_prone_check_api-2.19.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_core_2_18_0": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_core/2.18.0/error_prone_core-2.18.0.jar",
+    "com_google_errorprone_error_prone_core_2_19_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_core/2.19.0/error_prone_core-2.19.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_core_2_18_0",
-        "name": "com_google_errorprone_error_prone_core_2_18_0",
+        "generator_name": "com_google_errorprone_error_prone_core_2_19_0",
+        "name": "com_google_errorprone_error_prone_core_2_19_0",
         "netrc": "../maven/netrc",
-        "sha256": "eabbecefbb40c8ab7c2f17b5ef1715a8065f6b9718d4a02cf91850e65bfcc241",
+        "sha256": "c42acbe124b47cd5483a654e27710b4c960a82609df325911cf4c55341f817e2",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_core/2.18.0/error_prone_core-2.18.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_core/2.19.0/error_prone_core-2.19.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_type_annotations_2_18_0": {
-        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.18.0/error_prone_type_annotations-2.18.0.jar",
+    "com_google_errorprone_error_prone_type_annotations_2_19_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.19.0/error_prone_type_annotations-2.19.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_type_annotations_2_18_0",
-        "name": "com_google_errorprone_error_prone_type_annotations_2_18_0",
+        "generator_name": "com_google_errorprone_error_prone_type_annotations_2_19_0",
+        "name": "com_google_errorprone_error_prone_type_annotations_2_19_0",
         "netrc": "../maven/netrc",
-        "sha256": "d2ab73bc6807277f7463391504313e47bc3465ab1916339c8e82be633a9ab375",
+        "sha256": "960641b9f7bc3142a5b18b9e35ba90e935b11ea45fdc4469962f47bc8dc66d8b",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.18.0/error_prone_type_annotations-2.18.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.19.0/error_prone_type_annotations-2.19.0.jar"
         ]
     },
     "com_google_flogger_flogger_0_5_1": {
@@ -1288,6 +1299,17 @@
         "urls": [
             "https://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.38.0/google-http-client-jackson2-1.38.0.jar",
             "https://maven.google.com/com/google/http-client/google-http-client-jackson2/1.38.0/google-http-client-jackson2-1.38.0.jar"
+        ]
+    },
+    "com_google_inject_guice_5_1_0": {
+        "downloaded_file_path": "v1/https/repo1.maven.org/maven2/com/google/inject/guice/5.1.0/guice-5.1.0.jar",
+        "generator_function": "pinned_maven_install",
+        "generator_name": "com_google_inject_guice_5_1_0",
+        "name": "com_google_inject_guice_5_1_0",
+        "netrc": "../maven/netrc",
+        "sha256": "4130e50bfac48099c860f0d903b91860c81a249c90f38245f8fed58fc817bc26",
+        "urls": [
+            "https://repo1.maven.org/maven2/com/google/inject/guice/5.1.0/guice-5.1.0.jar"
         ]
     },
     "com_google_j2objc_j2objc_annotations_1_3": {
