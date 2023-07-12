@@ -17,7 +17,7 @@
       let
         sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
-        jdk = java.packages.${system}.openjdk_20;
+        jdk = java.packages.${system}.openjdk_21;
         bazel = import ./build.nix {
           inherit pkgs nixpkgs jdk src;
           version = sources.src.original.ref;
