@@ -35,8 +35,6 @@ let
     in
     builtins.listToAttrs (
       map toFetchurl [
-        srcs."coverage_output_generator-v2.6.zip"
-
         srcs.android_tools_for_testing
         srcs.bazel_skylib
         srcs.bazel_toolchains
@@ -48,9 +46,9 @@ let
         srcs.desugar_jdk_libs
         srcs.io_bazel_skydoc
         srcs.platforms
-        srcs.remote_java_tools_for_testing
-        srcs.remote_java_tools_linux_for_testing
-        srcs.remote_java_tools_test
+        srcs.remote_coverage_tools
+        srcs.remote_java_tools
+        srcs.remote_java_tools_linux
         srcs.remotejdk11_linux
         srcs.rules_cc
         srcs.rules_java
@@ -87,7 +85,7 @@ let
 
     name = "remote_java_tools_linux";
 
-    src = srcDepsSet."remote_java_tools_linux_for_testing";
+    src = srcDepsSet.remote_java_tools_linux;
 
     nativeBuildInputs = [ unzip ] ++ lib.optionals stdenv.isLinux [ autoPatchelfHook ];
     buildInputs = [ gcc-unwrapped ];
@@ -166,7 +164,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-udSFrFM7L4mKhsWb63PtG0LVtCKdqQTiwME3AxfmQt4=";
+    sha256 = "sha256-NQcgx0zJG8Lgq/iO2OD52e1Ddc8xxgK5IuSoadWHQ3s=";
   };
 
   buildAttrs = {
