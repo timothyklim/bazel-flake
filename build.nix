@@ -22,6 +22,11 @@ let
     zip
   ];
   defaultShellPath = lib.makeBinPath defaultShellUtils;
+  # Update java_tools to v12.5
+  java_tools-patch = fetchpatch {
+    url = "https://patch-diff.githubusercontent.com/raw/bazelbuild/bazel/pull/18902.patch";
+    sha256 = "sha256-pBEyOCyzF92TJhA/FC4alWV7IX4WPqR5vFfC1nqvtsU=";
+  };
   srcDeps = lib.attrsets.attrValues srcDepsSet;
   srcDepsSet =
     let
@@ -91,7 +96,7 @@ let
     buildInputs = [ gcc-unwrapped ];
 
     buildPhase = ''
-      mkdir $out;
+      mkdir $out
     '';
 
     installPhase = ''
@@ -151,9 +156,14 @@ buildBazelPackage {
   dontAddBazelOpts = true;
 
   fetchAttrs = {
+    patches = [
+      java_tools-patch
+    ];
+
     prePatch = ''
       rm -f .bazelversion
     '';
+
     postInstall = ''
       nix_build_top=$(echo $NIX_BUILD_TOP|sed "s/\/\//\//g")
       find $bazelOut/external -type l | while read symlink; do
@@ -164,7 +174,7 @@ buildBazelPackage {
     '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-NQcgx0zJG8Lgq/iO2OD52e1Ddc8xxgK5IuSoadWHQ3s=";
+    sha256 = "sha256-gFpL80a3NkSm5PqY3R6pdeCeZCc9uESvzJIGA2cPrk4=";
   };
 
   buildAttrs = {
@@ -183,6 +193,8 @@ buildBazelPackage {
         src = ./patches/bazel_rc.patch;
         bazelSystemBazelRCPath = bazelRC;
       })
+
+      java_tools-patch
     ];
 
     postPatch = ''
