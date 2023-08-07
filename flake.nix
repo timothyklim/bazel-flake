@@ -7,7 +7,7 @@
 
     java.url = "github:timothyklim/jdk-flake";
     src = {
-      url = "github:bazelbuild/bazel/7.0.0-pre.20230628.2";
+      url = "github:bazelbuild/bazel/7.0.0-pre.20230710.5";
       flake = false;
     };
   };
@@ -17,7 +17,7 @@
       let
         sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
-        jdk = java.packages.${system}.openjdk_20;
+        jdk = java.packages.${system}.openjdk_21;
         bazel = import ./build.nix {
           inherit pkgs nixpkgs jdk src;
           version = sources.src.original.ref;

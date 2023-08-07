@@ -2395,17 +2395,6 @@
             "https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.93.Final/netty-transport-native-unix-common-4.1.93.Final-osx-x86_64.jar"
         ]
     },
-    "io_netty_netty_transport_sctp_4_1_93_Final": {
-        "downloaded_file_path": "io/netty/netty-transport-sctp/4.1.93.Final/netty-transport-sctp-4.1.93.Final.jar",
-        "generator_function": "pinned_maven_install",
-        "generator_name": "io_netty_netty_transport_sctp_4_1_93_Final",
-        "name": "io_netty_netty_transport_sctp_4_1_93_Final",
-        "netrc": "../maven/netrc",
-        "sha256": "9021704f3ad2758d3d2728d335fcd16df8390bbcd9cfb64ee24e2024d4cd5a0f",
-        "urls": [
-            "https://repo1.maven.org/maven2/io/netty/netty-transport-sctp/4.1.93.Final/netty-transport-sctp-4.1.93.Final.jar"
-        ]
-    },
     "io_opencensus_cpp": {
         "generator_function": "grpc_deps",
         "generator_name": "io_opencensus_cpp",
@@ -2577,26 +2566,26 @@
             "https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar"
         ]
     },
-    "net_bytebuddy_byte_buddy_1_11_13": {
-        "downloaded_file_path": "net/bytebuddy/byte-buddy/1.11.13/byte-buddy-1.11.13.jar",
+    "net_bytebuddy_byte_buddy_1_14_5": {
+        "downloaded_file_path": "net/bytebuddy/byte-buddy/1.14.5/byte-buddy-1.14.5.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "net_bytebuddy_byte_buddy_1_11_13",
-        "name": "net_bytebuddy_byte_buddy_1_11_13",
+        "generator_name": "net_bytebuddy_byte_buddy_1_14_5",
+        "name": "net_bytebuddy_byte_buddy_1_14_5",
         "netrc": "../maven/netrc",
-        "sha256": "e29fa75b903432ac64d05c18c19d0e3b9026e74abda52bbd6f9065e55f4a29f5",
+        "sha256": "e99761a526df0fefbbd3fe14436b0f953000cdfa5151dc63c0b18d37d9c46f1c",
         "urls": [
-            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.11.13/byte-buddy-1.11.13.jar"
+            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.14.5/byte-buddy-1.14.5.jar"
         ]
     },
-    "net_bytebuddy_byte_buddy_agent_1_11_13": {
-        "downloaded_file_path": "net/bytebuddy/byte-buddy-agent/1.11.13/byte-buddy-agent-1.11.13.jar",
+    "net_bytebuddy_byte_buddy_agent_1_14_5": {
+        "downloaded_file_path": "net/bytebuddy/byte-buddy-agent/1.14.5/byte-buddy-agent-1.14.5.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "net_bytebuddy_byte_buddy_agent_1_11_13",
-        "name": "net_bytebuddy_byte_buddy_agent_1_11_13",
+        "generator_name": "net_bytebuddy_byte_buddy_agent_1_14_5",
+        "name": "net_bytebuddy_byte_buddy_agent_1_14_5",
         "netrc": "../maven/netrc",
-        "sha256": "49b43b0d10f8bb1d800d56137bdf0f44628412ebe1fbd804e45f363d495860fa",
+        "sha256": "55f19862b870f5d85890ba5386b1b45e9bbc88d5fe1f819abe0c788b4929fa6b",
         "urls": [
-            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.11.13/byte-buddy-agent-1.11.13.jar"
+            "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.5/byte-buddy-agent-1.14.5.jar"
         ]
     },
     "net_java_dev_jna_jna_5_6_0": {
@@ -3265,26 +3254,26 @@
             "https://repo1.maven.org/maven2/org/jvnet/staxex/stax-ex/1.8.1/stax-ex-1.8.1.jar"
         ]
     },
-    "org_mockito_mockito_core_3_12_4": {
-        "downloaded_file_path": "org/mockito/mockito-core/3.12.4/mockito-core-3.12.4.jar",
+    "org_mockito_mockito_core_5_4_0": {
+        "downloaded_file_path": "org/mockito/mockito-core/5.4.0/mockito-core-5.4.0.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "org_mockito_mockito_core_3_12_4",
-        "name": "org_mockito_mockito_core_3_12_4",
+        "generator_name": "org_mockito_mockito_core_5_4_0",
+        "name": "org_mockito_mockito_core_5_4_0",
         "netrc": "../maven/netrc",
-        "sha256": "75d4b14ba7aef836e92ba7b2d53ca7d6b215dd7db5625afbc39252f1358835fe",
+        "sha256": "b1689b06617ea01fd777bfaedbdde512faf083d639a049f79b388d5a4e96d2e5",
         "urls": [
-            "https://repo1.maven.org/maven2/org/mockito/mockito-core/3.12.4/mockito-core-3.12.4.jar"
+            "https://repo1.maven.org/maven2/org/mockito/mockito-core/5.4.0/mockito-core-5.4.0.jar"
         ]
     },
-    "org_objenesis_objenesis_3_2": {
-        "downloaded_file_path": "org/objenesis/objenesis/3.2/objenesis-3.2.jar",
+    "org_objenesis_objenesis_3_3": {
+        "downloaded_file_path": "org/objenesis/objenesis/3.3/objenesis-3.3.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "org_objenesis_objenesis_3_2",
-        "name": "org_objenesis_objenesis_3_2",
+        "generator_name": "org_objenesis_objenesis_3_3",
+        "name": "org_objenesis_objenesis_3_3",
         "netrc": "../maven/netrc",
-        "sha256": "03d960bd5aef03c653eb000413ada15eb77cdd2b8e4448886edf5692805e35f3",
+        "sha256": "02dfd0b0439a5591e35b708ed2f5474eb0948f53abf74637e959b8e4ef69bfeb",
         "urls": [
-            "https://repo1.maven.org/maven2/org/objenesis/objenesis/3.2/objenesis-3.2.jar"
+            "https://repo1.maven.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.jar"
         ]
     },
     "org_ow2_asm_asm_9_1": {
@@ -3538,50 +3527,50 @@
         "generator_function": "rules_java_dependencies",
         "generator_name": "remote_java_tools",
         "name": "remote_java_tools",
-        "sha256": "cbb62ecfef61568ded46260a8e8e8430755db7ec9638c0c7ff668a656f6c042f",
+        "sha256": "942b3d88ebd785a5face38049077a1f8dab5a3500f5ebd0c0df090244acc4e16",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.3/java_tools-v12.3.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.3/java_tools-v12.3.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.5/java_tools-v12.5.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.5/java_tools-v12.5.zip"
         ]
     },
     "remote_java_tools_darwin_arm64": {
         "generator_function": "rules_java_dependencies",
         "generator_name": "remote_java_tools_darwin_arm64",
         "name": "remote_java_tools_darwin_arm64",
-        "sha256": "29aa0c2de4e3cf45bc55d2995ba803ecbd1173a8d363860abbc309551db7931b",
+        "sha256": "5fb927b24043dd79010b54be31ec5f18b38ee9dbd9fd03d8353232431a7e2392",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.3/java_tools_darwin_arm64-v12.3.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.3/java_tools_darwin_arm64-v12.3.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.5/java_tools_darwin_arm64-v12.5.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.5/java_tools_darwin_arm64-v12.5.zip"
         ]
     },
     "remote_java_tools_darwin_x86_64": {
         "generator_function": "rules_java_dependencies",
         "generator_name": "remote_java_tools_darwin_x86_64",
         "name": "remote_java_tools_darwin_x86_64",
-        "sha256": "3c3fb1967a0f35c73ff509505de53ca4611518922a6b7c8c22a468aa7503132c",
+        "sha256": "7e96d0310222e9c27e4c87987978c0c59a0acb97cebdbd838ff652a13abbed77",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.3/java_tools_darwin_x86_64-v12.3.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.3/java_tools_darwin_x86_64-v12.3.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.5/java_tools_darwin_x86_64-v12.5.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.5/java_tools_darwin_x86_64-v12.5.zip"
         ]
     },
     "remote_java_tools_linux": {
         "generator_function": "rules_java_dependencies",
         "generator_name": "remote_java_tools_linux",
         "name": "remote_java_tools_linux",
-        "sha256": "32157b5218b151009f5b99bf5e2f65e28823d269dfbba8cd57e7da5e7cdd291d",
+        "sha256": "45dda5441b46385e8ec95d3bc4a04b9337a6ff837bb41bdaa6247d8d36edceae",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.3/java_tools_linux-v12.3.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.3/java_tools_linux-v12.3.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.5/java_tools_linux-v12.5.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.5/java_tools_linux-v12.5.zip"
         ]
     },
     "remote_java_tools_windows": {
         "generator_function": "rules_java_dependencies",
         "generator_name": "remote_java_tools_windows",
         "name": "remote_java_tools_windows",
-        "sha256": "ec6f91387d2353eacb0ca0492f35f68c5c7b0e7a80acd1fb825088b4b069fab1",
+        "sha256": "0b319cf762e256133f8d0f5f99fd7d35ca4cf00f35e7c0e8aea1b9fcd9cf4fb0",
         "urls": [
-            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.3/java_tools_windows-v12.3.zip",
-            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.3/java_tools_windows-v12.3.zip"
+            "https://mirror.bazel.build/bazel_java_tools/releases/java/v12.5/java_tools_windows-v12.5.zip",
+            "https://github.com/bazelbuild/java_tools/releases/download/java_v12.5/java_tools_windows-v12.5.zip"
         ]
     },
     "remotejdk11_linux": {
@@ -3936,31 +3925,22 @@
         "generator_function": "dist_http_archive",
         "generator_name": "rules_java",
         "name": "rules_java",
-        "patch_args": [
-            "-p1"
-        ],
-        "patches": [
-            "//third_party:rules_java_6.1.0.patch"
-        ],
-        "sha256": "76402a50ae6859d50bd7aed8c1b8ef09dae5c1035bb3ca7d276f7f3ce659818a",
+        "sha256": "847527aa7f74712e0a63af2670ba3ddc04e8ea3d8930a7947c17aebfb29d5294",
         "urls": [
-            "https://github.com/bazelbuild/rules_java/releases/download/6.1.1/rules_java-6.1.1.tar.gz"
+            "https://github.com/bazelbuild/rules_java/releases/download/6.2.2/rules_java-6.2.2.tar.gz"
         ]
     },
-    "rules_java-6.1.1.tar.gz": {
-        "name": "rules_java-6.1.1.tar.gz",
-        "sha256": "76402a50ae6859d50bd7aed8c1b8ef09dae5c1035bb3ca7d276f7f3ce659818a",
+    "rules_java-6.2.2.tar.gz": {
+        "name": "rules_java-6.2.2.tar.gz",
+        "sha256": "847527aa7f74712e0a63af2670ba3ddc04e8ea3d8930a7947c17aebfb29d5294",
         "urls": [
-            "https://github.com/bazelbuild/rules_java/releases/download/6.1.1/rules_java-6.1.1.tar.gz"
+            "https://github.com/bazelbuild/rules_java/releases/download/6.2.2/rules_java-6.2.2.tar.gz"
         ]
     },
     "rules_java_builtin_for_testing": {
         "generator_function": "dist_http_archive",
         "generator_name": "rules_java_builtin_for_testing",
         "name": "rules_java_builtin_for_testing",
-        "patch_args": [
-            "-p1"
-        ],
         "patch_cmds": [
             "test -f BUILD && chmod u+w BUILD || true",
             "echo >> BUILD",
@@ -3969,12 +3949,9 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "patches": [
-            "//third_party:rules_java_6.1.0.patch"
-        ],
-        "sha256": "76402a50ae6859d50bd7aed8c1b8ef09dae5c1035bb3ca7d276f7f3ce659818a",
+        "sha256": "847527aa7f74712e0a63af2670ba3ddc04e8ea3d8930a7947c17aebfb29d5294",
         "urls": [
-            "https://github.com/bazelbuild/rules_java/releases/download/6.1.1/rules_java-6.1.1.tar.gz"
+            "https://github.com/bazelbuild/rules_java/releases/download/6.2.2/rules_java-6.2.2.tar.gz"
         ]
     },
     "rules_jvm_external": {
