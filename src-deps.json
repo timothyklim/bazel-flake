@@ -87,14 +87,14 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "db3b02421ae974e0b33573f3e4f658d5f89cc9a0b42baae0ba2ac08e25c0720a",
-        "url": "https://mirror.bazel.build/bazel_android_tools/android_tools_pkg-0.28.0.tar"
+        "sha256": "d7223664ca5b0de490f2a918c31f35cdf4f23a1446fe261d7470b8a22bd7bcf1",
+        "url": "https://mirror.bazel.build/bazel_android_tools/android_tools_pkg-0.29.0.tar"
     },
-    "android_tools_pkg-0.28.0.tar": {
-        "name": "android_tools_pkg-0.28.0.tar",
-        "sha256": "db3b02421ae974e0b33573f3e4f658d5f89cc9a0b42baae0ba2ac08e25c0720a",
+    "android_tools_pkg-0.29.0.tar": {
+        "name": "android_tools_pkg-0.29.0.tar",
+        "sha256": "d7223664ca5b0de490f2a918c31f35cdf4f23a1446fe261d7470b8a22bd7bcf1",
         "urls": [
-            "https://mirror.bazel.build/bazel_android_tools/android_tools_pkg-0.28.0.tar"
+            "https://mirror.bazel.build/bazel_android_tools/android_tools_pkg-0.29.0.tar"
         ]
     },
     "androidx_databinding_databinding_common_3_4_0_alpha10": {
@@ -1036,15 +1036,15 @@
             "https://repo1.maven.org/maven2/com/google/code/java-allocation-instrumenter/java-allocation-instrumenter/3.3.0/java-allocation-instrumenter-3.3.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_annotation_2_19_0": {
-        "downloaded_file_path": "com/google/errorprone/error_prone_annotation/2.19.0/error_prone_annotation-2.19.0.jar",
+    "com_google_errorprone_error_prone_annotation_2_19_1": {
+        "downloaded_file_path": "com/google/errorprone/error_prone_annotation/2.19.1/error_prone_annotation-2.19.1.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_annotation_2_19_0",
-        "name": "com_google_errorprone_error_prone_annotation_2_19_0",
+        "generator_name": "com_google_errorprone_error_prone_annotation_2_19_1",
+        "name": "com_google_errorprone_error_prone_annotation_2_19_1",
         "netrc": "../maven/netrc",
-        "sha256": "a2796ac0de6c258150fb9d72d60978315793e8a4d5608bb25095d28eff9a4d05",
+        "sha256": "38c45cdaf993a7df6697703ca6ee00acbe376d3dade8d44daac3e33f039ca516",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotation/2.19.0/error_prone_annotation-2.19.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotation/2.19.1/error_prone_annotation-2.19.1.jar"
         ]
     },
     "com_google_errorprone_error_prone_annotations_2_11_0": {
@@ -1059,15 +1059,15 @@
             "https://maven.google.com/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar"
         ]
     },
-    "com_google_errorprone_error_prone_annotations_2_19_0": {
-        "downloaded_file_path": "com/google/errorprone/error_prone_annotations/2.19.0/error_prone_annotations-2.19.0.jar",
+    "com_google_errorprone_error_prone_annotations_2_19_1": {
+        "downloaded_file_path": "com/google/errorprone/error_prone_annotations/2.19.1/error_prone_annotations-2.19.1.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_annotations_2_19_0",
-        "name": "com_google_errorprone_error_prone_annotations_2_19_0",
+        "generator_name": "com_google_errorprone_error_prone_annotations_2_19_1",
+        "name": "com_google_errorprone_error_prone_annotations_2_19_1",
         "netrc": "../maven/netrc",
-        "sha256": "cb5c52ba0ec46466885b99d74d012fc4e6e871a615f77d0410648f8556e0a8eb",
+        "sha256": "add3990298501fdcb6ec58fff26608c1d298fb5dfe2f80d74867bf0f5c539668",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.19.0/error_prone_annotations-2.19.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.19.1/error_prone_annotations-2.19.1.jar"
         ]
     },
     "com_google_errorprone_error_prone_annotations_2_3_4": {
@@ -1082,37 +1082,37 @@
             "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar"
         ]
     },
-    "com_google_errorprone_error_prone_check_api_2_19_0": {
-        "downloaded_file_path": "com/google/errorprone/error_prone_check_api/2.19.0/error_prone_check_api-2.19.0.jar",
+    "com_google_errorprone_error_prone_check_api_2_19_1": {
+        "downloaded_file_path": "com/google/errorprone/error_prone_check_api/2.19.1/error_prone_check_api-2.19.1.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_check_api_2_19_0",
-        "name": "com_google_errorprone_error_prone_check_api_2_19_0",
+        "generator_name": "com_google_errorprone_error_prone_check_api_2_19_1",
+        "name": "com_google_errorprone_error_prone_check_api_2_19_1",
         "netrc": "../maven/netrc",
-        "sha256": "9b5a0a74e8fabb283e13b38a7641c5f18e8659bedafdc8e45a114089c44b4acf",
+        "sha256": "d8040a8be18c8b5c92abad80d7fd22257ad523cc8ccc51b7403110e26c4e9558",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_check_api/2.19.0/error_prone_check_api-2.19.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_check_api/2.19.1/error_prone_check_api-2.19.1.jar"
         ]
     },
-    "com_google_errorprone_error_prone_core_2_19_0": {
-        "downloaded_file_path": "com/google/errorprone/error_prone_core/2.19.0/error_prone_core-2.19.0.jar",
+    "com_google_errorprone_error_prone_core_2_19_1": {
+        "downloaded_file_path": "com/google/errorprone/error_prone_core/2.19.1/error_prone_core-2.19.1.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_core_2_19_0",
-        "name": "com_google_errorprone_error_prone_core_2_19_0",
+        "generator_name": "com_google_errorprone_error_prone_core_2_19_1",
+        "name": "com_google_errorprone_error_prone_core_2_19_1",
         "netrc": "../maven/netrc",
-        "sha256": "c42acbe124b47cd5483a654e27710b4c960a82609df325911cf4c55341f817e2",
+        "sha256": "5c3ff65e67d490d2a5f89b052dc19adcb19abbdd47fa322827708a43230ca717",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_core/2.19.0/error_prone_core-2.19.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_core/2.19.1/error_prone_core-2.19.1.jar"
         ]
     },
-    "com_google_errorprone_error_prone_type_annotations_2_19_0": {
-        "downloaded_file_path": "com/google/errorprone/error_prone_type_annotations/2.19.0/error_prone_type_annotations-2.19.0.jar",
+    "com_google_errorprone_error_prone_type_annotations_2_19_1": {
+        "downloaded_file_path": "com/google/errorprone/error_prone_type_annotations/2.19.1/error_prone_type_annotations-2.19.1.jar",
         "generator_function": "pinned_maven_install",
-        "generator_name": "com_google_errorprone_error_prone_type_annotations_2_19_0",
-        "name": "com_google_errorprone_error_prone_type_annotations_2_19_0",
+        "generator_name": "com_google_errorprone_error_prone_type_annotations_2_19_1",
+        "name": "com_google_errorprone_error_prone_type_annotations_2_19_1",
         "netrc": "../maven/netrc",
-        "sha256": "960641b9f7bc3142a5b18b9e35ba90e935b11ea45fdc4469962f47bc8dc66d8b",
+        "sha256": "a430ec8febdb9b92e40962b022152b8b6cd27ccaec4e65681b5d8b1284cb49b6",
         "urls": [
-            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.19.0/error_prone_type_annotations-2.19.0.jar"
+            "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_type_annotations/2.19.1/error_prone_type_annotations-2.19.1.jar"
         ]
     },
     "com_google_flogger_flogger_0_5_1": {
@@ -3908,17 +3908,17 @@
         "patch_cmds_win": [
             "Add-Content -Path BUILD -Value \"`nexports_files([`\"WORKSPACE`\"], visibility = [`\"//visibility:public`\"])`n\" -Force"
         ],
-        "sha256": "3d9e271e2876ba42e114c9b9bc51454e379cbf0ec9ef9d40e2ae4cec61a31b40",
-        "strip_prefix": "rules_cc-0.0.6",
+        "sha256": "ae46b722a8b8e9b62170f83bfb040cbf12adb732144e689985a66b26410a7d6f",
+        "strip_prefix": "rules_cc-0.0.8",
         "urls": [
-            "https://github.com/bazelbuild/rules_cc/releases/download/0.0.6/rules_cc-0.0.6.tar.gz"
+            "https://github.com/bazelbuild/rules_cc/releases/download/0.0.8/rules_cc-0.0.8.tar.gz"
         ]
     },
-    "rules_cc-0.0.6.tar.gz": {
-        "name": "rules_cc-0.0.6.tar.gz",
-        "sha256": "3d9e271e2876ba42e114c9b9bc51454e379cbf0ec9ef9d40e2ae4cec61a31b40",
+    "rules_cc-0.0.8.tar.gz": {
+        "name": "rules_cc-0.0.8.tar.gz",
+        "sha256": "ae46b722a8b8e9b62170f83bfb040cbf12adb732144e689985a66b26410a7d6f",
         "urls": [
-            "https://github.com/bazelbuild/rules_cc/releases/download/0.0.6/rules_cc-0.0.6.tar.gz"
+            "https://github.com/bazelbuild/rules_cc/releases/download/0.0.8/rules_cc-0.0.8.tar.gz"
         ]
     },
     "rules_java": {
