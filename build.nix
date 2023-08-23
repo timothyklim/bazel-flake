@@ -22,6 +22,11 @@ let
     zip
   ];
   defaultShellPath = lib.makeBinPath defaultShellUtils;
+  # Update java_tools to v12.5
+  java_tools-patch = fetchpatch {
+    url = "https://patch-diff.githubusercontent.com/raw/bazelbuild/bazel/pull/18902.patch";
+    sha256 = "sha256-pBEyOCyzF92TJhA/FC4alWV7IX4WPqR5vFfC1nqvtsU=";
+  };
   srcDeps = lib.attrsets.attrValues srcDepsSet;
   srcDepsSet =
     let
@@ -151,7 +156,9 @@ buildBazelPackage {
   dontAddBazelOpts = true;
 
   fetchAttrs = {
-    patches = [];
+    patches = [
+      java_tools-patch
+    ];
 
     prePatch = ''
       rm -f .bazelversion
@@ -186,6 +193,8 @@ buildBazelPackage {
         src = ./patches/bazel_rc.patch;
         bazelSystemBazelRCPath = bazelRC;
       })
+
+      java_tools-patch
     ];
 
     postPatch = ''
