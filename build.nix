@@ -4,6 +4,7 @@ with pkgs;
 let
   sourceRoot = ".";
   arch = stdenv.hostPlatform.parsed.cpu.name;
+  python3 = python38;
   defaultShellUtils = [
     bash
     binutils-unwrapped
@@ -22,11 +23,6 @@ let
     zip
   ];
   defaultShellPath = lib.makeBinPath defaultShellUtils;
-  # Update java_tools to v12.5
-  java_tools-patch = fetchpatch {
-    url = "https://patch-diff.githubusercontent.com/raw/bazelbuild/bazel/pull/18902.patch";
-    sha256 = "sha256-pBEyOCyzF92TJhA/FC4alWV7IX4WPqR5vFfC1nqvtsU=";
-  };
   srcDeps = lib.attrsets.attrValues srcDepsSet;
   srcDepsSet =
     let
@@ -121,6 +117,11 @@ let
       try-import /etc/bazel.bazelrc
     '';
   };
+  prePatch = ''
+    rm -f .bazelversion
+
+    ln -snf ${python3} ./python3
+  '';
 in
 buildBazelPackage {
   inherit src version;
@@ -145,7 +146,6 @@ buildBazelPackage {
   bazelFlags = jvm_flags ++ [
     "-c opt"
     "--override_repository=${remote_java_tools.name}=${remote_java_tools}"
-    "--sandbox_tmpfs_path=/tmp" # https://github.com/bazelbuild/bazel/issues/11401
   ];
   fetchConfigured = true;
 
@@ -156,30 +156,22 @@ buildBazelPackage {
   dontAddBazelOpts = true;
 
   fetchAttrs = {
+    inherit prePatch;
+
     patches = [
-      java_tools-patch
+      ./patches/nixpkgs_python.patch
     ];
 
-    prePatch = ''
-      rm -f .bazelversion
-    '';
-
-    postInstall = ''
-      nix_build_top=$(echo $NIX_BUILD_TOP|sed "s/\/\//\//g")
-      find $bazelOut/external -type l | while read symlink; do
-        new_target="$(readlink "$symlink" | sed "s,$nix_build_top,NIX_BUILD_TOP,")"
-        rm "$symlink"
-        ln -sf "$new_target" "$symlink"
-      done
-    '';
-
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-lrn8ZKJcQ/YPGniObSy26ivJ6P53FmgutvKwDR2zdoE=";
+    sha256 = "sha256-/2Z0kmxx0PAZE2o6qtYwsEmmTnBQRog8BJiNvF8TdzQ=";
   };
 
   buildAttrs = {
+    inherit prePatch;
+
     patches = [
       "${nixpkgs}/pkgs/development/tools/build-managers/bazel/trim-last-argument-to-gcc-if-empty.patch"
+      ./patches/nixpkgs_python.patch
 
       (substituteAll {
         src = ./patches/actions_path.patch;
@@ -193,8 +185,6 @@ buildBazelPackage {
         src = ./patches/bazel_rc.patch;
         bazelSystemBazelRCPath = bazelRC;
       })
-
-      java_tools-patch
     ];
 
     postPatch = ''
@@ -234,8 +224,6 @@ buildBazelPackage {
       echo "PATH=\$PATH:${defaultShellPath}" >> runfiles.bash.tmp
       cat tools/bash/runfiles/runfiles.bash >> runfiles.bash.tmp
       mv runfiles.bash.tmp tools/bash/runfiles/runfiles.bash
-
-      rm -f .bazelversion
 
       patchShebangs .
     '';
