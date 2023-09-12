@@ -163,7 +163,7 @@ buildBazelPackage {
     ];
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-/2Z0kmxx0PAZE2o6qtYwsEmmTnBQRog8BJiNvF8TdzQ=";
+    sha256 = "sha256-aCOINzoK87LYEBN/7YChsh+/H0RuiYlSR1jX6Egb+mw=";
   };
 
   buildAttrs = {
