@@ -1,9 +1,10 @@
-{ pkgs, nixpkgs, jdk, src, version }:
+{ pkgs, nixpkgs, src, version }:
 
 with pkgs;
 let
   sourceRoot = ".";
   arch = stdenv.hostPlatform.parsed.cpu.name;
+  jdk = openjdk17_headless;
   python3 = python38;
   defaultShellUtils = [
     bash
@@ -69,7 +70,7 @@ let
         srcs.junit_junit_4_13_2
       ]
     );
-  jvm_flags = [
+  bazelFlags = [
     "--java_language_version=17"
     "--java_runtime_version=17"
     "--tool_java_language_version=17"
@@ -113,6 +114,8 @@ let
       fetch --override_repository=${remote_java_tools.name}=${remote_java_tools}
       query --override_repository=${remote_java_tools.name}=${remote_java_tools}
 
+      ${lib.concatStringsSep "\n" (map (flag: "build ${flag}") bazelFlags)}
+
       # load default location for the system wide configuration
       try-import /etc/bazel.bazelrc
     '';
@@ -127,7 +130,7 @@ buildBazelPackage {
   inherit src version;
   pname = "bazel";
 
-  buildInputs = [ python3 openjdk17_headless ];
+  buildInputs = [ python3 jdk ];
   nativeBuildInputs = [
     bash
     coreutils
@@ -139,11 +142,11 @@ buildBazelPackage {
   ];
 
   bazel = bazel_6;
-  bazelTargets = ["//src:bazel_nojdk"];
+  bazelTargets = [ "//src:bazel_nojdk" ];
   bazelFetchFlags = [
     "--loading_phase_threads=HOST_CPUS"
   ];
-  bazelFlags = jvm_flags ++ [
+  bazelFlags = bazelFlags ++ [
     "-c opt"
     "--override_repository=${remote_java_tools.name}=${remote_java_tools}"
   ];
@@ -239,7 +242,7 @@ buildBazelPackage {
 
       hello_test () {
         $out/bin/bazel test \
-          ${lib.concatStringsSep " " jvm_flags} \
+          ${lib.concatStringsSep " " bazelFlags} \
           --test_output=errors \
           examples/cpp:hello-success_test \
           examples/java-native/src/test/java/com/example/myproject:hello

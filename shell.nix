@@ -1,4 +1,4 @@
-{ pkgs, src, }:
+{ pkgs, src }:
 
 with pkgs;
 let
