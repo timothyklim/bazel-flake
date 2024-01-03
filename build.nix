@@ -5,7 +5,6 @@ let
   sourceRoot = ".";
   arch = stdenv.hostPlatform.parsed.cpu.name;
   jdk = openjdk17_headless;
-  python3 = python38;
   defaultShellUtils = [
     bash
     binutils-unwrapped
