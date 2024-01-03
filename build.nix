@@ -44,45 +44,18 @@ let
     '';
   };
   bazelFlags = [
-    "--java_language_version=17"
-    "--java_runtime_version=17"
-    "--tool_java_language_version=17"
-    "--tool_java_runtime_version=17"
-    "--extra_toolchains=@local_jdk//:all"
+    # Register nix-specific nonprebuilt java toolchains
+    "--extra_toolchains=@bazel_tools//tools/jdk:all"
+    # and set bazel to use them by default
+    "--tool_java_runtime_version=local_jdk"
+    "--java_runtime_version=local_jdk"
   ];
   lockfile = src + "/MODULE.bazel.lock";
   distDir = callPackage "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7/bazel-repository-cache.nix" { inherit lockfile; };
-  remote_java_tools = stdenv.mkDerivation {
-    inherit sourceRoot;
-
-    name = "remote_java_tools_linux";
-    src = distDir;
-
-    nativeBuildInputs = [ autoPatchelfHook ];
-    buildInputs = [ gcc-unwrapped ];
-
-    buildPhase = ''
-      FILENAME=$(ls ${distDir}|grep 'java_tools_linux.*zip'|head -n 1)
-      ${unzip}/bin/unzip -q -d $out ./bazel-repository-cache/$FILENAME
-    '';
-
-    installPhase = ''
-      chmod -R u+w $out
-      touch $out/WORKSPACE
-    '';
-  };
   bazelRC = writeTextFile {
     name = "bazel-rc";
     text = ''
-      startup --server_javabase=${jdk.home}
-
-      build --distdir=${distDir}
-      fetch --distdir=${distDir}
-      query --distdir=${distDir}
- 
-      build --override_repository=${remote_java_tools.name}=${remote_java_tools}
-      fetch --override_repository=${remote_java_tools.name}=${remote_java_tools}
-      query --override_repository=${remote_java_tools.name}=${remote_java_tools}
+      startup --server_javabase=${jdk}
 
       ${lib.concatStringsSep "\n" (map (flag: "build ${flag}") bazelFlags)}
 
@@ -118,7 +91,7 @@ buildBazelPackage {
   bazelFlags = bazelFlags ++ [
     "--enable_bzlmod"
     "--lockfile_mode=update"
-  ] ++ lib.optional stdenv.isLinux "--override_repository=${remote_java_tools.name}=${remote_java_tools}";
+  ];
   bazelBuildFlags = [
     "-c opt"
     "--extra_toolchains=@bazel_tools//tools/python:autodetecting_toolchain"
@@ -169,7 +142,7 @@ buildBazelPackage {
 
     patches = [
       "${nixpkgs}/pkgs/development/tools/build-managers/bazel/trim-last-argument-to-gcc-if-empty.patch"
-      # ./patches/nixpkgs_python.patch
+      "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7/java_toolchain.patch"
 
       (substituteAll {
         src = ./patches/actions_path.patch;
