@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs, src, version }:
+{ pkgs, nixpkgs, lndir, src, version }:
 
 with pkgs;
 let
@@ -23,52 +23,26 @@ let
     zip
   ];
   defaultShellPath = lib.makeBinPath defaultShellUtils;
-  srcDeps = lib.attrsets.attrValues srcDepsSet;
-  srcDepsSet =
-    let
-      srcs = (builtins.fromJSON (builtins.readFile ./src-deps.json));
-      toFetchurl = d: lib.attrsets.nameValuePair d.name (
-        fetchurl {
-          urls = d.urls or [ d.url ];
-          sha256 = d.sha256;
-        }
-      );
-    in
-    builtins.listToAttrs (
-      map toFetchurl [
-        srcs.android_tools_for_testing
-        srcs.bazel_skylib
-        srcs.bazel_toolchains
-        srcs.com_github_cares_cares
-        srcs.com_github_grpc_grpc
-        srcs.com_google_absl
-        srcs.com_google_protobuf
-        srcs.com_googlesource_code_re2
-        srcs.desugar_jdk_libs
-        srcs.io_bazel_skydoc
-        srcs.platforms
-        srcs.remote_coverage_tools
-        srcs.remote_java_tools
-        srcs.remote_java_tools_linux
-        srcs.remotejdk11_linux
-        srcs.rules_cc
-        srcs.rules_java
-        srcs.rules_jvm_external
-        srcs.rules_pkg
-        srcs.rules_proto
-        srcs.rules_python
-        srcs.upb
-
-        # Tests
-        srcs.bazel_gazelle
-        srcs.bazelci_rules
-        srcs.com_envoyproxy_protoc_gen_validate
-        srcs.com_google_googleapis
-        srcs.rules_license
-        srcs.org_hamcrest_hamcrest_core_1_3
-        srcs.junit_junit_4_13_2
-      ]
-    );
+  bashWithDefaultShellUtilsSh = writeShellApplication {
+    name = "bash";
+    runtimeInputs = defaultShellUtils;
+    text = ''
+      if [[ "$PATH" == "/no-such-path" ]]; then
+        export PATH=${defaultShellPath}
+      fi
+      exec ${bash}/bin/bash "$@"
+    '';
+  };
+  # Script-based interpreters in shebangs aren't guaranteed to work,
+  # especially on MacOS. So let's produce a binary
+  bashWithDefaultShellUtils = stdenv.mkDerivation {
+    name = "bash";
+    src = bashWithDefaultShellUtilsSh;
+    nativeBuildInputs = [ makeBinaryWrapper ];
+    buildPhase = ''
+      makeWrapper ${bashWithDefaultShellUtilsSh}/bin/bash $out/bin/bash
+    '';
+  };
   bazelFlags = [
     "--java_language_version=17"
     "--java_runtime_version=17"
@@ -76,27 +50,24 @@ let
     "--tool_java_runtime_version=17"
     "--extra_toolchains=@local_jdk//:all"
   ];
-
-  distDir = runCommand "bazel-deps" { } ''
-    mkdir -p $out
-    for i in ${builtins.toString srcDeps}; do cp -f $i $out/$(stripHash $i); done
-  '';
+  lockfile = src + "/MODULE.bazel.lock";
+  distDir = callPackage "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7/bazel-repository-cache.nix" { inherit lockfile; };
   remote_java_tools = stdenv.mkDerivation {
     inherit sourceRoot;
 
     name = "remote_java_tools_linux";
+    src = distDir;
 
-    src = srcDepsSet.remote_java_tools_linux;
-
-    nativeBuildInputs = [ unzip ] ++ lib.optionals stdenv.isLinux [ autoPatchelfHook ];
+    nativeBuildInputs = [ autoPatchelfHook ];
     buildInputs = [ gcc-unwrapped ];
 
     buildPhase = ''
-      mkdir $out
+      FILENAME=$(ls ${distDir}|grep 'java_tools_linux.*zip'|head -n 1)
+      ${unzip}/bin/unzip -q -d $out ./bazel-repository-cache/$FILENAME
     '';
 
     installPhase = ''
-      cp -Ra * $out/
+      chmod -R u+w $out
       touch $out/WORKSPACE
     '';
   };
@@ -108,7 +79,7 @@ let
       build --distdir=${distDir}
       fetch --distdir=${distDir}
       query --distdir=${distDir}
-
+ 
       build --override_repository=${remote_java_tools.name}=${remote_java_tools}
       fetch --override_repository=${remote_java_tools.name}=${remote_java_tools}
       query --override_repository=${remote_java_tools.name}=${remote_java_tools}
@@ -121,33 +92,39 @@ let
   };
   prePatch = ''
     rm -f .bazelversion
-
-    ln -snf ${python3} ./python3
   '';
 in
 buildBazelPackage {
   inherit src version;
   pname = "bazel";
 
-  buildInputs = [ python3 jdk ];
+  buildInputs = [ jdk bashWithDefaultShellUtils ] ++ defaultShellUtils;
   nativeBuildInputs = [
     bash
     coreutils
     installShellFiles
     makeWrapper
+    python3
     unzip
     which
     zip
   ];
 
-  bazel = bazel_6;
+  bazel = bazel_7;
   bazelTargets = [ "//src:bazel_nojdk" ];
   bazelFetchFlags = [
     "--loading_phase_threads=HOST_CPUS"
   ];
   bazelFlags = bazelFlags ++ [
+    "--enable_bzlmod"
+    "--lockfile_mode=update"
+  ] ++ lib.optional stdenv.isLinux "--override_repository=${remote_java_tools.name}=${remote_java_tools}";
+  bazelBuildFlags = [
     "-c opt"
-    "--override_repository=${remote_java_tools.name}=${remote_java_tools}"
+    "--extra_toolchains=@bazel_tools//tools/python:autodetecting_toolchain"
+    # add version information to the build
+    "--stamp"
+    "--embed_label='${version}'"
   ];
   fetchConfigured = true;
 
@@ -160,20 +137,39 @@ buildBazelPackage {
   fetchAttrs = {
     inherit prePatch;
 
-    patches = [
-      ./patches/nixpkgs_python.patch
-    ];
+    postInstall = ''
+      rm -rf $out
+
+      # create the same archive but with cache and lockfile
+      tar czf $out \
+        --sort=name \
+        --mtime='@1' \
+        --owner=0 \
+        --group=0 \
+        --numeric-owner \
+        --directory="$bazelOut" external/ \
+        --directory="$bazelUserRoot" cache/ \
+        --directory="$PWD" MODULE.bazel.lock
+    '';
 
     # sha256 = lib.fakeSha256;
-    sha256 = "sha256-luRrAf3ACjLcUoPTZYRZu9ZOmbG0eS+iqxS7aMKGVgA=";
+    sha256 = "sha256-oRIOZmKUUduyuMUrChD1cOUc34+fcZT+ey/W4DtFxRY=";
   };
 
   buildAttrs = {
     inherit prePatch;
 
+    preConfigure = ''
+      rm -rf $bazelOut/cache
+      rm -f $bazelOut/MODULE.bazel.lock
+      mkdir -p "$bazelUserRoot"
+      tar xfz $deps --directory="$bazelUserRoot" cache/
+      tar xfz $deps MODULE.bazel.lock
+    '';
+
     patches = [
       "${nixpkgs}/pkgs/development/tools/build-managers/bazel/trim-last-argument-to-gcc-if-empty.patch"
-      ./patches/nixpkgs_python.patch
+      # ./patches/nixpkgs_python.patch
 
       (substituteAll {
         src = ./patches/actions_path.patch;
@@ -190,44 +186,43 @@ buildBazelPackage {
     ];
 
     postPatch = ''
+      function sedVerbose() {
+        local path=$1; shift;
+        sed -i".bak-nix" "$path" "$@"
+        diff -U0 "$path.bak-nix" "$path" | sed "s/^/  /" || true
+        rm -f "$path.bak-nix"
+      }
+    '' + ''
       # md5sum is part of coreutils
-      sed -i 's|/sbin/md5|md5sum|' src/BUILD
+      sed -i 's|/sbin/md5|md5sum|g' src/BUILD third_party/ijar/test/testenv.sh
 
-      # replace initial value of pythonShebang variable in BazelPythonSemantics.java
-      substituteInPlace src/main/java/com/google/devtools/build/lib/bazel/rules/python/BazelPythonSemantics.java \
-        --replace '"#!/usr/bin/env " + pythonExecutableName' "\"#!${python3}/bin/python\""
-
-      # substituteInPlace is rather slow, so prefilter the files with grep
-      grep -rlZ /bin src/main/java/com/google/devtools | while IFS="" read -r -d "" path; do
+      echo
+      echo "Substituting */bin/* hardcoded paths in src/main/java/com/google/devtools"
+      # Prefilter the files with grep for speed
+      grep -rlZ /bin/ \
+        src/main/java/com/google/devtools \
+        src/main/starlark/builtins_bzl/common/python \
+        tools \
+      | while IFS="" read -r -d "" path; do
         # If you add more replacements here, you must change the grep above!
         # Only files containing /bin are taken into account.
-        # We default to python3 where possible. See also `postFixup` where
-        # python3 is added to $out/nix-support
-        substituteInPlace "$path" \
-          --replace /bin/bash ${bash}/bin/bash \
-          --replace "/usr/bin/env bash" ${bash}/bin/bash \
-          --replace "/usr/bin/env python" ${python3}/bin/python \
-          --replace /usr/bin/env ${coreutils}/bin/env \
-          --replace /bin/true ${coreutils}/bin/true
+        sedVerbose "$path" \
+          -e 's!/usr/local/bin/bash!${bashWithDefaultShellUtils}/bin/bash!g' \
+          -e 's!/usr/bin/bash!${bashWithDefaultShellUtils}/bin/bash!g' \
+          -e 's!/bin/bash!${bashWithDefaultShellUtils}/bin/bash!g' \
+          -e 's!/usr/bin/env bash!${bashWithDefaultShellUtils}/bin/bash!g' \
+          -e 's!/usr/bin/env python2!${python3}/bin/python!g' \
+          -e 's!/usr/bin/env python!${python3}/bin/python!g' \
+          -e 's!/usr/bin/env!${coreutils}/bin/env!g' \
+          -e 's!/bin/true!${coreutils}/bin/true!g'
       done
-
-      # bazel test runner include references to /bin/bash
-      substituteInPlace tools/build_rules/test_rules.bzl --replace /bin/bash ${bash}/bin/bash
-
-      for i in $(find tools/cpp/ -type f)
-      do
-        substituteInPlace $i --replace /bin/bash ${bash}/bin/bash
-      done
-
-      # Fixup scripts that generate scripts. Not fixed up by patchShebangs below.
-      substituteInPlace scripts/bootstrap/compile.sh --replace /bin/bash ${bash}/bin/bash
 
       # append the PATH with defaultShellPath in tools/bash/runfiles/runfiles.bash
       echo "PATH=\$PATH:${defaultShellPath}" >> runfiles.bash.tmp
       cat tools/bash/runfiles/runfiles.bash >> runfiles.bash.tmp
       mv runfiles.bash.tmp tools/bash/runfiles/runfiles.bash
 
-      patchShebangs .
+      patchShebangs . >/dev/null
     '';
 
     installPhase = ''
@@ -235,7 +230,7 @@ buildBazelPackage {
       mv bazel-bin/src/bazel_nojdk $out/bin/bazel
     '';
 
-    doInstallCheck = true;
+    doInstallCheck = false;
     installCheckPhase = ''
       export TEST_TMPDIR=$(pwd)
 

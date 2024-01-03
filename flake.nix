@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     src = {
-      url = "github:bazelbuild/bazel/7.0.0-pre.20230906.2";
+      url = "github:bazelbuild/bazel/7.0.0";
       flake = false;
     };
   };
@@ -16,7 +16,7 @@
       let
         sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
-        bazel = import ./build.nix {
+        bazel = pkgs.callPackage ./build.nix {
           inherit pkgs nixpkgs src;
           version = sources.src.original.ref;
         };
@@ -28,7 +28,7 @@
         apps.bazel = bazel-app;
         defaultApp = bazel-app;
         legacyPackages = extend overlay;
-        devShell = callPackage ./shell.nix { inherit src; };
+        devShell = callPackage ./shell.nix { };
         nixosModules.default = {
           nixpkgs.overlays = [ overlay ];
         };
