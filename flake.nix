@@ -17,11 +17,13 @@
         sources = (nixpkgs.lib.importJSON ./flake.lock).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
         jdk = pkgs.jdk17_headless;
-        bazel = pkgs.callPackage ./build.nix {
+        bazel = with pkgs; with lib; callPackage ./build.nix {
           inherit src;
           buildJdk = jdk;
           runJdk = jdk;
-          version = sources.src.original.ref;
+          version =
+            let xs = splitString "-" sources.src.original.ref;
+            in elemAt xs (length (xs) - 1);
           rev = sources.src.locked.rev;
           # fixed-output derivation hash, set an empty string to compute a new one on update
           # deps-hash = pkgs.lib.fakeSha256;
