@@ -14,21 +14,26 @@
   outputs = { self, nixpkgs, flake-utils, src }:
     with flake-utils.lib; eachSystem [ system.x86_64-linux system.aarch64-linux system.aarch64-darwin ] (system:
       let
-        sources = with builtins; (fromJSON (readFile ./flake.lock)).nodes;
+        sources = (nixpkgs.lib.importJSON ./flake.lock).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
+        jdk = pkgs.jdk17_headless;
         bazel = pkgs.callPackage ./build.nix {
-          inherit pkgs nixpkgs src;
+          inherit src;
+          buildJdk = jdk;
+          runJdk = jdk;
           version = sources.src.original.ref;
+          rev = sources.src.locked.rev;
+          # fixed-output derivation hash, set an empty string to compute a new one on update
+          deps-hash = "sha256-P3Fdp3fJxfxXIyaSrF1DWfEF0RcqCZ43qXDHHMElb+w=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
         derivation = { inherit bazel; };
       in
-      with pkgs; rec {
+      rec {
         packages = derivation // { default = bazel; };
         apps.bazel = bazel-app;
         defaultApp = bazel-app;
-        legacyPackages = extend overlay;
-        devShell = callPackage ./shell.nix { };
+        legacyPackages = pkgs.extend overlay;
         nixosModules.default = {
           nixpkgs.overlays = [ overlay ];
         };
