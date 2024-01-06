@@ -22,8 +22,10 @@
           buildJdk = jdk;
           runJdk = jdk;
           version =
-            let xs = splitString "-" sources.src.original.ref;
-            in elemAt xs (length (xs) - 1);
+            let
+              xs = splitString "/" sources.src.original.ref;
+              ys = splitString "-" (elemAt xs (length (xs) - 1));
+            in elemAt ys (length (ys) - 1);
           rev = sources.src.locked.rev;
           # fixed-output derivation hash, set an empty string to compute a new one on update
           # deps-hash = pkgs.lib.fakeSha256;
