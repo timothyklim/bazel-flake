@@ -29,7 +29,7 @@
           rev = sources.src.locked.rev;
           # fixed-output derivation hash, set an empty string to compute a new one on update
           # deps-hash = pkgs.lib.fakeSha256;
-          deps-hash = "sha256-61Xi2ZY5e99azyInUhpQXko5/9jrpZLai446Bu1d/20=";
+          deps-hash = "sha256-op4/ldJLsKESmoNZXlj8u1QMbez9vbMMajDSPCZS2LQ=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
         derivation = { inherit bazel; };
