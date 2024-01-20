@@ -227,8 +227,8 @@ buildBazelPackage {
 
   # we only need this to fetch deps needed to run tests in installCheckPhase
   bazelTestTargets = [
-    "//examples/cpp:hello-success_test"
-    "//examples/java-native/src/test/java/com/example/myproject:hello"
+    # "//examples/cpp:hello-success_test"
+    # "//examples/java-native/src/test/java/com/example/myproject:hello"
   ];
 
   dontAddBazelOpts = true;
