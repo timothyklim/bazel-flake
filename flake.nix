@@ -25,11 +25,14 @@
             let
               xs = splitString "/" sources.src.original.ref;
               ys = splitString "-" (elemAt xs (length (xs) - 1));
-            in elemAt ys (length (ys) - 1);
+            in
+            elemAt ys (length (ys) - 1);
           rev = sources.src.locked.rev;
           # fixed-output derivation hash, set an empty string to compute a new one on update
           # deps-hash = pkgs.lib.fakeSha256;
-          deps-hash = "sha256-op4/ldJLsKESmoNZXlj8u1QMbez9vbMMajDSPCZS2LQ=";
+          deps-hash =
+            if stdenv.isDarwin then "sha256-qJEzIq4mYcCQMEYboMpWOxsGlpv878zkxb5vGOLaG70="
+            else "sha256-op4/ldJLsKESmoNZXlj8u1QMbez9vbMMajDSPCZS2LQ=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
         derivation = { inherit bazel; };
