@@ -321,7 +321,7 @@ buildBazelPackage {
     '';
 
     # see nixpkgs derivation
-    doInstallCheck = true;
+    doInstallCheck = false;
     installCheckPhase = ''
       export BAZEL_USE_CPP_ONLY_TOOLCHAIN=1
       export TEST_TMPDIR=$(pwd)

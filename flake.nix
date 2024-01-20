@@ -32,7 +32,7 @@
           # deps-hash = pkgs.lib.fakeSha256;
           deps-hash =
             if stdenv.isDarwin then "sha256-qJEzIq4mYcCQMEYboMpWOxsGlpv878zkxb5vGOLaG70="
-            else "sha256-op4/ldJLsKESmoNZXlj8u1QMbez9vbMMajDSPCZS2LQ=";
+            else "sha256-vwaJ+QkUqzwv5j7dIlDsGQc3u4KDbFlQHPMP1Nv1bPs=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
         derivation = { inherit bazel; };
