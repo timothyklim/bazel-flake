@@ -350,7 +350,7 @@ buildBazelPackage {
 
     postFixup = ''
       mkdir -p $out/nix-support
-      echo "${defaultShellPath}" >> $out/nix-support/depends
+      echo "${bashWithDefaultShellUtils}" >> $out/nix-support/depends
       echo "${bazelRC}" >> $out/nix-support/depends
     '' + lib.optionalString stdenv.isDarwin ''
       echo "${cctools}" >> $out/nix-support/depends
