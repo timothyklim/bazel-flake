@@ -1,6 +1,6 @@
 { lib
 , path
-, stdenv
+, llvmPackages_17
 , buildBazelPackage
 , writeTextFile
 , writeShellApplication
@@ -42,6 +42,7 @@
 }:
 
 let
+  stdenv = llvmPackages_17.libcxxStdenv;
   bazel_path = "${path}/pkgs/development/tools/build-managers/bazel";
 
   inherit (darwin) cctools sigtool;
