@@ -31,7 +31,7 @@
           # fixed-output derivation hash, set an empty string to compute a new one on update
           # deps-hash = pkgs.lib.fakeSha256;
           deps-hash =
-            if stdenv.isDarwin then "sha256-B1kEzbVfeIzPapqOfl/NMWe0kE0sQzFF7gTvVtqN/6c="
+            if stdenv.isDarwin then "sha256-ZA0E+aS7iZZZ2k0531tSmWpDChDR8fGFxxi7lWr5cHM="
             else "sha256-Cbbsp93Riggm3dZkW+5DJqprqDidKx+5cPhYt2G76rk=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
