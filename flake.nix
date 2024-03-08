@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     src = {
-      url = "github:bazelbuild/bazel/7.1.0rc1";
+      url = "github:bazelbuild/bazel/7.1.0";
       flake = false;
     };
   };
@@ -31,7 +31,7 @@
           # fixed-output derivation hash, set an empty string to compute a new one on update
           # deps-hash = pkgs.lib.fakeSha256;
           deps-hash =
-            if stdenv.isDarwin then "sha256-f07vM8NdKlcURRmylbYLkfhDhXXMJviRynyxbCelgkM="
+            if stdenv.isDarwin then "sha256-ca9xFeLi7fMwi/R1NfdbPYuRZpbEtJiA5K+WE3bIIQ0="
             else "sha256-wd5I1R62cGmG9LhNaXfUXMmluf2jxN3DhjU0FnU6Fho=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
