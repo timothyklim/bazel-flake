@@ -248,7 +248,7 @@ buildBazelPackage {
   ];
 
   removeRulesCC = false;
-  removeLocalConfigCc = true;
+  removeLocalConfigCc = false;
   removeLocal = false;
 
   fetchConfigured = true;
