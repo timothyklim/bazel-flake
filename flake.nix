@@ -12,7 +12,7 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, src }:
-    with flake-utils.lib; eachSystem [ system.x86_64-linux system.aarch64-linux system.aarch64-darwin ] (system:
+    with flake-utils.lib; with system; eachSystem [ x86_64-linux aarch64-linux x86_64-darwin aarch64-darwin ] (system:
       let
         sources = (nixpkgs.lib.importJSON ./flake.lock).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
@@ -31,7 +31,7 @@
           # fixed-output derivation hash, set an empty string to compute a new one on update
           # deps-hash = pkgs.lib.fakeSha256;
           deps-hash =
-            if stdenv.isDarwin then "sha256-Pj1FuzmBX2fIHIcu2e98tAnqUEci2gE2/XrPmobObeQ="
+            if stdenv.isDarwin then "sha256-ca9xFeLi7fMwi/R1NfdbPYuRZpbEtJiA5K+WE3bIIQ0="
             else "sha256-hw0ZpH4hZxbiIlmCZDk+3ODiM9jLiWZLB/MVK/45MYE=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
