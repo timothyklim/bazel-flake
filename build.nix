@@ -1,4 +1,5 @@
-{ lib
+{ pkgs
+, lib
 , path
 , llvmPackages_16
 , buildBazelPackage
@@ -42,11 +43,12 @@
 }:
 
 let
-  stdenv = llvmPackages_16.libcxxStdenv;
+  apple_sdk = darwin.apple_sdk_11_0;
+  stdenv = if pkgs.stdenv.isDarwin then apple_sdk.stdenv else llvmPackages_16.libcxxStdenv;
   bazel_path = "${path}/pkgs/development/tools/build-managers/bazel";
 
   inherit (darwin) cctools sigtool;
-  inherit (darwin.apple_sdk_11_0.frameworks) CoreFoundation CoreServices Foundation IOKit;
+  inherit (apple_sdk.frameworks) CoreFoundation CoreServices Foundation IOKit;
 
   defaultShellUtils = [
     bash
