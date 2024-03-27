@@ -32,7 +32,8 @@
           # deps-hash = pkgs.lib.fakeSha256;
           deps-hash =
             if stdenv.isDarwin then
-              if stdenv.hostPlatform.isAarch then "sha256-UpdLUQ9KkcjqW5HNLoJgI8kQzMiV9h4sN27e1v7oFvo=" else "sha256-DHHVxYkxpwh0KeuXgLOHQa+aKlJ8EM5rsDEMjKjl0gs="
+              if stdenv.hostPlatform.isAarch then "sha256-cV/LkC2sqzKEj7x9bqq6ohBhSABFLRKI5NynguYBL3w="
+              else "sha256-DHHVxYkxpwh0KeuXgLOHQa+aKlJ8EM5rsDEMjKjl0gs="
             else "sha256-hw0ZpH4hZxbiIlmCZDk+3ODiM9jLiWZLB/MVK/45MYE=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
