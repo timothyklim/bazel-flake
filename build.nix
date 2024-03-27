@@ -50,25 +50,27 @@ let
   inherit (darwin) cctools sigtool;
   inherit (apple_sdk.frameworks) CoreFoundation CoreServices Foundation IOKit;
 
-  defaultShellUtils = [
-    bash
-    binutils-unwrapped
-    coreutils
-    diffutils
-    file
-    findutils
-    gawk
-    gnugrep
-    gnupatch
-    gnumake
-    gnused
-    gnutar
-    gzip
-    python3
-    unzip
-    which
-    zip
-  ];
+  defaultShellUtils =
+    lib.optionals pkgs.stdenv.isDarwin [ cctools ]
+    ++ [
+      bash
+      binutils-unwrapped
+      coreutils
+      diffutils
+      file
+      findutils
+      gawk
+      gnugrep
+      gnupatch
+      gnumake
+      gnused
+      gnutar
+      gzip
+      python3
+      unzip
+      which
+      zip
+    ];
   defaultShellPath = lib.makeBinPath defaultShellUtils;
   bashWithDefaultShellUtilsSh = writeShellApplication {
     name = "bash";
