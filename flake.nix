@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     src = {
-      url = "github:bazelbuild/bazel/7.1.1";
+      url = "github:bazelbuild/bazel/release-7.2.0";
       flake = false;
     };
   };
@@ -16,7 +16,7 @@
       let
         sources = (nixpkgs.lib.importJSON ./flake.lock).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
-        jdk = pkgs.jdk17_headless;
+        jdk = pkgs.jdk21_headless;
         bazel = with pkgs; with lib; callPackage ./build.nix {
           inherit src;
           buildJdk = jdk;
@@ -32,9 +32,9 @@
           # deps-hash = pkgs.lib.fakeSha256;
           deps-hash =
             if stdenv.isDarwin then
-              if stdenv.hostPlatform.isAarch then "sha256-cV/LkC2sqzKEj7x9bqq6ohBhSABFLRKI5NynguYBL3w="
-              else "sha256-DHHVxYkxpwh0KeuXgLOHQa+aKlJ8EM5rsDEMjKjl0gs="
-            else "sha256-hw0ZpH4hZxbiIlmCZDk+3ODiM9jLiWZLB/MVK/45MYE=";
+              if stdenv.hostPlatform.isAarch then "sha256-XXjcrP6DgKtNRnsohTAayFYa20LB48nP/AEoBO4OKpo="
+              else "sha256-TL+BxKgPzWs7Kc0zDy3nlpOusbNYBG6CJgF+FUPqvKg="
+            else "sha256-laC/9ykJ+YLSTUtOK1ETOmLDMYiTw1nwP0UY+Ws0a/o=";
         };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
         derivation = { inherit bazel; };
