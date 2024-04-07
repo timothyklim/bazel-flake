@@ -27,6 +27,7 @@
 , unzip
 , which
 , zip
+, libtool
   # Apple dependencies
 , darwin
 , libcxx
@@ -51,7 +52,8 @@ let
   inherit (apple_sdk.frameworks) CoreFoundation CoreServices Foundation IOKit;
 
   defaultShellUtils =
-    lib.optionals pkgs.stdenv.isDarwin [ cctools ]
+    [ libtool ]
+    ++ lib.optionals pkgs.stdenv.isDarwin [ cctools ]
     ++ [
       bash
       binutils-unwrapped
