@@ -1,0 +1,57 @@
+name: "Build bazel"
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    env:
+      PATH: /run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
+    timeout-minutes: 20
+    runs-on: nixos
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Change maven.org to local nexus
+      run: |
+        for file in `find . \( -name "*WORKSPACE" -or -name "*.yaml" -or -name "*.bzl" -or -name "*.nix" -or -name "*.scala" \) -print`
+          do
+            export strFileNameFSproj=$file
+            echo $strFileNameFSproj
+            sed -i "s|https://repo1.maven.org/maven2|https://nexus.tawasal.ae/repository/maven-central|g"  $strFileNameFSproj
+            sed -i "s|https://repo.maven.apache.org/maven2|https://nexus.tawasal.ae/repository/maven-apache|g"  $strFileNameFSproj
+          done
+    - name: Build nix flake
+      env:
+        LD_LIBRARY_PATH: ''
+      run: nix build -L
+
+    - name: Create files for store
+      env:
+        LD_LIBRARY_PATH: ''
+      run: |
+        rm -rf tostore
+        mkdir -p tostore
+        mkdir -p tostore/nar
+        ls -d result*
+        for i in `ls -d result*`
+        do
+          echo "Working with $i"
+          nix copy --to file://${{ github.workspace }}/tostore?compression=zstd ./$i
+        done
+
+    - name: Prepare secrets
+      env:
+        PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+      run: |
+        mkdir ${{ github.workspace }}/.secrets
+        echo "$PRIVATE_KEY" > ${{ github.workspace }}/.secrets/ssh_key
+    - name: Copy to nix-store
+      run: |
+        cd tostore
+        rsync -av \
+          -e 'ssh -p ${{ vars.NIX_STORE_PORT }} -i ${{ github.workspace }}/.secrets/ssh_key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no' \
+          * \
+          teamcity@${{ vars.NIX_STORE_IP }}:/opt/nix-store/store
+  
+    - name: Clean
+      run: rm -rf tostore
