@@ -1,4 +1,4 @@
-name: "Build bazel"
+name: "Build bazel on nixos"
 on:
   push:
   workflow_dispatch:
