@@ -15,8 +15,8 @@ jobs:
             arch: ARM64
           - os: macOS
             arch: nixos
-    env:
-      PATH: /run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
+    #env:
+    #  PATH: /run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
     timeout-minutes: 20
     runs-on: ["${{ matrix.os }}", "${{ matrix.arch }}"]
     steps:
