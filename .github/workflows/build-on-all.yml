@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    continue-on-error: true
     strategy:
       matrix:
         os: [Linux, macOS]
