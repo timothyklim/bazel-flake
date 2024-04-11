@@ -1,4 +1,4 @@
-name: "Build bazel on nixos"
+name: "Build bazel on all systems"
 on:
   push:
   workflow_dispatch:
@@ -29,9 +29,9 @@ jobs:
             export strFileNameFSproj=$file
             echo $strFileNameFSproj
             # Macos sed have'nt -i parameter so write to other file and rename it
-            sed "s|https://repo1.maven.org/maven2|https://nexus.tawasal.ae/repository/maven-central|g"  $strFileNameFSproj.new
+            sed "s|https://repo1.maven.org/maven2|https://nexus.tawasal.ae/repository/maven-central|g"  $strFileNameFSproj > $strFileNameFSproj.new
             mv -f $strFileNameFSproj.new $strFileNameFSproj
-            sed "s|https://repo.maven.apache.org/maven2|https://nexus.tawasal.ae/repository/maven-apache|g"  $strFileNameFSproj.new
+            sed "s|https://repo.maven.apache.org/maven2|https://nexus.tawasal.ae/repository/maven-apache|g"  $strFileNameFSproj > $strFileNameFSproj.new
             mv -f $strFileNameFSproj.new $strFileNameFSproj
           done
     - name: Build nix flake
