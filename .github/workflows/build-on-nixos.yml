@@ -7,11 +7,18 @@ jobs:
     strategy:
       matrix:
         os: [Linux, macOS]
-        label: [nixos, X64, ARM64]  
+        arch: [nixos, X64, ARM64]
+        exclude:
+          - os: Linux
+            arch: X64
+          - os: Linux
+            arch: ARM64
+          - os: macOS
+            arch: nixos
     env:
       PATH: /run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
     timeout-minutes: 20
-    runs-on: nixos
+    runs-on: ["${{ matrix.os }}", "${{ matrix.arch }}"]
     steps:
     - uses: actions/checkout@v4
 
