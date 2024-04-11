@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    env:
+    strategy:
+      matrix:
+        os: [Linux, macOS]
+        label: [nixos, X64, ARM64]  
+      env:
       PATH: /run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
     timeout-minutes: 20
     runs-on: nixos
