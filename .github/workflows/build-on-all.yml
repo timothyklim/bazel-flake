@@ -60,6 +60,7 @@ jobs:
       run: |
         mkdir ${{ github.workspace }}/.secrets
         echo "$PRIVATE_KEY" > ${{ github.workspace }}/.secrets/ssh_key
+        chmod 0600 ${{ github.workspace }}/.secrets/ssh_key
     - name: Copy to nix-store
       run: |
         cd tostore
