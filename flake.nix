@@ -12,7 +12,7 @@
         sources = (nixpkgs.lib.importJSON ./flake.lock).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
         jdk = pkgs.jdk21_headless;
-        bazel = with pkgs; with lib; darwin.apple_sdk.callPackage ./build.nix {
+        bazel = with pkgs; with lib; darwin.apple_sdk_11_0.callPackage ./build.nix {
           inherit nixpkgs;
           inherit (darwin) cctools sigtool;
           inherit (darwin.apple_sdk_11_0.frameworks) CoreFoundation CoreServices Foundation IOKit;
