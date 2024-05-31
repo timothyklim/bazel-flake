@@ -44,14 +44,14 @@
 }:
 
 let
-  version = "7.2.0rc2";
+  version = "7.1.0";
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    sha256 = "KCRZ2UBgqUNx37fQPgX6KPPgajD4SvyBHTKg5plRrFQ=";
+    sha256 = "HiDQyJ98nRtKOBqMWGtKQ1qWv8Qfu880osKUlOs4Z6E=";
   };
   lockfile = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/bazelbuild/bazel/${version}/MODULE.bazel.lock";
-    sha256 = "0cr87zqlzm9f13q3dhmpp2gzk34gzknyarkg2varlxqjzf66dz6g";
+    sha256 = "01vipyrgy15y8yr33cpp9jzhl0lgpsi1f48irm9prdvzqlxp8wzv";
   };
 
   # Two-in-one format
