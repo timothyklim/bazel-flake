@@ -44,24 +44,19 @@
 }:
 
 let
-  version = "7.1.0";
+  version = "7.1.2";
 
-  src = stdenv.mkDerivation {
-    name = "bazel-src";
-    src = fetchurl {
-      url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-      sha256 = "HiDQyJ98nRtKOBqMWGtKQ1qWv8Qfu880osKUlOs4Z6E=";
-    };
-
-    buildInputs = [ unzip ];
-
-    phases = [ "installPhase" ];
-
-    installPhase = ''unzip -qd $out $src'';
+  src = fetchurl {
+    url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
+    hash = "sha256-nPbtIxnIFpGdlwFe720MWULNGu1I4DxzuggV2VPtYas=";
+  };
+  lockfile = builtins.fetchurl {
+    url = "https://raw.githubusercontent.com/bazelbuild/bazel/release-${version}/MODULE.bazel.lock";
+    sha256 = "1azblcfixkz6jl0rdd5r82x31c13zvxahnmyikvlam05ji5vawv8";
   };
 
-  repoCache = callPackage "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7/bazel-repository-cache.nix" {
-    lockfile = "${src}/MODULE.bazel.lock";
+  repoCache = callPackage ./bazel-repository-cache.nix {
+    inherit lockfile;
 
     # We use the release tarball that already has everything bundled so we
     # should not need any extra external deps. But our nonprebuilt java
@@ -143,6 +138,7 @@ let
 in
 stdenv.mkDerivation rec {
   inherit src version;
+  sourceRoot = ".";
 
   pname = "bazel";
 
