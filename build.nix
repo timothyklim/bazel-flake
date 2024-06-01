@@ -44,20 +44,29 @@
 }:
 
 let
-  version = "7.1.0";
-  src = fetchurl {
-    url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    sha256 = "HiDQyJ98nRtKOBqMWGtKQ1qWv8Qfu880osKUlOs4Z6E=";
-  };
-  lockfile = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/bazelbuild/bazel/${version}/MODULE.bazel.lock";
-    sha256 = "01vipyrgy15y8yr33cpp9jzhl0lgpsi1f48irm9prdvzqlxp8wzv";
+  version = "7.2.0rc2";
+
+  src = stdenv.mkDerivation {
+    name = "bazel-src";
+    src = fetchurl {
+      url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
+      sha256 = "KCRZ2UBgqUNx37fQPgX6KPPgajD4SvyBHTKg5plRrFQ=";
+    };
+
+    buildInputs = [ unzip ];
+
+    phases = [ "installPhase" ];
+
+    installPhase = ''
+      mkdir -p $out
+      unzip -qd $out $src
+    '';
   };
 
   # Two-in-one format
   distDir = repoCache;
   repoCache = callPackage "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7/bazel-repository-cache.nix" {
-    inherit lockfile;
+    lockfile = "${src}/MODULE.bazel.lock";
 
     # We use the release tarball that already has everything bundled so we
     # should not need any extra external deps. But our nonprebuilt java
@@ -141,7 +150,6 @@ stdenv.mkDerivation rec {
   inherit src version;
 
   pname = "bazel";
-  sourceRoot = ".";
 
   patches = [
     # Remote java toolchains do not work on NixOS because they download binaries,
