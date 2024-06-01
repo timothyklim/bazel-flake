@@ -16,6 +16,8 @@ jobs:
             arch: ARM64
           - os: macOS
             arch: nixos
+          - os: macOS
+            arch: X64
     #env:
     #  PATH: /run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
     timeout-minutes: 20
