@@ -64,8 +64,7 @@ let
   };
 
   # Two-in-one format
-  distDir = repoCache;
-  repoCache = callPackage "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7/bazel-repository-cache.nix" {
+  repoCache = callPackage ./bazel-repository-cache.nix {
     lockfile = "${src}/MODULE.bazel.lock";
 
     # We use the release tarball that already has everything bundled so we
