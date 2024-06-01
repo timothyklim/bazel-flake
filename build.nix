@@ -44,27 +44,23 @@
 }:
 
 let
-  version = "7.2.0rc2";
+  version = "7.1.0";
 
   src = stdenv.mkDerivation {
     name = "bazel-src";
     src = fetchurl {
       url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-      sha256 = "KCRZ2UBgqUNx37fQPgX6KPPgajD4SvyBHTKg5plRrFQ=";
+      sha256 = "HiDQyJ98nRtKOBqMWGtKQ1qWv8Qfu880osKUlOs4Z6E=";
     };
 
     buildInputs = [ unzip ];
 
     phases = [ "installPhase" ];
 
-    installPhase = ''
-      mkdir -p $out
-      unzip -qd $out $src
-    '';
+    installPhase = ''unzip -qd $out $src'';
   };
 
-  # Two-in-one format
-  repoCache = callPackage ./bazel-repository-cache.nix {
+  repoCache = callPackage "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7/bazel-repository-cache.nix" {
     lockfile = "${src}/MODULE.bazel.lock";
 
     # We use the release tarball that already has everything bundled so we
@@ -328,10 +324,10 @@ stdenv.mkDerivation rec {
           -e "/bazel_build /a\  --experimental_strict_java_deps=off \\\\" \
           -e "/bazel_build /a\  --strict_proto_deps=off \\\\" \
           -e "/bazel_build /a\  --toolchain_resolution_debug='@bazel_tools//tools/jdk:(runtime_)?toolchain_type' \\\\" \
-          -e "/bazel_build /a\  --tool_java_runtime_version=local_jdk_21 \\\\" \
-          -e "/bazel_build /a\  --java_runtime_version=local_jdk_21 \\\\" \
-          -e "/bazel_build /a\  --tool_java_language_version=21 \\\\" \
-          -e "/bazel_build /a\  --java_language_version=21 \\\\" \
+          -e "/bazel_build /a\  --tool_java_runtime_version=local_jdk_17 \\\\" \
+          -e "/bazel_build /a\  --java_runtime_version=local_jdk_17 \\\\" \
+          -e "/bazel_build /a\  --tool_java_language_version=17 \\\\" \
+          -e "/bazel_build /a\  --java_language_version=17 \\\\" \
           -e "/bazel_build /a\  --extra_toolchains=@bazel_tools//tools/jdk:all \\\\" \
 
         # Also build parser_deploy.jar with bootstrap bazel
