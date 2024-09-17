@@ -51,7 +51,7 @@ let
     hash = "sha256-nPbtIxnIFpGdlwFe720MWULNGu1I4DxzuggV2VPtYas=";
   };
   lockfile = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/bazelbuild/bazel/release-${version}/MODULE.bazel.lock";
+    url = "https://raw.githubusercontent.com/bazelbuild/bazel/refs/tags/${version}/MODULE.bazel.lock";
     sha256 = "1azblcfixkz6jl0rdd5r82x31c13zvxahnmyikvlam05ji5vawv8";
   };
 
