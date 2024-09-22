@@ -8,6 +8,8 @@
 , substituteAll
 , writeShellApplication
 , makeBinaryWrapper
+, autoPatchelfHook
+, buildFHSEnv
   # native build inputs
 , runtimeShell
 , zip
@@ -44,25 +46,11 @@
 }:
 
 let
-  version = "7.1.2";
+  version = "7.3.1";
 
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-nPbtIxnIFpGdlwFe720MWULNGu1I4DxzuggV2VPtYas=";
-  };
-  lockfile = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/bazelbuild/bazel/refs/tags/${version}/MODULE.bazel.lock";
-    sha256 = "1azblcfixkz6jl0rdd5r82x31c13zvxahnmyikvlam05ji5vawv8";
-  };
-
-  repoCache = callPackage ./bazel-repository-cache.nix {
-    inherit lockfile;
-
-    # We use the release tarball that already has everything bundled so we
-    # should not need any extra external deps. But our nonprebuilt java
-    # toolchains hack needs just one non bundled dep.
-    requiredDepNamePredicate = name:
-      null != builtins.match "rules_java~.*~toolchains~remote_java_tools" name;
+    hash = "sha256-8FAfkMn8dM1pM9vcWeF7jWJy1sCfi448QomFxYlxR8c=";
   };
 
   defaultShellUtils = [ libtool ]
@@ -76,16 +64,145 @@ let
     findutils
     gawk
     gnugrep
-    gnupatch
     gnumake
+    gnupatch
     gnused
     gnutar
     gzip
+    makeWrapper
     python3
     unzip
     which
     zip
   ];
+
+  bazelBootstrap = stdenv.mkDerivation rec {
+    name = "bazelBootstrap";
+
+    src =
+      if stdenv.hostPlatform.system == "x86_64-linux" then
+        fetchurl {
+          url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
+          hash = "sha256-05fHtz47OilpOVYawB17VRVEDpycfYTIHBmwYCOyPjI=";
+        }
+      else
+        fetchurl {
+          # stdenv.hostPlatform.system == "aarch64-darwin"
+          url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
+          hash = "sha256-v3g/Rv5RP4b18gcAN6aRGJLWS/7y8pma1fCw/V1Entc=";
+        };
+
+    nativeBuildInputs = defaultShellUtils;
+    buildInputs = [
+      stdenv.cc.cc
+    ] ++ lib.optional (!stdenv.hostPlatform.isDarwin) autoPatchelfHook;
+
+    dontUnpack = true;
+    dontPatch = true;
+    dontBuild = true;
+    dontStrip = true;
+    installPhase = ''
+      runHook preInstall
+      mkdir -p $out/bin
+      install -Dm755 $src $out/bin/bazel
+      runHook postInstall
+    '';
+
+    postFixup = ''
+      wrapProgram $out/bin/bazel \
+        --prefix PATH : ${lib.makeBinPath nativeBuildInputs}
+    '';
+
+    meta.sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+  };
+
+  bazelFhs = buildFHSEnv {
+    name = "bazel";
+    targetPkgs = _: [ bazelBootstrap ];
+    runScript = "bazel";
+  };
+
+  # A FOD that vendors the Bazel dependencies using Bazel's new vendor mode.
+  # See https://bazel.build/versions/7.3.0/external/vendor for details.
+  # Note that it may be possible to vendor less than the full set of deps in
+  # the future, as this is approximately 16GB.
+  bazelDeps =
+    let
+      bazelForDeps = if stdenv.hostPlatform.isDarwin then bazelBootstrap else bazelFhs;
+    in
+    stdenv.mkDerivation {
+      name = "bazelDeps";
+      inherit src version;
+      sourceRoot = ".";
+      patches = [
+        # The repo rule that creates a manifest of the bazel source for testing
+        # the cli is not reproducible. This patch ensures that it is by sorting
+        # the results in the repo rule rather than the downstream genrule.
+        ./patches/test_source_sort.patch
+      ];
+      patchFlags = [
+        "--no-backup-if-mismatch"
+        "-p1"
+      ];
+      nativeBuildInputs = [
+        unzip
+        runJdk
+        bazelForDeps
+      ];
+      configurePhase = ''
+        runHook preConfigure
+        mkdir bazel_src
+        shopt -s dotglob extglob
+        mv !(bazel_src) bazel_src
+        mkdir vendor_dir
+        runHook postConfigure
+      '';
+      dontFixup = true;
+      buildPhase = ''
+        runHook preBuild
+        export HOME=$TMP
+        (cd bazel_src; ${bazelForDeps}/bin/bazel --server_javabase=${runJdk} mod deps --curses=no;
+        ${bazelForDeps}/bin/bazel --server_javabase=${runJdk} vendor src:bazel_nojdk \
+        --curses=no \
+        --vendor_dir ../vendor_dir \
+        --verbose_failures \
+        --experimental_strict_java_deps=off \
+        --strict_proto_deps=off \
+        --tool_java_runtime_version=local_jdk_21 \
+        --java_runtime_version=local_jdk_21 \
+        --tool_java_language_version=21 \
+        --java_language_version=21)
+        # Some post-fetch fixup is necessary, because the deps come with some
+        # baggage that is not reproducible. Luckily, this baggage does not factor
+        # into the final product, so removing it is enough.
+        # the GOCACHE is poisonous!
+        rm -rf vendor_dir/gazelle~~non_module_deps~bazel_gazelle_go_repository_cache/gocache
+        # as is the go versions file (changes when new versions show up)
+        rm -f vendor_dir/rules_go~~go_sdk~go_default_sdk/versions.json
+        # and so are .pyc files
+        find vendor_dir -name "*.pyc" -type f -delete
+        runHook postBuild
+      '';
+
+      installPhase = ''
+        mkdir -p $out/vendor_dir
+        cp -r --reflink=auto vendor_dir/* $out/vendor_dir
+      '';
+
+      outputHashMode = "recursive";
+      outputHash =
+        if stdenv.hostPlatform.system == "x86_64-linux" then
+          "sha256-ugi2F0xTDVWDCYKknSk3dTbnI78WluDMq4QvlLWtCts="
+        else if stdenv.hostPlatform.system == "aarch64-linux" then
+          "sha256-T7vVWLlRzhaWneKMgMdgjUpBwRuGZ9ZFtD2AQvH9krI="
+        else if stdenv.hostPlatform.system == "aarch64-darwin" then
+          "sha256-zv39lLMwfOr0MfK8dZ0alEwXpWdf97XEc6ciAoO4OK0="
+        else
+          # x86_64-darwin
+          lib.fakeSha256;
+      outputHashAlgo = "sha256";
+
+    };
 
   defaultShellPath = lib.makeBinPath defaultShellUtils;
 
@@ -305,10 +422,6 @@ stdenv.mkDerivation rec {
           -e 's!/bin/bash!${bashWithDefaultShellUtils}/bin/bash!g' \
           -e 's!shasum -a 256!sha256sum!g'
 
-        # Augment bundled repository_cache with our extra paths
-        ${lndir}/bin/lndir ${repoCache}/content_addressable \
-          $PWD/derived/repository_cache/content_addressable
-
         # Add required flags to bazel command line.
         # XXX: It would suit a bazelrc file better, but I found no way to pass it.
         #      It seems that bazel bootstrapping ignores it.
@@ -320,11 +433,15 @@ stdenv.mkDerivation rec {
           -e "/bazel_build /a\  --experimental_strict_java_deps=off \\\\" \
           -e "/bazel_build /a\  --strict_proto_deps=off \\\\" \
           -e "/bazel_build /a\  --toolchain_resolution_debug='@bazel_tools//tools/jdk:(runtime_)?toolchain_type' \\\\" \
-          -e "/bazel_build /a\  --tool_java_runtime_version=local_jdk_17 \\\\" \
-          -e "/bazel_build /a\  --java_runtime_version=local_jdk_17 \\\\" \
-          -e "/bazel_build /a\  --tool_java_language_version=17 \\\\" \
-          -e "/bazel_build /a\  --java_language_version=17 \\\\" \
+          -e "/bazel_build /a\  --tool_java_runtime_version=local_jdk_21 \\\\" \
+          -e "/bazel_build /a\  --java_runtime_version=local_jdk_21 \\\\" \
+          -e "/bazel_build /a\  --tool_java_language_version=21 \\\\" \
+          -e "/bazel_build /a\  --java_language_version=21 \\\\" \
           -e "/bazel_build /a\  --extra_toolchains=@bazel_tools//tools/jdk:all \\\\" \
+          -e "/bazel_build /a\  --vendor_dir=../vendor_dir \\\\" \
+          -e "/bazel_build /a\  --repository_disable_download \\\\" \
+          -e "/bazel_build /a\  --announce_rc \\\\" \
+          -e "/bazel_build /a\  --nobuild_python_zip \\\\" \
 
         # Also build parser_deploy.jar with bootstrap bazel
         # TODO: Turn into a proper patch
@@ -391,12 +508,16 @@ stdenv.mkDerivation rec {
     mkdir bazel_src
     shopt -s dotglob extglob
     mv !(bazel_src) bazel_src
+
+    # Augment bundled repository_cache with our extra paths
+    mkdir vendor_dir
+    ${lndir}/bin/lndir ${bazelDeps}/vendor_dir vendor_dir
+    rm vendor_dir/VENDOR.bazel
+    find vendor_dir -maxdepth 1 -type d -printf "pin(\"@@%P\")\n" > vendor_dir/VENDOR.bazel
   '';
   buildPhase = ''
     runHook preBuild
-
-    # Increasing memory during compilation might be necessary.
-    # export BAZEL_JAVAC_OPTS="-J-Xmx2g -J-Xms200m"
+    export HOME=$(mktemp -d)
 
     # If EMBED_LABEL isn't set, it'd be auto-detected from CHANGELOG.md
     # and `git rev-parse --short HEAD` which would result in
