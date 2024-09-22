@@ -89,7 +89,7 @@ let
         fetchurl {
           # stdenv.hostPlatform.system == "aarch64-darwin"
           url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
-          hash = "sha256-v3g/Rv5RP4b18gcAN6aRGJLWS/7y8pma1fCw/V1Entc=";
+          hash = "sha256-mB+CpHC60TSTIrb1HJxv+gqikdqxAU+sQRVDwS5mHf8=";
         };
 
     nativeBuildInputs = defaultShellUtils;
