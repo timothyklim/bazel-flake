@@ -196,7 +196,7 @@ let
         else if stdenv.hostPlatform.system == "aarch64-linux" then
           "sha256-T7vVWLlRzhaWneKMgMdgjUpBwRuGZ9ZFtD2AQvH9krI="
         else if stdenv.hostPlatform.system == "aarch64-darwin" then
-          "sha256-zv39lLMwfOr0MfK8dZ0alEwXpWdf97XEc6ciAoO4OK0="
+          "sha256-v3g/Rv5RP4b18gcAN6aRGJLWS/7y8pma1fCw/V1Entc="
         else
           # x86_64-darwin
           lib.fakeSha256;
