@@ -10,6 +10,7 @@
 , makeBinaryWrapper
 , autoPatchelfHook
 , buildFHSEnv
+, nix
   # native build inputs
 , runtimeShell
 , zip
@@ -43,6 +44,8 @@
   # Allow to independently override the jdks used to build and run respectively
 , buildJdk
 , runJdk
+  # diff.sh
+, dryRun
 }:
 
 let
@@ -81,10 +84,11 @@ let
 
     src =
       if stdenv.hostPlatform.system == "x86_64-linux" then
-        fetchurl {
-          url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
-          hash = "sha256-05fHtz47OilpOVYawB17VRVEDpycfYTIHBmwYCOyPjI=";
-        }
+        fetchurl
+          {
+            url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
+            hash = "sha256-05fHtz47OilpOVYawB17VRVEDpycfYTIHBmwYCOyPjI=";
+          }
       else
         fetchurl {
           # stdenv.hostPlatform.system == "aarch64-darwin"
@@ -149,6 +153,7 @@ let
         runJdk
         bazelForDeps
       ];
+      buildInputs = [ nix ];
       configurePhase = ''
         runHook preConfigure
         mkdir bazel_src
@@ -158,50 +163,63 @@ let
         runHook postConfigure
       '';
       dontFixup = true;
-      buildPhase = ''
-        runHook preBuild
+      installPhase = ''
         export HOME=$TMP
-        (cd bazel_src; ${bazelForDeps}/bin/bazel --server_javabase=${runJdk} mod deps --curses=no;
+
+        pushd bazel_src
+        ${bazelForDeps}/bin/bazel --server_javabase=${runJdk} mod deps --curses=no
         ${bazelForDeps}/bin/bazel --server_javabase=${runJdk} vendor src:bazel_nojdk \
-        --curses=no \
-        --vendor_dir ../vendor_dir \
-        --verbose_failures \
-        --experimental_strict_java_deps=off \
-        --strict_proto_deps=off \
-        --tool_java_runtime_version=local_jdk_21 \
-        --java_runtime_version=local_jdk_21 \
-        --tool_java_language_version=21 \
-        --java_language_version=21)
+          --curses=no \
+          --vendor_dir ../vendor_dir \
+          --verbose_failures \
+          --experimental_strict_java_deps=off \
+          --strict_proto_deps=off \
+          --tool_java_runtime_version=local_jdk_21 \
+          --java_runtime_version=local_jdk_21 \
+          --tool_java_language_version=21 \
+          --java_language_version=21
+        popd
+
         # Some post-fetch fixup is necessary, because the deps come with some
         # baggage that is not reproducible. Luckily, this baggage does not factor
         # into the final product, so removing it is enough.
+
         # the GOCACHE is poisonous!
         rm -rf vendor_dir/gazelle~~non_module_deps~bazel_gazelle_go_repository_cache/gocache
+
         # as is the go versions file (changes when new versions show up)
         rm -f vendor_dir/rules_go~~go_sdk~go_default_sdk/versions.json
+
+        # remove markers and local_cc_config's
+        rm -rf vendor_dir/bazel-external/*.marker \
+          vendor_dir/bazel-external/*cc_configure* \
+          vendor_dir/bazel-external/bazel_tools*
+
         # and so are .pyc files
         find vendor_dir -name "*.pyc" -type f -delete
-        runHook postBuild
-      '';
 
-      installPhase = ''
-        mkdir -p $out/vendor_dir
-        cp -r --reflink=auto vendor_dir/* $out/vendor_dir
+        mv vendor_dir/bazel-external bazel-external
+        mkdir $out
+        cp -RLf vendor_dir $out/
+
+        mkdir $out/vendor_dir/bazel-external
+
+        find bazel-external/ -maxdepth 1 -type l | while read -r link; do
+          name="''${link##*/}"
+          ln -s "../$name" "$out/vendor_dir/bazel-external/$name"
+        done
       '';
 
       outputHashMode = "recursive";
       outputHash =
-        if stdenv.hostPlatform.system == "x86_64-linux" then
+        if dryRun then
+          "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+        else if stdenv.hostPlatform.system == "x86_64-linux" then
           "sha256-ugi2F0xTDVWDCYKknSk3dTbnI78WluDMq4QvlLWtCts="
-        else if stdenv.hostPlatform.system == "aarch64-linux" then
-          "sha256-T7vVWLlRzhaWneKMgMdgjUpBwRuGZ9ZFtD2AQvH9krI="
         else if stdenv.hostPlatform.system == "aarch64-darwin" then
-          "sha256-v3g/Rv5RP4b18gcAN6aRGJLWS/7y8pma1fCw/V1Entc="
-        else
-          # x86_64-darwin
-          lib.fakeSha256;
+          "sha256-QnVcZT8OusdfyO0DLWf98DEPibaugnUBLNIGqTzrYZE="
+        else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
       outputHashAlgo = "sha256";
-
     };
 
   defaultShellPath = lib.makeBinPath defaultShellUtils;
@@ -642,4 +660,6 @@ stdenv.mkDerivation rec {
 
   dontStrip = true;
   dontPatchELF = true;
+
+  passthru = { inherit bazelDeps; };
 }
