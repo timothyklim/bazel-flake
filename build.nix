@@ -217,7 +217,7 @@ let
         if dryRun then
           "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
         else if stdenv.hostPlatform.system == "x86_64-linux" then
-          "sha256-ugi2F0xTDVWDCYKknSk3dTbnI78WluDMq4QvlLWtCts="
+          "sha256-VvzyjeMU3AjlPILoJhyB+1b1towIfj1IsDElcJcxh5M="
         else if stdenv.hostPlatform.system == "aarch64-darwin" then
           "sha256-qjwtysLXMzvIg6q/kBsjJ2/O0sMO8d6gltgCjB2nK5c="
         else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
