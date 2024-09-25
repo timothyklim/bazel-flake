@@ -193,7 +193,9 @@ let
         # remove markers and local_cc_config's
         rm -rf vendor_dir/bazel-external/*.marker \
           vendor_dir/bazel-external/*cc_configure* \
-          vendor_dir/bazel-external/bazel_tools*
+          vendor_dir/bazel-external/bazel_tools* \
+          vendor_dir/bazel-external/googleapis~ \
+          vendor_dir/bazel-external/remoteapis~
 
         # and so are .pyc files
         find vendor_dir -name "*.pyc" -type f -delete
@@ -217,7 +219,7 @@ let
         else if stdenv.hostPlatform.system == "x86_64-linux" then
           "sha256-ugi2F0xTDVWDCYKknSk3dTbnI78WluDMq4QvlLWtCts="
         else if stdenv.hostPlatform.system == "aarch64-darwin" then
-          "sha256-QnVcZT8OusdfyO0DLWf98DEPibaugnUBLNIGqTzrYZE="
+          "sha256-qjwtysLXMzvIg6q/kBsjJ2/O0sMO8d6gltgCjB2nK5c="
         else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
       outputHashAlgo = "sha256";
     };
