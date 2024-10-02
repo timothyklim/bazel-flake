@@ -89,12 +89,12 @@ let
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
             hash = "sha256-05fHtz47OilpOVYawB17VRVEDpycfYTIHBmwYCOyPjI=";
           }
-      else
+      else if stdenv.hostPlatform.system == "aarch64-darwin" then
         fetchurl {
-          # stdenv.hostPlatform.system == "aarch64-darwin"
           url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
           hash = "sha256-mB+CpHC60TSTIrb1HJxv+gqikdqxAU+sQRVDwS5mHf8=";
-        };
+        }
+      else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
 
     nativeBuildInputs = defaultShellUtils;
     buildInputs = [
@@ -190,26 +190,15 @@ let
         # as is the go versions file (changes when new versions show up)
         rm -f vendor_dir/rules_go~~go_sdk~go_default_sdk/versions.json
 
-        # remove markers and local_cc_config's
-        rm -rf vendor_dir/bazel-external/*.marker \
-          vendor_dir/bazel-external/*cc_configure* \
-          vendor_dir/bazel-external/bazel_tools* \
-          vendor_dir/bazel-external/googleapis~ \
-          vendor_dir/bazel-external/remoteapis~
+        # bazel-external is auto-generated and should be removed
+        # see https://bazel.build/external/vendor#vendor-symlinks for more details
+        rm vendor_dir/bazel-external
 
         # and so are .pyc files
         find vendor_dir -name "*.pyc" -type f -delete
 
-        mv vendor_dir/bazel-external bazel-external
         mkdir $out
         cp -RLf vendor_dir $out/
-
-        mkdir $out/vendor_dir/bazel-external
-
-        find bazel-external/ -maxdepth 1 -type l | while read -r link; do
-          name="''${link##*/}"
-          ln -s "../$name" "$out/vendor_dir/bazel-external/$name"
-        done
       '';
 
       outputHashMode = "recursive";
@@ -217,9 +206,9 @@ let
         if dryRun then
           "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
         else if stdenv.hostPlatform.system == "x86_64-linux" then
-          "sha256-VvzyjeMU3AjlPILoJhyB+1b1towIfj1IsDElcJcxh5M="
+          "sha256-bvmLj6VYQuB6bxGc8tokZHM8KlICOErcBtkD0MCD/yo="
         else if stdenv.hostPlatform.system == "aarch64-darwin" then
-          "sha256-qjwtysLXMzvIg6q/kBsjJ2/O0sMO8d6gltgCjB2nK5c="
+          "sha256-Tyo6BEp2MyR3FSCf57/bQfgHLCB4UfQuW00RcVcsmWM="
         else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
       outputHashAlgo = "sha256";
     };
