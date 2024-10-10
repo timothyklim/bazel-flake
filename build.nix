@@ -49,11 +49,11 @@
 }:
 
 let
-  version = "7.3.1";
+  version = "7.3.2";
 
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-8FAfkMn8dM1pM9vcWeF7jWJy1sCfi448QomFxYlxR8c=";
+    hash = "sha256-jCRJCmRFsA63agStuwFy9cUbHtuu7vkf9/PH6Gx5If8=";
   };
 
   defaultShellUtils = [ libtool ]
@@ -80,20 +80,22 @@ let
   ];
 
   bazelBootstrap = stdenv.mkDerivation rec {
-    name = "bazelBootstrap";
+    inherit version;
+    pname = "bazelBootstrap";
 
     src =
       if stdenv.hostPlatform.system == "x86_64-linux" then
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
-            hash = "sha256-05fHtz47OilpOVYawB17VRVEDpycfYTIHBmwYCOyPjI=";
+            hash = "sha256-eaDJVe4dQZ4KKR0ctd06jbpKb57tJ+K+8tzhVifDB2E=";
           }
       else if stdenv.hostPlatform.system == "aarch64-darwin" then
-        fetchurl {
-          url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
-          hash = "sha256-mB+CpHC60TSTIrb1HJxv+gqikdqxAU+sQRVDwS5mHf8=";
-        }
+        fetchurl
+          {
+            url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
+            hash = "sha256-eeTSQBsclp0rV7q9DFCwymG3GWidiwKckZUldE9Shyw=";
+          }
       else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
 
     nativeBuildInputs = defaultShellUtils;
@@ -652,5 +654,5 @@ stdenv.mkDerivation rec {
   dontStrip = true;
   dontPatchELF = true;
 
-  passthru = { inherit bazelDeps; };
+  passthru = { inherit bazelDeps bazelBootstrap; };
 }

@@ -27,7 +27,6 @@
               else stdenv;
           };
         bazel = build { dryRun = false; };
-        bazel-dryRun = (build { dryRun = true; }).bazelDeps;
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
         checker = with pkgs; stdenv.mkDerivation {
           name = "checker";
@@ -43,7 +42,9 @@
       in
       rec {
         packages = derivation // {
-          inherit bazel-dryRun checker;
+          inherit checker;
+          bazel-dryRun = (build { dryRun = true; }).bazelDeps;
+          bazelBootstrap = bazel.bazelBootstrap;
           default = bazel;
         };
         apps.bazel = bazel-app;
