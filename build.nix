@@ -49,11 +49,11 @@
 }:
 
 let
-  version = "7.3.2";
+  version = "7.4.0rc1";
 
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-jCRJCmRFsA63agStuwFy9cUbHtuu7vkf9/PH6Gx5If8=";
+    hash = "sha256-Acu8IUPR8HDdtj4dfzjoJdvvM6N7ivXYCqTp9qFY0jM=";
   };
 
   defaultShellUtils = [ libtool ]
@@ -88,13 +88,13 @@ let
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
-            hash = "sha256-eaDJVe4dQZ4KKR0ctd06jbpKb57tJ+K+8tzhVifDB2E=";
+            hash = "sha256-qtlZZLyT8mThXVEJ7vTfon7Xlz0giQgblMownJR7mHU=";
           }
       else if stdenv.hostPlatform.system == "aarch64-darwin" then
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
-            hash = "sha256-eeTSQBsclp0rV7q9DFCwymG3GWidiwKckZUldE9Shyw=";
+            hash = "sha256-fciN9IQqW0mDDFWxdFUURVh65g8CemfQ+Efbs18fQMY=";
           }
       else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
 
@@ -150,12 +150,7 @@ let
         "--no-backup-if-mismatch"
         "-p1"
       ];
-      nativeBuildInputs = [
-        unzip
-        runJdk
-        bazelForDeps
-      ];
-      buildInputs = [ nix ];
+      nativeBuildInputs = [ unzip runJdk bazelForDeps ];
       configurePhase = ''
         runHook preConfigure
         mkdir bazel_src

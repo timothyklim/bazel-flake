@@ -9,7 +9,6 @@
   outputs = { self, nixpkgs, flake-utils }:
     with flake-utils.lib; with system; eachSystem [ x86_64-linux aarch64-linux aarch64-darwin ] (system:
       let
-        sources = (nixpkgs.lib.importJSON ./flake.lock).nodes;
         pkgs = nixpkgs.legacyPackages.${system};
         jdk = pkgs.jdk21_headless;
         build = { dryRun }:
@@ -43,8 +42,9 @@
       rec {
         packages = derivation // {
           inherit checker;
+          inherit (bazel) bazelBootstrap bazelDeps;
+
           bazel-dryRun = (build { dryRun = true; }).bazelDeps;
-          bazelBootstrap = bazel.bazelBootstrap;
           default = bazel;
         };
         apps.bazel = bazel-app;
