@@ -194,8 +194,10 @@ let
         # and so are .pyc files
         find vendor_dir -name "*.pyc" -type f -delete
 
-        mkdir $out
+        mkdir -p $out/share
         cp -RLf vendor_dir $out/
+
+        echo ${version} $out/share/version
       '';
 
       outputHashMode = "recursive";
@@ -203,7 +205,7 @@ let
         if dryRun then
           "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
         else if stdenv.hostPlatform.system == "x86_64-linux" then
-          "sha256-bvmLj6VYQuB6bxGc8tokZHM8KlICOErcBtkD0MCD/yo="
+          "sha256-1FST20t3tnp4IB9scLtofgzZu/LHsVxbTIdul1AoIak="
         else if stdenv.hostPlatform.system == "aarch64-darwin" then
           "sha256-Tyo6BEp2MyR3FSCf57/bQfgHLCB4UfQuW00RcVcsmWM="
         else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
