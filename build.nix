@@ -49,11 +49,11 @@
 }:
 
 let
-  version = "7.4.0rc1";
+  version = "7.4.0rc2";
 
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-Acu8IUPR8HDdtj4dfzjoJdvvM6N7ivXYCqTp9qFY0jM=";
+    hash = "sha256-sNqp7uidERIIZ1YuyYAjt+AgNWiuSW2QqZFykBqfgno=";
   };
 
   defaultShellUtils = [ libtool ]
@@ -88,13 +88,13 @@ let
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
-            hash = "sha256-qtlZZLyT8mThXVEJ7vTfon7Xlz0giQgblMownJR7mHU=";
+            hash = "sha256-UAu2GPLSpHFp0LhMYLZ5xXu4d4yYXT8w1LCfHgbA0GM=";
           }
       else if stdenv.hostPlatform.system == "aarch64-darwin" then
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
-            hash = "sha256-fciN9IQqW0mDDFWxdFUURVh65g8CemfQ+Efbs18fQMY=";
+            hash = "sha256-BfxwztjTMImEAgGaUmSoGkQG+42tpgCAECHZZXLH+2w=";
           }
       else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
 
