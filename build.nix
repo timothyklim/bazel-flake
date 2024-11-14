@@ -94,7 +94,7 @@ let
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
-            hash = "sha256-+EP+HssT4aISUZwLKkSuuXjGQm9lheNJDr7WZw1v0pU=";
+            hash = "sha256-ArEXuX0JIa5NT04R0n4sCTA4HfQW43NDXV0EGcaibyQ=";
           }
       else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
 
