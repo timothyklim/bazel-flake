@@ -49,11 +49,11 @@
 }:
 
 let
-  version = "7.4.0";
+  version = "7.4.1";
 
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-GY1wu3O5O7K2MMJv6wjE+DLnUgwjkHdmcqhT1o9G9Cg=";
+    hash = "sha256-gzhmGLxIn02jYmbvJiDsZKUmxobPBwQTMsr/fJU6+vU=";
   };
 
   defaultShellUtils = [ libtool ]
@@ -88,7 +88,7 @@ let
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
-            hash = "sha256-0glQLNAU0aT7+3Hzv0+IzgvJlfs7y8wflEwFssIvnkk=";
+            hash = "sha256-CYL1paAtzTbfl7TfsqwJry/dkoTO/yZdHrX0NSA1+Ig=";
           }
       else if stdenv.hostPlatform.system == "aarch64-darwin" then
         fetchurl

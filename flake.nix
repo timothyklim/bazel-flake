@@ -53,6 +53,10 @@
         nixosModules.default = {
           nixpkgs.overlays = [ overlay ];
         };
+        devShell = with pkgs; mkShell {
+          name = "bazel-env";
+          buildInputs = [ just ];
+        };
         overlay = final: prev: derivation;
         formatter = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
       });
