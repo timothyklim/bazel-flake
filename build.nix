@@ -145,6 +145,7 @@ let
         # the cli is not reproducible. This patch ensures that it is by sorting
         # the results in the repo rule rather than the downstream genrule.
         ./patches/test_source_sort.patch
+        ./patches/error-prone.patch
       ];
       patchFlags = [
         "--no-backup-if-mismatch"
@@ -266,6 +267,8 @@ stdenv.mkDerivation rec {
   pname = "bazel";
 
   patches = [
+    ./patches/error-prone.patch
+
     # Remote java toolchains do not work on NixOS because they download binaries,
     # so we need to use the @local_jdk//:jdk
     # It could in theory be done by registering @local_jdk//:all toolchains,
@@ -319,7 +322,7 @@ stdenv.mkDerivation rec {
     # Fix DARWIN_XCODE_LOCATOR_COMPILE_COMMAND by removing multi-arch support.
     # Nixpkgs toolcahins do not support that (yet?) and get confused.
     # Also add an explicit /usr/bin prefix that will be patched below.
-    "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7//xcode_locator.patch"
+    "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_7/xcode_locator.patch"
 
     # On Darwin, the last argument to gcc is coming up as an empty string. i.e: ''
     # This is breaking the build of any C target. This patch removes the last
