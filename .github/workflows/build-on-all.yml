@@ -45,7 +45,10 @@ jobs:
     - name: Create files for store
       env:
         LD_LIBRARY_PATH: ''
+        STORE_PRIVATE_KEY: ${{ secrets.STORE_KEY }}
       run: |
+        mkdir ${{ github.workspace }}/.secrets
+        echo "$STORE_PRIVATE_KEY" > ${{ github.workspace }}/.secrets/store_key
         rm -rf tostore
         mkdir -p tostore
         mkdir -p tostore/nar
@@ -53,6 +56,7 @@ jobs:
         for i in `ls -d result*`
         do
           echo "Working with $i"
+          nix store sign --key-file ${{ github.workspace }}/.secrets/store_key ./$i
           nix copy --to file://${{ github.workspace }}/tostore?compression=zstd ./$i
         done
 
@@ -60,7 +64,6 @@ jobs:
       env:
         PRIVATE_KEY: ${{ secrets.SSH_KEY }}
       run: |
-        mkdir ${{ github.workspace }}/.secrets
         echo "$PRIVATE_KEY" > ${{ github.workspace }}/.secrets/ssh_key
         chmod 0600 ${{ github.workspace }}/.secrets/ssh_key
         chmod 0700 ${{ github.workspace }}/.secrets
@@ -73,4 +76,7 @@ jobs:
           teamcity@${{ vars.NIX_STORE_IP }}:/opt/nix-store/store
   
     - name: Clean
-      run: rm -rf tostore
+      if: ${{ always() }}
+      run: |
+        rm -rf ${{ github.workspace }}/.secrets
+        rm -rf tostore
