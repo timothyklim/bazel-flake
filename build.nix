@@ -145,7 +145,6 @@ let
         # the cli is not reproducible. This patch ensures that it is by sorting
         # the results in the repo rule rather than the downstream genrule.
         ./patches/test_source_sort.patch
-        ./patches/error-prone.patch
       ];
       patchFlags = [
         "--no-backup-if-mismatch"
@@ -206,7 +205,7 @@ let
         else if stdenv.hostPlatform.system == "x86_64-linux" then
           "sha256-1FST20t3tnp4IB9scLtofgzZu/LHsVxbTIdul1AoIak="
         else if stdenv.hostPlatform.system == "aarch64-darwin" then
-          "sha256-gL0CaI0doOcnK05bKTvdJenQ3ghek0ukm7cycl01MUA="
+          "sha256-tDvSBVdBWoF8cjNfGqQkakWnbMcLaShdvV0vYQQMvj8="
         else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
       outputHashAlgo = "sha256";
     };
@@ -267,8 +266,6 @@ stdenv.mkDerivation rec {
   pname = "bazel";
 
   patches = [
-    ./patches/error-prone.patch
-
     # Remote java toolchains do not work on NixOS because they download binaries,
     # so we need to use the @local_jdk//:jdk
     # It could in theory be done by registering @local_jdk//:all toolchains,
