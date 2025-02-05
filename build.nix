@@ -49,11 +49,11 @@
 }:
 
 let
-  version = "7.5.0rc2";
+  version = "7.5.0";
 
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-rOp35Vd/b6Y/scYQnghuYdQHe9qBcDJJmiQ8qLqa7Vk=";
+    hash = "sha256-nT2bdM88u6BAGHTDofcO/GUxh400FGsi1P0gknbvr90=";
   };
 
   defaultShellUtils = [ libtool ]
@@ -88,13 +88,13 @@ let
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
-            hash = "sha256-+IBvHeMxYJTaCFHWoH677j2SlTU01QGuSZv+zpxU6yU=";
+            hash = "sha256-nWgvGSF3YE78SE0SVMZAVQLj8jo1M1Vjp3mbjQzivms=";
           }
       else if stdenv.hostPlatform.system == "aarch64-darwin" then
         fetchurl
           {
             url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
-            hash = "sha256-TYAgu5sRPquZNtBkGrXRTgFOaO4oJCGNz1w4tbxToKI=";
+            hash = "sha256-6y8ppX16woZFeHuLq4xeEebR0EMsNAhPwirP2s+PAt0=";
           }
       else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
 
@@ -141,6 +141,8 @@ let
       inherit src version;
       sourceRoot = ".";
       patches = [
+        ./patches/error-prone.patch
+
         # The repo rule that creates a manifest of the bazel source for testing
         # the cli is not reproducible. This patch ensures that it is by sorting
         # the results in the repo rule rather than the downstream genrule.
@@ -203,9 +205,9 @@ let
         if dryRun then
           "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
         else if stdenv.hostPlatform.system == "x86_64-linux" then
-          "sha256-eujds1UBoYEbYDSClDre8ghshF1eu1CC8SRVe3dpWPs="
+          "sha256-SUHDZ8W0tlXBvdgSJnZzJ/ufEomgTkGfcoAMpd6G/y0="
         else if stdenv.hostPlatform.system == "aarch64-darwin" then
-          "sha256-tDvSBVdBWoF8cjNfGqQkakWnbMcLaShdvV0vYQQMvj8="
+          "sha256-D0AJvXAYQIAFOKX5SXsDEskuFvA0Qzplm0aEfjxOBK8="
         else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
       outputHashAlgo = "sha256";
     };
@@ -266,6 +268,8 @@ stdenv.mkDerivation rec {
   pname = "bazel";
 
   patches = [
+    ./patches/error-prone.patch
+
     # Remote java toolchains do not work on NixOS because they download binaries,
     # so we need to use the @local_jdk//:jdk
     # It could in theory be done by registering @local_jdk//:all toolchains,
