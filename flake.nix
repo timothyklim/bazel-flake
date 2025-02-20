@@ -42,7 +42,7 @@
       rec {
         packages = derivation // {
           inherit checker;
-          inherit (bazel) bazelBootstrap bazelDeps;
+          inherit (bazel) bazelBootstrap bazelDeps bazelVendorDeps;
 
           bazel-dryRun = (build { dryRun = true; }).bazelDeps;
           default = bazel;

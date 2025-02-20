@@ -5,11 +5,11 @@
 , fetchurl
 , makeWrapper
 , writeTextFile
+, writeScript
 , substituteAll
 , writeShellApplication
 , makeBinaryWrapper
 , autoPatchelfHook
-, buildFHSEnv
 , nix
   # native build inputs
 , runtimeShell
@@ -49,11 +49,12 @@
 }:
 
 let
-  version = "7.5.0";
+  version = "8.1.0";
+  sourceRoot = ".";
 
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-nT2bdM88u6BAGHTDofcO/GUxh400FGsi1P0gknbvr90=";
+    hash = "sha256-4IuRN+uF2gEq+uLV80NI5WIt8nPnTUFA6MOJ8OonXyc=";
   };
 
   defaultShellUtils = [ libtool ]
@@ -80,23 +81,19 @@ let
   ];
 
   bazelBootstrap = stdenv.mkDerivation rec {
-    inherit version;
+    version = "8.0.1";
     pname = "bazelBootstrap";
 
-    src =
-      if stdenv.hostPlatform.system == "x86_64-linux" then
-        fetchurl
-          {
-            url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
-            hash = "sha256-nWgvGSF3YE78SE0SVMZAVQLj8jo1M1Vjp3mbjQzivms=";
-          }
-      else if stdenv.hostPlatform.system == "aarch64-darwin" then
-        fetchurl
-          {
-            url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-darwin-arm64";
-            hash = "sha256-6y8ppX16woZFeHuLq4xeEebR0EMsNAhPwirP2s+PAt0=";
-          }
-      else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
+    src = {
+      x86_64-linux = fetchurl {
+        url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
+        hash = "sha256-KLejW8XcVQ3xD+kP9EGCRrODmHZwX7Sq3etdrVBNXHI=";
+      };
+      aarch64-darwin = fetchurl {
+        url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-darwin-arm64";
+        hash = "sha256-7IKMKQ8+Qwi3ORzZgKSffdId1Zq13hKcshthWKYTtCA=";
+      };
+    }.${stdenv.hostPlatform.system};
 
     nativeBuildInputs = defaultShellUtils;
     buildInputs = [
@@ -122,24 +119,39 @@ let
     meta.sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
   };
 
-  bazelFhs = buildFHSEnv {
-    name = "bazel";
-    targetPkgs = _: [ bazelBootstrap ];
-    runScript = "bazel";
-  };
-
   # A FOD that vendors the Bazel dependencies using Bazel's new vendor mode.
-  # See https://bazel.build/versions/7.3.0/external/vendor for details.
+  # See https://bazel.build/versions/7.4.1/external/vendor for details.
   # Note that it may be possible to vendor less than the full set of deps in
-  # the future, as this is approximately 16GB.
-  bazelDeps =
+  # the future, as this is approximately 1GB.
+  bazelVendorDeps =
     let
-      bazelForDeps = if stdenv.hostPlatform.isDarwin then bazelBootstrap else bazelFhs;
+      bazelForDeps = bazelBootstrap;
+      # Bootstrap Bazel isn't reliably working on MacOS, under sandbox=true
+      # it may fail to make power management tweaks
+      # but we can hack out those modules with classpath manipilations
+      #
+      # Note that those stubs don't affect bazelVendorDeps outputs and aren't
+      # applied for bazel build step either, they are only needed to prevent
+      # build failures in sandbox
+      serverJavabase =
+        if stdenv.hostPlatform.isDarwin then
+          let
+            hacks = (import ./darwin_hacks/default.nix) {
+              inherit
+                stdenv
+                buildJdk
+                runJdk
+                version
+                writeScript
+                ;
+            };
+          in
+          hacks.jvmIntercept
+        else runJdk;
     in
     stdenv.mkDerivation {
-      name = "bazelDeps";
-      inherit src version;
-      sourceRoot = ".";
+      inherit src version sourceRoot;
+      name = "bazelVendorDeps";
       patches = [
         ./patches/error-prone.patch
 
@@ -152,65 +164,149 @@ let
         "--no-backup-if-mismatch"
         "-p1"
       ];
-      nativeBuildInputs = [ unzip runJdk bazelForDeps ];
+      nativeBuildInputs = [
+        unzip
+        runJdk
+        bazelForDeps
+        stdenv.cc.cc
+      ] ++ lib.optional (stdenv.hostPlatform.isDarwin) libtool;
+      buildInputs = lib.optional (!stdenv.hostPlatform.isDarwin) autoPatchelfHook;
       configurePhase = ''
         runHook preConfigure
+
         mkdir bazel_src
         shopt -s dotglob extglob
         mv !(bazel_src) bazel_src
         mkdir vendor_dir
+
         runHook postConfigure
       '';
       dontFixup = true;
-      installPhase = ''
-        export HOME=$TMP
+      buildPhase = ''
+        runHook preBuild
 
-        pushd bazel_src
-        ${bazelForDeps}/bin/bazel --server_javabase=${runJdk} mod deps --curses=no
-        ${bazelForDeps}/bin/bazel --server_javabase=${runJdk} vendor src:bazel_nojdk \
-          --curses=no \
-          --vendor_dir ../vendor_dir \
-          --verbose_failures \
-          --experimental_strict_java_deps=off \
-          --strict_proto_deps=off \
-          --tool_java_runtime_version=local_jdk_21 \
-          --java_runtime_version=local_jdk_21 \
-          --tool_java_language_version=21 \
-          --java_language_version=21
-        popd
+        export HOME=$(mktemp -d)
+        export JAVA_HOME=${runJdk.home}
+
+        cd bazel_src
+
+        ${lib.optionalString (!stdenv.hostPlatform.isDarwin) ''
+          # process-wrapper links against libstdc++.so.6 so we need to apply patchelf to
+          # it and any other potential unpacked tools
+          export INSTALL_BASE=$(${bazelForDeps}/bin/bazel --batch info install_base)
+
+          # Bazel checks integrity of unpacked files by setting timestamp into future
+          # and then comparing it, so we should preserve the timestamps
+          touch -r $INSTALL_BASE/process-wrapper save_time
+
+          autoPatchelf "$INSTALL_BASE"
+
+          find $INSTALL_BASE -exec touch -r save_time '{}' \;
+        ''}
+
+        ${bazelForDeps}/bin/bazel \
+        --host_jvm_args=--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED \
+        --host_jvm_args=--add-opens=java.base/java.nio=ALL-UNNAMED \
+        --host_jvm_args=--add-opens=java.base/java.lang=ALL-UNNAMED \
+        --server_javabase=${serverJavabase} --batch vendor src:bazel_nojdk \
+        --curses=no \
+        --vendor_dir ../vendor_dir \
+        --verbose_failures \
+        --experimental_strict_java_deps=off \
+        --strict_proto_deps=off \
+        --tool_java_runtime_version=local_jdk \
+        --java_runtime_version=local_jdk
+
+        cd ..
 
         # Some post-fetch fixup is necessary, because the deps come with some
         # baggage that is not reproducible. Luckily, this baggage does not factor
         # into the final product, so removing it is enough.
 
-        # the GOCACHE is poisonous!
-        rm -rf vendor_dir/gazelle~~non_module_deps~bazel_gazelle_go_repository_cache/gocache
+        # .pyc files are poisonous
+        find vendor_dir -name "*.pyc" -type f -delete
 
-        # as is the go versions file (changes when new versions show up)
-        rm -f vendor_dir/rules_go~~go_sdk~go_default_sdk/versions.json
+        # those symlinks point to locations under bazel_src/
+        find vendor_dir -name imported_maven_install.json -exec rm '{}' \;
 
         # bazel-external is auto-generated and should be removed
         # see https://bazel.build/external/vendor#vendor-symlinks for more details
         rm vendor_dir/bazel-external
 
-        # and so are .pyc files
-        find vendor_dir -name "*.pyc" -type f -delete
+        # .marker files seem to make Nix unhappy with FOD output on MacOS
+        # and make "store path invalid"
+        find vendor_dir -name "*.marker" -exec rm '{}' \;
 
-        mkdir $out
-        cp -RLf vendor_dir $out/
+        runHook postBuild
+      '';
+
+      installPhase = ''
+        mkdir -p $out/vendor_dir
+        cp -r --reflink=auto vendor_dir/* $out/vendor_dir
       '';
 
       outputHashMode = "recursive";
-      outputHash =
-        if dryRun then
-          "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
-        else if stdenv.hostPlatform.system == "x86_64-linux" then
-          "sha256-SUHDZ8W0tlXBvdgSJnZzJ/ufEomgTkGfcoAMpd6G/y0="
-        else if stdenv.hostPlatform.system == "aarch64-darwin" then
-          "sha256-D0AJvXAYQIAFOKX5SXsDEskuFvA0Qzplm0aEfjxOBK8="
-        else throw "Unsupproted system: ${stdenv.hostPlatform.system}";
+      outputHash = {
+        x86_64-linux = "sha256-z+3CawlSwq+yQwLrLzj7ZKWimvV1BL/RT+mkhPx26no=";
+        aarch64-darwin = "sha256-Q4VhBibmOlZ8FzveHUuruf4BMj9miwOGxWE6h4VCiVw=";
+      }.${stdenv.hostPlatform.system};
       outputHashAlgo = "sha256";
     };
+
+  declareSedVerbose = ''
+    function sedVerbose() {
+      local path=$1; shift;
+      sed -i".bak-nix" "$path" "$@"
+      diff -U0 "$path.bak-nix" "$path" | sed "s/^/  /" || true
+      rm -f "$path.bak-nix"
+    }
+  '';
+
+  # bazelVendorDeps have some references to "/usr/bin/env python3" that
+  # need to be replaced.
+  #
+  # Note that it can't easily be combined with bazelVendorDeps FOD because
+  # it produces output with references to Nix store and those aren't allowed
+  # by default for FOD, also listing all allowed references isn't as easy as
+  # just listing "python3" as allowed reference.
+  # So we add this extra non-FOD derivation.
+  bazelDeps = stdenv.mkDerivation {
+    name = "bazelDeps";
+    inherit version;
+
+    dontUnpack = true;
+
+    buildPhase =
+      declareSedVerbose
+      + ''
+        cp -r ${bazelVendorDeps} $out
+        chmod -R +w $out
+
+        ${lib.optionalString stdenv.hostPlatform.isDarwin ''
+          sed -i -e 's;"/usr/bin/libtool";_find_generic(repository_ctx, "libtool", "LIBTOOL", overriden_tools);g' $out/vendor_dir/rules_cc+/cc/private/toolchain/unix_cc_configure.bzl
+          wrappers=( $out/vendor_dir/rules_cc+/cc/private/toolchain/osx_cc_wrapper.sh.tpl )
+          for wrapper in "''${wrappers[@]}"; do
+            sedVerbose $wrapper \
+              -e "s,/usr/bin/xcrun install_name_tool,${cctools}/bin/install_name_tool,g"
+          done
+        ''}
+
+        echo
+        echo "Substituting /usr/bin/env hardcoded paths"
+        # Prefilter the files with grep for speed
+        grep -rlZ /bin/ $out \
+        | while IFS="" read -r -d "" path; do
+          # If you add more replacements here, you must change the grep above!
+          # Only files containing /bin/ are taken into account.
+          sedVerbose "$path" \
+            -e 's!/usr/bin/env python3!${python3}/bin/python!g'
+        done
+
+        find "$out/vendor_dir/abseil-cpp+" -type f -name "BUILD.bazel" | while read -r file; do
+          sedVerbose "$file" -e 's!layering_check!-layering_check!g'
+        done
+      '';
+  };
 
   defaultShellPath = lib.makeBinPath defaultShellUtils;
 
@@ -260,12 +356,6 @@ let
       try-import /etc/bazel.bazelrc
     '';
   };
-in
-stdenv.mkDerivation rec {
-  inherit src version;
-  sourceRoot = ".";
-
-  pname = "bazel";
 
   patches = [
     ./patches/error-prone.patch
@@ -348,6 +438,11 @@ stdenv.mkDerivation rec {
       bazelSystemBazelRCPath = bazelRC;
     })
   ];
+in
+stdenv.mkDerivation rec {
+  inherit src patches version sourceRoot;
+
+  pname = "bazel";
 
   postPatch =
     let
@@ -386,14 +481,6 @@ stdenv.mkDerivation rec {
 
         # nixpkgs's libSystem cannot use pthread headers directly, must import GCD headers instead
         sed -i -e "/#include <pthread\/spawn.h>/i #include <dispatch/dispatch.h>" src/main/cpp/blaze_util_darwin.cc
-
-        # XXX: What do these do ?
-        sed -i -e 's;"/usr/bin/libtool";_find_generic(repository_ctx, "libtool", "LIBTOOL", overriden_tools);g' tools/cpp/unix_cc_configure.bzl
-        wrappers=( tools/cpp/osx_cc_wrapper.sh.tpl )
-        for wrapper in "''${wrappers[@]}"; do
-          sedVerbose $wrapper \
-            -e "s,/usr/bin/xcrun install_name_tool,${cctools}/bin/install_name_tool,g"
-        done
       '';
 
       genericPatches = ''
@@ -443,16 +530,17 @@ stdenv.mkDerivation rec {
           -e "/bazel_build /a\  --experimental_strict_java_deps=off \\\\" \
           -e "/bazel_build /a\  --strict_proto_deps=off \\\\" \
           -e "/bazel_build /a\  --toolchain_resolution_debug='@bazel_tools//tools/jdk:(runtime_)?toolchain_type' \\\\" \
-          -e "/bazel_build /a\  --tool_java_runtime_version=local_jdk_21 \\\\" \
-          -e "/bazel_build /a\  --java_runtime_version=local_jdk_21 \\\\" \
-          -e "/bazel_build /a\  --tool_java_language_version=21 \\\\" \
-          -e "/bazel_build /a\  --java_language_version=21 \\\\" \
+          -e "/bazel_build /a\  --tool_java_runtime_version=local_jdk \\\\" \
+          -e "/bazel_build /a\  --java_runtime_version=local_jdk \\\\" \
           -e "/bazel_build /a\  --extra_toolchains=@bazel_tools//tools/jdk:all \\\\" \
           -e "/bazel_build /a\  --vendor_dir=../vendor_dir \\\\" \
           -e "/bazel_build /a\  --repository_disable_download \\\\" \
           -e "/bazel_build /a\  --announce_rc \\\\" \
           -e "/bazel_build /a\  --nobuild_python_zip \\\\" \
-
+      '' + lib.optionalString stdenv.hostPlatform.isDarwin ''
+        -e "/bazel_build /a\  --copt=-mmacosx-version-min=${stdenv.cc.darwinMinVersion} \\\\" \
+        -e "/bazel_build /a\  --linkopt=-mmacosx-version-min=${stdenv.cc.darwinMinVersion} \\\\" \
+      '' + ''
         # Also build parser_deploy.jar with bootstrap bazel
         # TODO: Turn into a proper patch
         sedVerbose compile.sh \
@@ -474,16 +562,7 @@ stdenv.mkDerivation rec {
         patchShebangs . >/dev/null
       '';
     in
-    ''
-      function sedVerbose() {
-        local path=$1; shift;
-        sed -i".bak-nix" "$path" "$@"
-        diff -U0 "$path.bak-nix" "$path" | sed "s/^/  /" || true
-        rm -f "$path.bak-nix"
-      }
-    ''
-    + lib.optionalString stdenv.hostPlatform.isDarwin darwinPatches
-    + genericPatches;
+    declareSedVerbose + lib.optionalString stdenv.hostPlatform.isDarwin darwinPatches + genericPatches;
 
   # Bazel starts a local server and needs to bind a local address.
   __darwinAllowLocalNetworking = true;
@@ -500,7 +579,9 @@ stdenv.mkDerivation rec {
     which
     zip
     python3.pkgs.absl-py # Needed to build fish completion
-  ] ++ lib.optionals (stdenv.isDarwin) [
+  ]
+  ++ lib.optional (!stdenv.hostPlatform.isDarwin) stdenv.cc # Needed for execlog
+  ++ lib.optionals (stdenv.isDarwin) [
     cctools
     libcxx
     Foundation
@@ -537,6 +618,7 @@ stdenv.mkDerivation rec {
     # Note that .bazelversion is always correct and is based on bazel-*
     # executable name, version checks should work fine
     export EMBED_LABEL="${version}- (@non-git)"
+
     echo "Stage 1 - Running bazel bootstrap script"
     ${bash}/bin/bash ./bazel_src/compile.sh
 
@@ -653,5 +735,5 @@ stdenv.mkDerivation rec {
   dontStrip = true;
   dontPatchELF = true;
 
-  passthru = { inherit bazelDeps bazelBootstrap; };
+  passthru = { inherit bazelVendorDeps bazelDeps bazelBootstrap; };
 }
