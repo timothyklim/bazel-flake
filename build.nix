@@ -153,8 +153,6 @@ let
       inherit src version sourceRoot;
       name = "bazelVendorDeps";
       patches = [
-        ./patches/error-prone.patch
-
         # The repo rule that creates a manifest of the bazel source for testing
         # the cli is not reproducible. This patch ensures that it is by sorting
         # the results in the repo rule rather than the downstream genrule.
@@ -358,8 +356,6 @@ let
   };
 
   patches = [
-    ./patches/error-prone.patch
-
     # Remote java toolchains do not work on NixOS because they download binaries,
     # so we need to use the @local_jdk//:jdk
     # It could in theory be done by registering @local_jdk//:all toolchains,
