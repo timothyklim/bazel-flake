@@ -49,12 +49,12 @@
 }:
 
 let
-  version = "8.1.0";
+  version = "8.1.1";
   sourceRoot = ".";
 
   src = fetchurl {
     url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-4IuRN+uF2gEq+uLV80NI5WIt8nPnTUFA6MOJ8OonXyc=";
+    hash = "sha256-TJSHoW94QRUAkvB9k6ZyfWbyxBM6YX1zncqOyD+wCZw=";
   };
 
   defaultShellUtils = [ libtool ]
