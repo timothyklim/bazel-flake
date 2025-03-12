@@ -40,7 +40,7 @@ jobs:
     - name: Build nix flake
       env:
         LD_LIBRARY_PATH: ''
-      run: nix build -L
+      run: nix build -L .#bazelDeps .#bazelBootstrap .#bazel .#bazel_7
 
     - name: Create files for store
       env:
