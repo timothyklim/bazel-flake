@@ -37,6 +37,7 @@
 , cctools
 , libcxx
 , sigtool
+, llvmPackages
 , CoreFoundation
 , CoreServices
 , Foundation
@@ -57,8 +58,17 @@ let
     hash = "sha256-TJSHoW94QRUAkvB9k6ZyfWbyxBM6YX1zncqOyD+wCZw=";
   };
 
+  dsymutil = stdenv.mkDerivation {
+    name = "dsymutil";
+    phases = [ "installPhase" ];
+    installPhase = ''
+      mkdir -p $out/bin
+      cp -L ${llvmPackages.libllvm}/bin/dsymutil $out/bin/
+    '';
+  };
+
   defaultShellUtils = [ libtool ]
-    ++ lib.optionals stdenv.isDarwin [ cctools ]
+    ++ lib.optionals stdenv.isDarwin [ cctools dsymutil ]
     ++ [
     bash
     binutils-unwrapped
