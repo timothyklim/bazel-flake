@@ -6,7 +6,7 @@
 , makeWrapper
 , writeTextFile
 , writeScript
-, substituteAll
+, replaceVars
 , writeShellApplication
 , makeBinaryWrapper
 , autoPatchelfHook
@@ -432,15 +432,13 @@ let
     # This is non hermetic on non-nixos systems. On NixOS, bazel cannot find the required binaries.
     # So we are replacing this bazel paths by defaultShellPath,
     # improving hermeticity and making it work in nixos.
-    (substituteAll {
-      src = "${nixpkgs}/pkgs/development/tools/build-managers/bazel/strict_action_env.patch";
+    (replaceVars "${nixpkgs}/pkgs/development/tools/build-managers/bazel/strict_action_env.patch" {
       strictActionEnvPatch = defaultShellPath;
     })
 
     # bazel reads its system bazelrc in /etc
     # override this path to a builtin one
-    (substituteAll {
-      src = "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_rc.patch";
+    (replaceVars "${nixpkgs}/pkgs/development/tools/build-managers/bazel/bazel_rc.patch" {
       bazelSystemBazelRCPath = bazelRC;
     })
   ];

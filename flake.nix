@@ -27,23 +27,6 @@
           };
         bazel = build { dryRun = false; };
         bazel-app = flake-utils.lib.mkApp { drv = bazel; };
-
-        build_7 = { dryRun }:
-          with pkgs; with lib; darwin.apple_sdk_11_0.callPackage ./build_7.nix {
-            inherit nixpkgs dryRun;
-            inherit (darwin) cctools sigtool;
-            inherit (darwin.apple_sdk_11_0.frameworks) CoreFoundation CoreServices Foundation IOKit;
-
-            buildJdk = jdk;
-            runJdk = jdk;
-
-            stdenv =
-              if stdenv.isDarwin then darwin.apple_sdk.stdenv
-              else if stdenv.cc.isClang then llvmPackages.stdenv
-              else stdenv;
-          };
-        bazel_7 = build_7 { dryRun = false; };
-
         checker = with pkgs; stdenv.mkDerivation {
           name = "checker";
           nativeBuildInputs = [ makeWrapper ];
@@ -54,7 +37,7 @@
             wrapProgram $out/bin/checker --prefix PATH : ${lib.makeBinPath [ gawk gnused ]}
           '';
         };
-        derivation = { inherit bazel bazel_7; };
+        derivation = { inherit bazel; };
       in
       rec {
         packages = derivation // {
