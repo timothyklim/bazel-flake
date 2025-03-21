@@ -6,6 +6,11 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
+  nixConfig = {
+    extra-trusted-public-keys = "nix-store.tawasal.ae:ZvppQTiNIqqt9y970LptbhrLOmqHWrIvrzkH9Qz2uJM=";
+    extra-substituters = "https://nix-store.tawasal.ae/store";
+  };
+
   outputs = { self, nixpkgs, flake-utils }:
     with flake-utils.lib; with system; eachSystem [ x86_64-linux aarch64-linux aarch64-darwin ] (system:
       let
