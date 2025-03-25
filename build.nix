@@ -352,8 +352,6 @@ let
   bazelRC = writeTextFile {
     name = "bazel-rc";
     text = ''
-      startup --server_javabase=${runJdk}
-
       # Register nix-specific nonprebuilt java toolchains
       build --extra_toolchains=@bazel_tools//tools/jdk:all
       # and set bazel to use them by default
