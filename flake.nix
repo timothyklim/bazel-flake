@@ -77,12 +77,10 @@
             default = bazel-app;
             bazel = bazel-app;
           };
-          legacyPackages = pkgs.extend overlays.default;
           devShells.default = with pkgs; mkShell {
             name = "bazel-env";
             buildInputs = [ just ];
           };
-          overlays.default = final: prev: derivation;
           checks.hashes = pkgs.runCommand "hashes" { } ''
             mkdir -p $out
 
@@ -95,7 +93,7 @@
           formatter = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
         }) // {
       nixosModules.default = {
-        nixpkgs.overlays = [ overlay ];
+        nixpkgs.overlays = [ overlays.default ];
       };
       overlays.default = final: prev: {
         bazel = self.packages.${prev.system}.default;
