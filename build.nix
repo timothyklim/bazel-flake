@@ -47,16 +47,12 @@
 , runJdk
   # diff.sh
 , dryRun
+, sources
 }:
 
 let
-  version = "8.1.1";
+  inherit (sources.bazel) src version;
   sourceRoot = ".";
-
-  src = fetchurl {
-    url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-dist.zip";
-    hash = "sha256-TJSHoW94QRUAkvB9k6ZyfWbyxBM6YX1zncqOyD+wCZw=";
-  };
 
   dsymutil = stdenv.mkDerivation {
     name = "dsymutil";
@@ -91,19 +87,10 @@ let
   ];
 
   bazelBootstrap = stdenv.mkDerivation rec {
-    version = "8.0.1";
+    inherit (sources.bazelBootstrap) version;
     pname = "bazelBootstrap";
 
-    src = {
-      x86_64-linux = fetchurl {
-        url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-linux-x86_64";
-        hash = "sha256-KLejW8XcVQ3xD+kP9EGCRrODmHZwX7Sq3etdrVBNXHI=";
-      };
-      aarch64-darwin = fetchurl {
-        url = "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel_nojdk-${version}-darwin-arm64";
-        hash = "sha256-7IKMKQ8+Qwi3ORzZgKSffdId1Zq13hKcshthWKYTtCA=";
-      };
-    }.${stdenv.hostPlatform.system};
+    src = sources.bazelBootstrap.src.${stdenv.hostPlatform.system};
 
     nativeBuildInputs = defaultShellUtils;
     buildInputs = [
